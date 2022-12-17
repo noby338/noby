@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper.cdc0426e.js";import{o as t,c as l,b as _}from"./app.72b5f7d8.js";const o={},c=_("ul",null,[_("li",null,"闪电"),_("li",null,"崔克")],-1),n=[c];function s(r,a){return t(),l("div",null,n)}const f=e(o,[["render",s],["__file","公路自行车品牌.html.vue"]]);export{f as default};

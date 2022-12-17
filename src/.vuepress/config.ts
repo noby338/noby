@@ -15,7 +15,7 @@ export default defineUserConfig({
     "/": {
       lang: "zh-CN",
       title: "Noby",
-      description: "Noby's 学习笔记",
+      description: "诺比的个人知识库",
       // 设置favicon
       head: [["link", { rel: "icon", href: "/favicon.svg" }]],
     },
@@ -38,7 +38,7 @@ export default defineUserConfig({
       // 热键支持
       hotKeys: ["command", "k"],
       // 最大推荐个数
-      maxSuggestions: 7,
+      maxSuggestions: 10,
       // 排除首页
       isSearchable: (page) => page.path !== "/",
     }),

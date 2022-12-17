@@ -7,12 +7,12 @@ import { zhSidebar } from "./sidebar/index.js";
 // 主题设置
 export default hopeTheme({
   // 当前网站部署到的域名
-  hostname: "https://gitee.com/oucystong",
+  hostname: "https://github.com/noby338",
 
   // 文章显示的默认作者
   author: {
     name: "Noby",
-    url: "https://gitee.com/oucystong",
+    url: "https://github.com/noby338",
   },
 
   // 使用官方提供的图标库-也可以构建自己的图标库
@@ -22,13 +22,13 @@ export default hopeTheme({
   logo: "/site_logo.png",
 
   // 导航栏上的个人仓库地址
-  repo: "https://gitee.com/oucystong",
+  repo: "https://github.com/noby338",
 
   // 自定义仓库链接文字-默认从repo中自动推断为"GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
   repoLabel: "GitHub",
 
   // 是否在导航栏内显示仓库链接-默认为true
-  repoDisplay: true,
+  repoDisplay: false,
 
   // 导航栏布局
   navbarLayout: {
@@ -38,7 +38,7 @@ export default hopeTheme({
   },
 
   // 页面显示信息
-  pageInfo: ["Category", "Tag", "ReadingTime"],
+  pageInfo: ["Category", "Tag", "Word","Date"],
 
   // 路径导航
   breadcrumb: true,
@@ -60,16 +60,16 @@ export default hopeTheme({
   // 返回顶部按钮-下滑300px后显示
   backToTop: true,
   // 纯净模式-禁用
-  pure: false,
+  pure: true,
 
   // 文章的最后更新时间
   lastUpdated: true,
 
   // 显示页面的贡献者
-  contributors: false,
+  contributors: true,
 
   // 文章所在仓库
-  docsRepo: "https://gitee.com/oucystong/notes.git",
+  docsRepo: "https://github.com/noby338/noby",
 
   // 文章所在分支
   docsBranch: "master",
@@ -87,35 +87,36 @@ export default hopeTheme({
       sidebar: zhSidebar,
 
       // 全局设置页脚信息
-      footer: "Noby's 学习笔记",
+      footer: "Noby's space",
 
       // 显示页脚
       displayFooter: false,
 
       // 页面配置信息
-      metaLocales: {
-        editLink: "在【Gitee】上编辑此页",
-      },
+      // metaLocales: {
+      //   editLink: "在【Github】上编辑此页",
+      // },
     },
   },
   // 博客配置
   blog: {
     // 头像
-    avatar: "/blog_head_logo.gif",
+    avatar: "/site_logo.png",
     // 名称
-    name: "Mr.Tong",
+    name: "Noby",
     // 是否是圆形头像
-    roundAvatar: false,
+    roundAvatar: true,
     // 个人描述
-    description: "你是无意穿堂风 偏偏孤倨引山洪",
+    description: "Just do it!",
     // 社交媒体
-    medias: {
-      Gitee: "https://gitee.com/oucystong",
-    },
+    // medias: {
+    //   Github: "https://github.com/noby338",
+    //   Gitee: "https://gitee.com/noby3388",
+    // },
     // 博客的侧边栏设置
     sidebarDisplay: "mobile",
     // 每页展示的文章数量
-    articlePerPage: 7,
+    articlePerPage: 20,
     timeline: "Noby's 时光轴🍃",
   },
   plugins: {
