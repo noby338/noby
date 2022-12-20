@@ -17,7 +17,7 @@ export default defineUserConfig({
       title: "Noby",
       description: "诺比的个人知识库",
       // 设置favicon
-      head: [["link", { rel: "icon", href: "/favicon.svg" }]],
+      head: [["link", { rel: "icon", href: "/site_logo.png" }]],
     },
   },
   // 主题设置

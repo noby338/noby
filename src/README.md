@@ -2,26 +2,28 @@
 home: true
 layout: Blog
 hero: true
-# heroImage : /head_logo.png
-bgImage: /blog_background.png
+# heroImage : /head_logo.jpg
+bgImage: /blog_background3.jpg
 heroFullScreen: false
-# projects:
-#   - name: DockerHub
-#     link: https://hub.docker.com/
-#     desc: Docker镜像官方下载网站
-#     icon: link
-#   - name: Maven仓库
-#     link: https://mvnrepository.com/	
-#     desc: Jar包的搜索及下载地址
-#     icon: link
-#   - name: B站
-#     link: https://www.bilibili.com/	
-#     desc: 让我增长知识的小破站
-#     icon: link
-#   - name: 抖音
-#     link: https://www.douyin.com/
-#     desc: 消耗我时间的精神粮食
-#     icon: link
+footer: "<a href='https://beian.miit.gov.cn' target='_blank' style='color: var(--c-text-lighter);'>蜀ICP备2022029402号</a>"
+footerHtml: true
+projects:
+  - name: 代码笔记
+    link: /codenotes/
+    desc: 
+    icon: code
+  - name: 开源项目
+    link: /projects/
+    desc: 
+    icon: free
+  - name: 资源下载
+    link: /resources/
+    desc: 
+    icon: share
+  - name: 三方导航
+    link: /othernav/
+    desc: 
+    icon: link
 ---
 
 

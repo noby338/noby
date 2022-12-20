@@ -87,15 +87,14 @@ export default hopeTheme({
       sidebar: zhSidebar,
 
       // 全局设置页脚信息
-      footer: "Noby's space",
-
+      footer: "本站若有资源涉及侵权，请立即联系作者删除（<a href='mailto:1326981297@qq.com' target='_blank'>1326981297@qq.com</a>），非常抱歉。",
       // 显示页脚
-      displayFooter: false,
+      displayFooter: true,
 
       // 页面配置信息
-      // metaLocales: {
-      //   editLink: "在【Github】上编辑此页",
-      // },
+      metaLocales: {
+        editLink: "在【Github】上编辑此页(仅作者)",
+      },
     },
   },
   // 博客配置
@@ -112,6 +111,7 @@ export default hopeTheme({
     // medias: {
     //   Github: "https://github.com/noby338",
     //   Gitee: "https://gitee.com/noby3388",
+    //   Email: "https://gitee.com/noby3388"
     // },
     // 博客的侧边栏设置
     sidebarDisplay: "mobile",
@@ -142,21 +142,20 @@ export default hopeTheme({
     },
     // MarkDown文件增强
     mdEnhance: {
-      align: true,
-      attrs: true,
-      chart: true,
-      codetabs: true,
+      align: false,
+      attrs: false,
+      chart: false,
+      codetabs: false,
       container: true,
-      demo: true,
-      echarts: true,
-      flowchart: true,
-      gfm: true,
-      imageSize: true,
-      include: true,
-      katex: true,
-      // lazyLoad: true,
-      mark: true,
-      mermaid: true,
+      demo: false,
+      echarts: false,
+      flowchart: false,
+      gfm: false,
+      imageSize: false,
+      include: false,
+      katex: false,
+      mark: false,
+      mermaid: false,
       playground: {
         presets: ["ts", "vue"],
       },
