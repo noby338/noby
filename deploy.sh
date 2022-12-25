@@ -13,5 +13,6 @@ git init
 git add .
 git commit -m 'deploy'
 git push -f git@43.139.179.52:/home/www/website/ts.git master
+# ssh -v git@43.139.179.52
 
 cd -

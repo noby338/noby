@@ -11,7 +11,7 @@ article: false
 timeline: false
 ---
 
-* 本模块作为个人学习笔记记录
+* 本模块作为计算机相关技术学习笔记总结记录
 
 
 

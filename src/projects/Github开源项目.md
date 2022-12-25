@@ -21,16 +21,20 @@ timeline: true
 date: 2022-12-14
 ---
 
-## CS
+## CS-Note
 
-* [CS-Notes](https://github.com/CyC2018/CS-Notes)：技术面试**必备基础知识**、`Leetcode`、计算机操作系统、计算机网络、系统设计。
+### 项目介绍
+* 一个用于java、数据库、算法、操作系统等后端知识学习的项目
 
-> `Github`地址：https://github.com/CyC2018/CS-Notes
->
-> 官网：http://www.cyc2018.xyz/
+### 如何使用
+* Github:[CS-Notes](https://github.com/CyC2018/CS-Notes)
+* 官网:[CS-Notes](http://www.cyc2018.xyz/)
 
-## 专业软件
+## vuepress-theme-hope
 
-* [RuanCang](https://ruancang.net/)：**专业软件**免费下载。
-
->官网：https://ruancang.net/
+### 项目介绍
+* 一个基于vuepress的前端博客框架
+* 本站基于此项目搭建
+### 如何使用
+* Github:[vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope)
+* 官网:[vuepress-theme-hope](https://vuepress-theme-hope.gitee.io/)

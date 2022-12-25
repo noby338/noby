@@ -7,7 +7,8 @@ import { zhSidebar } from "./sidebar/index.js";
 // 主题设置
 export default hopeTheme({
   // 当前网站部署到的域名
-  hostname: "https://github.com/noby338",
+  hostname: "https://www.noby.site",
+  
 
   // 文章显示的默认作者
   author: {
@@ -87,7 +88,7 @@ export default hopeTheme({
       sidebar: zhSidebar,
 
       // 全局设置页脚信息
-      footer: "本站若有资源涉及侵权，请立即联系作者删除（<a href='mailto:1326981297@qq.com' target='_blank'>1326981297@qq.com</a>），非常抱歉。",
+      footer: "本站若有资源涉及侵权，请立即联系作者删除，非常抱歉。（<a href='mailto:1326981297@qq.com' target='_blank'>1326981297@qq.com</a>）",
       // 显示页脚
       displayFooter: true,
 
@@ -142,20 +143,20 @@ export default hopeTheme({
     },
     // MarkDown文件增强
     mdEnhance: {
-      align: false,
-      attrs: false,
-      chart: false,
-      codetabs: false,
+      align: true,
+      attrs: true,
+      chart: true,
+      codetabs: true,
       container: true,
-      demo: false,
-      echarts: false,
-      flowchart: false,
-      gfm: false,
-      imageSize: false,
-      include: false,
-      katex: false,
-      mark: false,
-      mermaid: false,
+      demo: true,
+      echarts: true,
+      flowchart: true,
+      gfm: true,
+      imageSize: true,
+      include: true,
+      katex: true,
+      mark: true,
+      mermaid: true,
       playground: {
         presets: ["ts", "vue"],
       },
