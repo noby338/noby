@@ -8,14 +8,14 @@ const __dirname = getDirname(import.meta.url);
 
 //自定义用户配置
 export default defineUserConfig({
-  // base: "/mynotes/",
+  base: "/",
 
   // 多语言设置
   locales: {
     "/": {
       lang: "zh-CN",
       title: "Noby",
-      description: "诺比的个人知识库",
+      description: "诺比的个人博客",
       // 设置favicon
       head: [["link", { rel: "icon", href: "/site_logo.png" }]],
     },

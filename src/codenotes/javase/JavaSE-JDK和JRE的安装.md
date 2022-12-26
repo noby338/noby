@@ -18,8 +18,6 @@ star: false
 article: true
 # 是否将该文章添加至时间线中
 timeline: true
-# 文档的时间
-date: 2022-12-20
 ---
 
 

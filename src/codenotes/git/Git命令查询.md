@@ -16,8 +16,6 @@ star: true
 article: true
 # 是否将该文章添加至时间线中
 timeline: true
-# 文档的时间
-date: 2022-12-20
 ---
 ::: tip
 本文为git的常用命令的查询。若对git的基础概念不理解，可学习 [廖雪峰git教程](https://www.liaoxuefeng.com/wiki/896043488029600)

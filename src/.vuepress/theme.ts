@@ -8,7 +8,7 @@ import { zhSidebar } from "./sidebar/index.js";
 export default hopeTheme({
   // 当前网站部署到的域名
   hostname: "https://www.noby.site",
-  
+
 
   // 文章显示的默认作者
   author: {
@@ -39,7 +39,7 @@ export default hopeTheme({
   },
 
   // 页面显示信息
-  pageInfo: ["Category", "Tag", "Word","Date"],
+  pageInfo: ["Category", "Tag", "Word", "Date"],
 
   // 路径导航
   breadcrumb: true,
@@ -48,26 +48,29 @@ export default hopeTheme({
   breadcrumbIcon: true,
 
   // 用户可以自定义的多主题色
-  themeColor: {
-    yellow: "#FEC201",
-    pink: "#EF699F",
-    purple: "#684CCE",
-    orange: "#FF8C3D",
-  },
+  // themeColor: {
+  //   yellow: "#FEC201",
+  //   pink: "#EF699F",
+  //   purple: "#684CCE",
+  //   orange: "#FF8C3D",
+  // },
   // 暗黑模式切换-在深色模式和浅色模式中切换
   darkmode: "toggle",
   // 全屏按钮
-  fullscreen: true,
+  fullscreen: false,
   // 返回顶部按钮-下滑300px后显示
   backToTop: true,
   // 纯净模式-禁用
-  pure: true,
+  pure: false,
 
   // 文章的最后更新时间
   lastUpdated: true,
 
   // 显示页面的贡献者
   contributors: true,
+
+  // 显示编辑本页面
+  editLink: false,
 
   // 文章所在仓库
   docsRepo: "https://github.com/noby338/noby",
@@ -88,14 +91,14 @@ export default hopeTheme({
       sidebar: zhSidebar,
 
       // 全局设置页脚信息
-      footer: "本站若有资源涉及侵权，请立即联系作者删除，非常抱歉。（<a href='mailto:1326981297@qq.com' target='_blank'>1326981297@qq.com</a>）",
+      footer: "本站若有资源涉及侵权，请立即联系作者删除，非常抱歉。（<a href='mailto:1326981297@qq.com' target='_blank' style='color: var(--c-text-lighter);'>1326981297@qq.com</a>）",
       // 显示页脚
       displayFooter: true,
 
       // 页面配置信息
-      metaLocales: {
-        editLink: "在【Github】上编辑此页(仅作者)",
-      },
+      // metaLocales: {
+      //   editLink: "在【Github】上编辑此页(仅作者)",
+      // },
     },
   },
   // 博客配置
@@ -191,5 +194,17 @@ export default hopeTheme({
     git: true,
     // 关闭sitemap插件
     sitemap: false,
+
+    // comment: {
+    //   provider: "waline",
+    //   serverURL: "YOUR_SERVER_URL", // your server url
+    // },
+    // commentPlugin({
+    //   provider: "Giscus",
+    //   repo: "vuepress-theme-hope/giscus-discussions",
+    //   repoId: "R_kgDOG_Pt2A",
+    //   category: "Announcements",
+    //   categoryId: "DIC_kwDOG_Pt2M4COD69",
+    // })
   },
 });

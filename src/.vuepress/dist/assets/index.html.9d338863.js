@@ -1,0 +1,1 @@
+import{_ as t}from"./_plugin-vue_export-helper.cdc0426e.js";import{o,c as n,a as e}from"./app.8f780750.js";const c={},_=e("ul",null,[e("li",null,"本模块包括个人收藏的it技术、软件、兴趣爱好等可下载资源")],-1),l=[_];function s(r,a){return o(),n("div",null,l)}const f=t(c,[["render",s],["__file","index.html.vue"]]);export{f as default};

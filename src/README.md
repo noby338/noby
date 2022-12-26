@@ -3,7 +3,7 @@ home: true
 layout: Blog
 hero: true
 # heroImage : /head_logo.jpg
-bgImage: /blog_background3.jpg
+bgImage: /blog_background.jpg
 heroFullScreen: false
 footer: "<a href='https://beian.miit.gov.cn' target='_blank' style='color: var(--c-text-lighter);'>蜀ICP备2022029402号</a>"
 footerHtml: true
