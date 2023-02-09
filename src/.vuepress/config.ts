@@ -1,6 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 import { getDirname, path } from "@vuepress/utils";
 import theme from "./theme.js";
 
@@ -17,7 +18,10 @@ export default defineUserConfig({
       title: "Noby",
       description: "诺比的个人博客",
       // 设置favicon
-      head: [["link", { rel: "icon", href: "/site_logo.png" }]],
+      head: [
+        ["link", { rel: "icon", href: "/site_logo.png" }]
+        , ['meta', { name: "baidu-site-verification", content: "codeva-2o7EWQ18Dr" }]
+      ]
     },
   },
   // 主题设置
@@ -42,6 +46,10 @@ export default defineUserConfig({
       // 排除首页
       isSearchable: (page) => page.path !== "/",
     }),
+    //seo优化插件
+    sitemapPlugin({
+      hostname: 'https://noby.site'
+    })
   ],
 
   shouldPrefetch: false,
