@@ -1,3 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper.cdc0426e.js";import{o as i,c as o,e as a}from"./app.ce0ff7e4.js";const t={},r=a(`<h2 id="符号变量" tabindex="-1"><a class="header-anchor" href="#符号变量" aria-hidden="true">#</a> 符号变量</h2><div class="language-bat line-numbers-mode" data-ext="bat"><pre class="language-bat"><code>mklink /r &quot;C:\\Program Files (x86)\\Microsoft&quot; D:\\Application\\Microsoft
-mklink /r &quot;C:\\Program Files\\Microsoft Office\\root\\Office16&quot; D:\\Application\\Office16
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div>`,2),n=[r];function s(c,d){return i(),o("div",null,n)}const f=e(t,[["render",s],["__file","windows符号变量的使用.html.vue"]]);export{f as default};
