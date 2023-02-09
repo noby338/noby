@@ -7,7 +7,7 @@ import { zhSidebar } from "./sidebar/index.js";
 // 主题设置
 export default hopeTheme({
   // 当前网站部署到的域名
-  hostname: "https://www.noby.site",
+  hostname: "https://noby.site",
 
 
   // 文章显示的默认作者
@@ -23,7 +23,7 @@ export default hopeTheme({
   logo: "/site_logo.png",
 
   // 导航栏上的个人仓库地址
-  repo: "https://github.com/noby338",
+  repo: "https://github.com/noby338/noby",
 
   // 自定义仓库链接文字-默认从repo中自动推断为"GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
   repoLabel: "GitHub",
@@ -73,13 +73,14 @@ export default hopeTheme({
   editLink: false,
 
   // 文章所在仓库
-  docsRepo: "https://github.com/noby338/noby",
+  docsRepo: "https://github.com/noby338/noby338.github.io",
 
   // 文章所在分支
   docsBranch: "master",
 
   // 文章所在目录
-  docsDir: "src",
+  // docsDir: "src",
+  docsDir: "/",
 
   // 多语言设置
   locales: {
