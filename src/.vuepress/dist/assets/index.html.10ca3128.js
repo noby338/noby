@@ -1,1 +1,0 @@
-import{_ as t}from"./_plugin-vue_export-helper.cdc0426e.js";import{o,c as n,a as e}from"./app.fbd2e910.js";const s={},_=e("p",null,"test",-1),c=e("ul",null,[e("li",null,"本模块包括个人的项目，以及收录的其他三方优秀的互联网项目")],-1),l=[_,c];function r(a,i){return o(),n("div",null,l)}const f=t(s,[["render",r],["__file","index.html.vue"]]);export{f as default};
