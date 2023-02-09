@@ -91,7 +91,7 @@ export default hopeTheme({
       sidebar: zhSidebar,
 
       // 全局设置页脚信息
-      footer: "本站若有资源涉及侵权，请立即联系作者删除，非常抱歉。（<a href='mailto:1326981297@qq.com' target='_blank' style='color: var(--c-text-lighter);'>1326981297@qq.com</a>）",
+      footer: "本站若有资源涉及侵权，请立即联系作者删除，非常抱歉。（<a href='mailto:1326981297@qq.com?subject=noby个人网站-信息反馈' target='_blank' style='color: var(--c-text-lighter);'>1326981297@qq.com</a>）",
       // 显示页脚
       displayFooter: true,
 
