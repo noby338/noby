@@ -1,7 +1,6 @@
 //解决生产环境_plugin-vue_export-helper 404 问题
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
 
 // eslint-disable-next-line no-control-regex
 const INVALID_CHAR_REGEX = /[\x00-\x1F\x7F<>*#"{}|^[\]`;?:&=+$,]/g;
