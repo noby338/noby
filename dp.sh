@@ -17,6 +17,6 @@ git init
 git add .
 git commit -m "$1"
 # git push -f git@43.139.179.52:/home/www/website/ts.git master
-git push -u git@github.com:noby338/noby338.git master
+git push -f git@github.com:noby338/noby338.git master
 
 cd -
