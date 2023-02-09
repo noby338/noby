@@ -21,6 +21,7 @@ export default defineUserConfig({
       head: [
         ["link", { rel: "icon", href: "/site_logo.png" }]
         , ['meta', { name: "baidu-site-verification", content: "codeva-2o7EWQ18Dr" }]
+        , ['meta', { name: "description", content: "诺比的个人技术博客" }]
       ]
     },
   },
