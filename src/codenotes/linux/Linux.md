@@ -19,7 +19,6 @@ article: true
 # 是否将该文章添加至时间线中
 timeline: true
 ---
-
 ###  目录结构
 
 * | 文件夹               | 英文全称                               | 文件夹作用                                                   |
@@ -146,17 +145,22 @@ timeline: true
 * netstat: 查看Linux中网络系统状态信息
   * eg: `netstat -anp | grep 3306`
     * 查看3306端口的占用情况
+
 * curl: 利用URL规则在命令行下工作的文件传输工具，查看网络是否能够访问某域名
   * eg: `curl www.baidu.com`
+
 * firewall-cmd: 防火墙设置
   * eg: `firewall-cmd --zone=public --query-port=8080/tcp`
     * 查看端口
   * eg: `firewall-cmd --zone=public --add-port=8080/tcp --permanent`
     * 添加开放端口，–permanent永久生效，没有此参数重启后失效
+
   * eg: `firewall-cmd --reload`
     * 重新载入--重启防火墙
+
   * eg: `firewall-cmd --zone=public --remove-port=6379/tcp --permanent`
     * 删除端口
+
 * clear: 终端清屏
 * ls(list directory contents): 目录查看
   * 颜色：蓝色为文件夹，白色为一般文件，绿色为可执行文件
@@ -597,28 +601,20 @@ timeline: true
 
 ### linux shell
 
-
 * 解释：shell 是作为用户和linux的核心(kernel)之间的交流媒介，是提供用户操作系统的一个接口。shell 可以控制其他应用程序，如ls、vim、tar等指令都是调用应用程序的过程。只要能过操作应用程序的接口都能够称为shell（壳程序），狭义的shell指的是命令行方面的软件（如bash），广义的shell则包括图形接口的软件。
 * bash是linux的shell之一。linux的默认shell程序是bash
 * 使用者通过命令行或图形界面的方式和shell交流，使之控制kernel，从而kernel控制硬件做出相应的响应
 * bash配置文件的位置 ~/.bashrc，配置之后重启生效
-
   * eg: `export mysrc="/usr/local/src/"`
-
     * 配置自定义变量
 * bash中的符号
-
   * `#`: 批注符号：这个最常被使用在script当中，视为说明！在后的数据均不执行
   * `\`: 跳脱符号：将「特殊字符或通配符」还原成一般字符
   * `|`: 管线(pipe):分隔两个管线命令的界定，管线命令只可用于接收来自正确的输出，将正确的输出进一步处理，|的后面只可跟可以处理 standard input 的命令，如less,more,head,tail等，ls,cp,mv等不可接收管线命令
     * eg: `last | grep 'root'`
-
       * last输出登陆信息，找出带'root'的行，并显示出来
-
     * eg: `grep 'MANPATH' /etc/man_db.conf`
-
       * 输出带有MANPATH字样的行
-
   * `;`: 连续指令下达分隔符：连续性命令的界定（注意！与管线命令并不相同）
   * `~`: 用户的家目录
   * `$`: 取用变数前导符：亦即是变量之前需要加的变量取代值
@@ -629,52 +625,36 @@ timeline: true
   * `/`: 目录符号：路径分隔的符号
   * `>,>>`: 数据流重导向：输出导向，分别是『取代」与『累加」
     * eg: `cat test2.txt > test.txt`
-
       * 将tset2.txt中的文件数据流输入到test.txt，如果不存在test.txt则创建，如果存在则覆盖原本内容
-
     * eg: `cat test2.txt >> test.txt`
-
       * 将tset2.txt中的文件数据流输入到test.txt，如果不存在test.txt则创建，如果存在则追加原本内容
-
     * eg: `cat test2.txt test3.txt 1> test.txt 2> test0.txt`
-
       * 不存在test3.txt，程序将会报错，将错误信息传递到test0.txt，正确信息传递到test.txt，1表示正确数据，2表示错误数据
     * eg: `cat > catfile`
-
       * 数据输出流导向到catfile，由于未指定导向的来源，因此由键盘输入
-
   * `<,<<`: 数据流重导向：输入导向，将原本需要由键盘输入的内容直接由文件读取
-
     * `cat > catfile < /.bashrc`
-
       * 数据流输出导向建立catfile，数据输出流将键盘内容输入导向/.bashrc文件输入
-
   * `''`: 单引号，不具有变量置换的功能($变为纯文本)
   * `""`: 具有变量置换的功能！($可保留相关功能)
   * ``: 两个符号中间为可以先执行的指令，亦可使用${}
   * `()`: 在中间为子shel‖的起始与结束
   * `{}`: 在中间为命令区块的组合！
 * 环境变量
-
-  * 环境变量即为系统的全局变量。常用的环境变量有PATH、HOME、MAIL、SHELL，环境变量为了与自定义变量形成区别，通常是大写。当用户未指定目录的情况下直接执行某指令如 ls 会在$PATH环境变量的值中寻找是否存在该指令，存在即调用对应目录下的指令（存在多个时调用第一个搜寻到的），不同用户的环境变量不相同，使用本目录下的命令的方式为 ./命令名，为了安全起见，本目录(.)不放入到$PATH中
+  * 环境变量即为系统的全局变量。常用的环境变量有PATH、HOME、MAIL、SHELL，环境变量为了与自定义变量形成区别，通常是大写。当用户未指定目录的情况下直接执行某指令如 ls 会在PATH环境变量的值中寻找是否存在该指令，存在即调用对应目录下的指令（存在多个时调用第一个搜寻到的），不同用户的环境变量不相同，使用本目录下的命令的方式为 ./命令名，为了安全起见，本目录(.)不放入到$PATH中
   * eg: `echo $PATH`
     * 查看$PATH环境变量
   * eg: `PATH="${PATH}:/root"`
-
     * 给环境变量$PATH添加新的内容，将/root目录加入环境变量，$PATH等同${PATH}
   * eg: `env`
-
     * 查看所有的环境变量
   * eg: `export`
-
     * 查看所有的环境变量
   * eg: `read bike`
-
     * -p: 指定输入时提示的信息
     * -t: 指定输入的倒计时，倒计时结束即输入为空
     * 从用户的键盘输入变量
   * eg: `declare -i sum=1+2`
-
     * -a: 将后面的变量定义为数组
     * -i: 将后面的变量定义为整数
     * -x: 将后面的变量定义为环境变量
