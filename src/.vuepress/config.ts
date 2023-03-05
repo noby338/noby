@@ -16,7 +16,6 @@ export default defineUserConfig({
     "/": {
       lang: "zh-CN",
       title: "Noby",
-      description: "诺比的个人博客",
       // 设置favicon
       head: [
         ["link", { rel: "icon", href: "/site_logo.png" }]
