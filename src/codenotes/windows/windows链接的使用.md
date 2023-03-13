@@ -26,6 +26,7 @@ timeline: true
   * eg: `mklink /j "D:\VSCodeProjects\noby\src\codenotes\javase" "D:\markdown\javaSE"`
   * eg: `mklink /j "D:\VSCodeProjects\noby\src\codenotes\linux" "D:\markdown\linux"`
   * eg: `mklink /j "D:\VSCodeProjects\noby\src\codenotes\windows" "D:\markdown\windows"`
+  * eg: `mklink /j "D:\VSCodeProjects\noby\src\codenotes\sql" "D:\markdown\sql"`
 
     * 新建目录B为为目录A的软链接
 
