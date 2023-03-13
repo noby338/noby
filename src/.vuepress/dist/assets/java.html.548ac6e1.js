@@ -1,8 +1,0 @@
-import{_ as a}from"./_plugin-vue_export-helper.cdc0426e.js";import{o as s,c as n,e}from"./app.b62a36f4.js";const l={},i=e(`<h3 id="java-的安装" tabindex="-1"><a class="header-anchor" href="#java-的安装" aria-hidden="true">#</a> java 的安装</h3><ul><li><p>使用压缩包安装</p><ol><li><p>解压到/usr/local/src/java/</p></li><li><p>配置环境变量/etc/profile</p></li></ol><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>   <span class="token comment">#java environment</span>
-   <span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/local/src/java/jdk1.8.0_221
-   <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">\${JAVA_HOME}</span>/bin
-   \`\`<span class="token variable"><span class="token variable">\`</span>
-
-<span class="token number">2</span>. 重新加载/etc/profile配置文件 <span class="token variable">\`</span></span><span class="token builtin class-name">source</span> /etc/profile\`
-
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li></ul>`,2),t=[i];function c(o,r){return s(),n("div",null,t)}const v=a(l,[["render",c],["__file","java.html.vue"]]);export{v as default};
