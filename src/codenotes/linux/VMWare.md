@@ -65,14 +65,10 @@ timeline: true
   * 命令：
     * 查看ip：ipconfig(win)、ifconfig(linux)
     * 查看网络连接：ping ip
-
-
   * 三种模式：
     * 桥接模式：
       * VMnet0：vm直接连接pc所在的网段
-
     * NAT模式：
       * VMnet8：上一个网段的ip不能访问下一个网段的ip，为实现pc访问vm，网络设置中的VMnet8是用于将pc虚拟成NAT中的子ip，以实现pc和vm同网段，(若没有VMnet8，vm可以ping pc，但pc 不可以 ping vm)
-
     * 仅主机模式：
       * VMnet1：类似NAT模式可实现pc和vm的相互访问，vm不能访问外网
