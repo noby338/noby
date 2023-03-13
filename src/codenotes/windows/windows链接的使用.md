@@ -1,29 +1,15 @@
 ---
-# 当前页面内容标题
-title: 链接的使用
-# 当前页面图标
-icon:  write
-# 分类
+title: windows链接的使用
+icon: write
 category:
-  - windows
-# 标签
+  - Windows
 tag:
-  - windows
-  - 符号链接
-  - 软链接
-  - 硬链接
-
+  - Windows
 sticky: false
-# 是否收藏在博客主题的文章列表中，当填入数字时，数字越大，排名越靠前。
 star: false
-# 是否将该文章添加至文章列表中
 article: true
-# 是否将该文章添加至时间线中
 timeline: true
-# 文档的时间
-date: 2022-12-14
 ---
-
 ## 链接的使用
 
 * dir：查看路径下的目录、文件、链接
@@ -37,6 +23,9 @@ date: 2022-12-14
 * junction point（directory hard link）（软链接）：可跨分区，只可作用于目录，只能使用绝对路径。即使创建junction point时使用了相对路径，保存到NTFS中时将隐式转换成绝对路径。（linux中没有该类链接）
 
   * eg: `mklink /j "D:\null\B" "D:\null\A" `
+  * eg: `mklink /j "D:\VSCodeProjects\noby\src\codenotes\javase" "D:\markdown\javaSE"`
+  * eg: `mklink /j "D:\VSCodeProjects\noby\src\codenotes\linux" "D:\markdown\linux"`
+  * eg: `mklink /j "D:\VSCodeProjects\noby\src\codenotes\windows" "D:\markdown\windows"`
 
     * 新建目录B为为目录A的软链接
 

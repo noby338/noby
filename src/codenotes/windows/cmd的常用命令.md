@@ -1,25 +1,15 @@
 ---
-# 当前页面内容标题
 title: cmd的常用命令
-# 当前页面图标
-icon:  write
-# 分类
+icon: write
 category:
-  - windows
-# 标签
+  - Windows
 tag:
-  - windows
+  - Windows
 sticky: false
-# 是否收藏在博客主题的文章列表中，当填入数字时，数字越大，排名越靠前。
-star: 10
-# 是否将该文章添加至文章列表中
+star: false
 article: true
-# 是否将该文章添加至时间线中
 timeline: true
-# 文档的时间
-date: 2022-12-14
 ---
-
 ## cmd 常用命令
 
 | cmd命令                                                      | 作用                                                         |
@@ -42,9 +32,6 @@ date: 2022-12-14
 | `taskkill /im notepad.exe`<br />`taskkill /pid 1234`<br />`taskkill /f /im msedge.exe` | 关闭notepad镜像生成的进程<br />根据进程id关闭指定进程<br />结束所有的msedge.exe进程 |
 | `net user administrator /active:yes`                         | 启用管理员账户                                               |
 | `shutdown /s`<br />`shutdown /s /t 3600`<br />`shutdown /r` <br />`shutdown /l`<br />`shutdown /h /f` | 关机<br />定时关机（秒）<br />重启<br />注销<br />休眠       |
-|                                                              |                                                              |
-|                                                              |                                                              |
-|                                                              |                                                              |
 
 
 

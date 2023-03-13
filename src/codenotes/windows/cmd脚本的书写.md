@@ -1,27 +1,19 @@
 ---
-# 当前页面内容标题
 title: cmd脚本的书写
-# 当前页面图标
-icon:  write
-# 分类
+icon: write
 category:
-  - windows
-# 标签
+  - Windows
 tag:
-  - windows
-
+  - Windows
 sticky: false
-# 是否收藏在博客主题的文章列表中，当填入数字时，数字越大，排名越靠前。
 star: false
-# 是否将该文章添加至文章列表中
 article: true
-# 是否将该文章添加至时间线中
 timeline: true
-# 文档的时间
-date: 2022-12-14
 ---
-
 ## bat 脚本
+
+* 脚本文件：windows中当文件的后缀名为`.bat`或`.cmd`时，都是可执行的脚本文件
+* 通过启动目录执行脚本：下的可执行文件在开机时都会执行。windows的启动目录位置：[C:\Users\用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup]
 
 ```bat
 ::Windows 系统命令行默认使用 GBK 编码（编号: 936），如果需要显示中文，编写的脚本可以使用 ANSI 或 GB2312 编码。
@@ -86,6 +78,3 @@ mshta vbscript:msgbox("内容",0,"标题")(window.close)
 
 
 ```
-
-* 脚本文件：windows中当文件的后缀名为`.bat`或`.cmd`时，都是可执行的脚本文件
-* 通过启动目录执行脚本：下的可执行文件在开机时都会执行。windows的启动目录位置：[C:\Users\用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup]

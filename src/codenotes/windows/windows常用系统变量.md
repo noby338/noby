@@ -1,26 +1,15 @@
 ---
-# 当前页面内容标题
-title: windows常用的系统变量
-# 当前页面图标
-icon:  write
-# 分类
+title: windows常用系统变量
+icon: write
 category:
-  - windows
-# 标签
+  - Windows
 tag:
-  - windows
-
+  - Windows
 sticky: false
-# 是否收藏在博客主题的文章列表中，当填入数字时，数字越大，排名越靠前。
 star: false
-# 是否将该文章添加至文章列表中
 article: true
-# 是否将该文章添加至时间线中
 timeline: true
-# 文档的时间
-date: 2022-12-14
 ---
-
 ## 常用系统变量
 
 | 变量名              | 变量值(默认值)                         | 变量描述                                                     |
