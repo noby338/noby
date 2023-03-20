@@ -17,7 +17,7 @@ cd src/.vuepress/dist
 
 git init
 git add .
-git commit -m ${info}
+git commit -m "${info}"
 git push -f git@github.com:noby338/noby338.github.io.git master
 
 cd -
