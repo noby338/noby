@@ -11,9 +11,8 @@ article: false
 timeline: false
 ---
 
-::: tip
-本模块作为计算机相关技术学习笔记总结记录
-:::
+>本模块作为计算机相关技术学习笔记总结记录
+
 ## 目录
 -   [数据结构与算法](algdata/README.md)
 -   [git](git/README.md)
