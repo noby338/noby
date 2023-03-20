@@ -3,20 +3,21 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+info=$(date +"%Y/%m/%d %X")
+
 # 生成静态文件
-npm run docs:build
+# npm run docs:build
 
 git add .
-git commit -m "$1"
+git commit -m "${info}"
 git push git@github.com:noby338/noby.git master
 
 # 进入生成的文件夹
-cd src/.vuepress/dist
+# cd src/.vuepress/dist
 
-git init
-git add .
-git commit -m "$1"
-# git push -f git@43.139.179.52:/home/www/website/ts.git master
-git push -f git@github.com:noby338/noby338.github.io.git master
+# git init
+# git add .
+# git commit -m ${info}
+# git push -f git@github.com:noby338/noby338.github.io.git master
 
-cd -
+# cd -
