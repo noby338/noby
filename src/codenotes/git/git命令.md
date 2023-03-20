@@ -1,4 +1,18 @@
-git命令：
+---
+title: git命令
+icon: write
+category:
+  - git
+tag:
+  - git
+sticky: false
+star: false
+article: true
+timeline: true
+---
+## git命令：
+
+* git的基础知识学习推荐：[Git教程 - 廖雪峰的官方网站 (liaoxuefeng.com)](https://www.liaoxuefeng.com/wiki/896043488029600)
 
 | git指令                                                      | 作用                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |

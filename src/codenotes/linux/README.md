@@ -12,7 +12,7 @@ timeline: false
 ---
 ## 目录
 -   [docker](docker.md)
--   [git](git.md)
+-   [git](linux/git.md)
 -   [hexo](hexo.md)
 -   [java](java.md)
 -   [linux](linux.md)

@@ -11,6 +11,8 @@ article: true
 timeline: true
 ---
 
+> 前置知识 [README](../sql/README.md)
+
 ## JDBC
 
 - 定义：通过 java 语言操作数据库

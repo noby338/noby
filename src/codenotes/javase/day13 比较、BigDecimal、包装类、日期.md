@@ -168,6 +168,11 @@ class Person {
 
 ```
 
+## Comparable 和 Comparetor 的区别
+
+- Comparator 位于 java.util 下，而 Comparable 位于   java.lang 下
+- Comparable 是在比较类的内部定义的 compareto()方法实现的排序（String 和包装类已实现 Comparable 接口），Comparator 是在比较类的外部定义的 compare()方法实现的排序
+
 ## BigDecimal
 
 - 作用：用于解决浮点数的运算时的精度问题
