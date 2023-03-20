@@ -147,20 +147,20 @@ export default hopeTheme({
     },
     // MarkDown文件增强
     mdEnhance: {
-      align: false,
-      attrs: false,
-      chart: false,
-      codetabs: false,
-      container: false,
-      demo: false,
-      echarts: false,
-      flowchart: false,
-      gfm: false,
-      imageSize: false,
-      include: false,
-      katex: false,
-      mark: false,
-      mermaid: false,
+      align: true,
+      attrs: true,
+      chart: true,
+      codetabs: true,
+      container: true,
+      demo: true,
+      echarts: true,
+      flowchart: true,
+      gfm: true,
+      imageSize: true,
+      include: true,
+      katex: true,
+      mark: true,
+      mermaid: true,
       playground: {
         presets: ["ts", "vue"],
       },
@@ -180,11 +180,11 @@ export default hopeTheme({
           },
         },
       ],
-      sub: false,
-      sup: false,
-      tabs: false,
+      sub: true,
+      sup: true,
+      tabs: true,
       // vpre: true,
-      vuePlayground: false,
+      vuePlayground: true,
     },
     // 打开博客功能
     blog: {
@@ -194,7 +194,7 @@ export default hopeTheme({
     // 开启git实现编辑此页面-最后更新时间-贡献者功能
     git: true,
     // 关闭sitemap插件
-    sitemap: false,
+    sitemap: true,
 
     // comment: {
     //   provider: "waline",
