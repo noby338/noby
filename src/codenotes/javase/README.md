@@ -33,6 +33,6 @@ timeline: false
 -   [day19 多线程的基本使用](day19%20多线程的基本使用.md)
 -   [day20 死锁、线程等待、线程池、定时器](day20%20死锁、线程等待、线程池、定时器.md)
 -   [day21 网络编程](day21%20网络编程.md)
--   [day22 JDBC](day22%20JDBC.md)
--   [day23 反射、注解、枚举](day23%20反射、注解、枚举.md)
+-   [day22 JDBC、数据库连接池](day22%20JDBC、数据库连接池.md)
+-   [day23 Lombok、反射、注解、枚举](day23%20Lombok、反射、注解、枚举.md)
 -   [tips](tips.md)
