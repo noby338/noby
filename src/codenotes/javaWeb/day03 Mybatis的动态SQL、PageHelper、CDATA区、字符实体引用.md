@@ -1,5 +1,5 @@
 ---
-title: mybatis的动态SQL、PageHelper、CDATA区、字符实体引用
+title: day03 Mybatis的动态SQL、PageHelper、CDATA区、字符实体引用
 icon: write
 category:
   - JavaWeb

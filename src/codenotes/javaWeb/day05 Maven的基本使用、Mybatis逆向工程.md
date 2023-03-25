@@ -1,5 +1,5 @@
 ---
-title: maven的基本使用、mybatis逆向工程
+title: day05 Maven的基本使用、Mybatis逆向工程
 icon: write
 category:
   - JavaWeb
@@ -43,6 +43,14 @@ timeline: true
     - ![1627202903750.png](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/1627202903750.png)
     - 编译后的 Java 字节码文件和 resources 的资源文件，会被放到 WEB-INF 下的 classes 目录下
     - pom.xml 中依赖坐标对应的 jar 包，会被放入 WEB-INF 下的 lib 目录下
+
+#### 插件
+
+- clear 清除
+- compile 编译（生成 target 目录）
+- package 打包（target 目录中生成 jar 包）
+- install 安装（在本地仓库中生成 jar 包）
+- deploy 部署（在远程仓库中生成 jar 包）
 
 #### 仓库
 

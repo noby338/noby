@@ -1,5 +1,5 @@
 ---
-title: mybatis多表查询关系、连表查询、分布查询、缓存
+title: day04 Mybatis多表查询关系、连表查询、分布查询、缓存
 icon: write
 category:
   - JavaWeb

@@ -1,5 +1,5 @@
 ---
-title: mybatis的基本用法、接口映射、注解映射、缓存
+title: day02 Mybatis的基本用法、接口映射、注解映射、缓存
 icon: write
 category:
   - JavaWeb
