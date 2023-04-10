@@ -14,11 +14,12 @@ timeline: false
 >本模块作为计算机相关技术学习笔记总结记录
 
 ## 目录
--   [数据结构与算法](algdata/README.md)
+
 -   [git](git/README.md)
 -   [javaSE](javase/README.md)
 -   [javaWeb](javaWeb/README.md)
 -   [spring](spring/README.md)
+-   [distributed](distributed/README.md)
 -   [linux](linux/README.md)
 -   [SQL](sql/README.md)
 -   [windows](windows/README.md)

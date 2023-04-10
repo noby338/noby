@@ -125,11 +125,11 @@ timeline: true
 - 数据库中的热点数据 key 的命名惯例方式
   - 方式 1：属性值
     - 表名：主键名：主键值：字段名
-    - eg1: student:id:101:name noby
-    - eg2: student:id:101:age 20
+    - `eg1: student:id:101:name noby`
+    - `eg2: student:id:101:age 20`
   - 方式 2：json
     - 表名：主键名：主键值
-    - eg1: student:id:101 {name:noby,age:20}
+    - `eg1: student:id:101 {name:noby,age:20}`
 
 ### hash
 

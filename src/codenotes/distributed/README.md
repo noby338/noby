@@ -22,4 +22,3 @@ timeline: false
 - [day07 Nacos 服务注册与发现](day07%20Nacos%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0.md)
 - [day08 Seata 分布式事务](day08%20Seata%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1.md)
 - [day09 Sentinel 服务保护](day09%20Sentinel%E6%9C%8D%E5%8A%A1%E4%BF%9D%E6%8A%A4.md)
-- [README](README.md)
