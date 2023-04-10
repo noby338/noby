@@ -1,3 +1,15 @@
+---
+title: rabbitmq
+icon: write
+category:
+  - Linux
+tag:
+  - Linux
+sticky: false
+star: false
+article: true
+timeline: true
+---
 ## 安装
 
 ### 基础部分
