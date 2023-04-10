@@ -73,13 +73,13 @@ timeline: true
   - 切换 key 从时效性转换为永久性
     - persist key
 - 查询符合条件的 key
-  - keys pattern(pattern 为通配符，\*表示任意个数任意字符，?表示一个任意字符，`[`]表示其中的一个字符)
+  - keys pattern(pattern 为通配符，\*表示任意个数任意字符，?表示一个任意字符，`[]`表示其中的一个字符)
 - 其他操作
   - 为 key 改名
     - rename key newkey(若新的名称已存在，使用 newkey 的老 key 将会被使用 newkey 的新 key 代替)
     - renamenx key newkey(若新的名称不存在才可更改)
-  - 对所 key 排序`[逆序`](只可排序 list、set、zset 返回的结果为排序的结果，并不会影响原列表)
-    - sort key `[desc`]
+  - 对所 key 排序`[逆序]`(只可排序 list、set、zset 返回的结果为排序的结果，并不会影响原列表)
+    - sort key `[desc]`
   - 其他 key 通用操作
     - help @generic
 - db 的操作
@@ -165,8 +165,8 @@ timeline: true
 ### list
 
 - 添加/修改数据(l 代表 left，r 代表 right)
-  - lpush key valuel `[value2`]...
-  - rpush key valuel `[value2`]...
+  - lpush key valuel `[value2]`...
+  - rpush key valuel `[value2]`...
 - 获取数据(l 代表 lish，-1 索引可代表最后一个，-2 代表倒数第二个)
   - lrange key start stop
   - lindex key index
@@ -175,8 +175,8 @@ timeline: true
   - 1pop key
   - rpop key
 - 规定时间内获取并移除数据
-  - blpop key1 `[key2`]... timeout
-  - brpop key1 `[key2`]... timeout
+  - blpop key1 `[key2]`... timeout
+  - brpop key1 `[key2]`... timeout
 - 移除指定数据(count 表示数量，value 表示左边起第一个该 value 值为起始的位置)
   - lrem key count value
 - 注意
@@ -188,27 +188,27 @@ timeline: true
 ### set
 
 - 添加数据
-  - sadd key member1 `[member2`]...
+  - sadd key member1 `[member2]`...
 - 获取全部数据
   - smembers key
 - 删除数据
-  - srem key memberl `[member2`]...
+  - srem key memberl `[member2]`...
 - 获取集合数据总量
   - scard key
 - 判断集合中是否包含指定数据
   - sismember key member
 - 随机获取集合中指定数量的数据
-  - srandmember key `[count`]
+  - srandmember key `[count]`
 - 随机获取集合中指定数量的数据，并将该数据移出集合
-  - spop key `[count`]
+  - spop key `[count]`
 - 求两个集合的交、并、差集
-  - sinter key1 `[key2`]
-  - sunion key1 `[key2`]
-  - sdiff key1 `[key2`]
+  - sinter key1 `[key2]`
+  - sunion key1 `[key2]`
+  - sdiff key1 `[key2]`
 - 求两个集合的交、并、差集并存储到指定集合中
-  - sinterstore destination keyl `[key2`]
-  - sunionstore destination key1 `[key2`]
-  - sdiffstore destination keyl `[key2`]
+  - sinterstore destination key1 `[key2]`
+  - sunionstore destination key1 `[key2]`
+  - sdiffstore destination keyl `[key2]`
 - 将指定数据从原始集合中移动到目标集合中
   - smove source destination member
 - 注意
@@ -218,15 +218,15 @@ timeline: true
 ### sorted_set
 
 - 添加数据
-  - zadd key scorel memberl `[score2 member2`]
+  - zadd key scorel memberl `[score2 member2]`
 - 获取全部数据
-  - zrange key start stop `[WITHSCORES`]
-  - zrevrange key start stop `[WITHSCORES`]
+  - zrange key start stop `[WITHSCORES]`
+  - zrevrange key start stop `[WITHSCORES]`
 - 删除数据
-  - zrem key member `[member ..`]
+  - zrem key member `[member ..]`
 - 按条件获取数据
-  - zrangebyscore key min max `[WITHSCORES`] `[LIMIT`]
-  - zrevrangebyscore key max min `[WITHSCORES`]
+  - zrangebyscore key min max `[WITHSCORES]` `[LIMIT]`
+  - zrevrangebyscore key max min `[WITHSCORES]`
 - 条件删除数据
   - zremrangebyrank key start stop
   - zremrangebyscore key min max
@@ -234,8 +234,8 @@ timeline: true
   - zcard key
   - zcount key min max
 - 集合交、并操作
-  - zinterstore destination numkeys key `[key ..`]
-  - zunionstore destination numkeys key `[key ..`]
+  - zinterstore destination numkeys key `[key ..]`
+  - zunionstore destination numkeys key `[key ..]`
 - 获取数据对应的索引（排名）
   - zrank key member
   - zrevrank key member
