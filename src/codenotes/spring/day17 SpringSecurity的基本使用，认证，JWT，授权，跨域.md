@@ -1,3 +1,22 @@
+---
+title: day17 SpringSecurity的基本使用，认证，JWT，授权，跨域
+icon: write
+category:
+  - Spring
+  - SpringBoot
+tag:
+  - Spring
+  - SpringBoot
+  - SpringSecurity
+  - JWT
+  - 跨域
+  - 认证
+  - 授权
+sticky: false
+star: false
+article: true
+timeline: true
+---
 ## 介绍
 
 - Spring Security 是一个基于 Spring 框架的安全框架，它为应用程序提供身份验证、授权、安全会话管理、防止攻击等方面的支持。

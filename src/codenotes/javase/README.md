@@ -11,6 +11,8 @@ article: false
 timeline: false
 ---
 
+> 学习笔记源码开源地址：[noby338/stage1 (github.com)](https://github.com/noby338/stage1)
+
 ## 目录
 
 - [day01 计算机及 java 基础知识、java 环境变量的配置](day01%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%8Ajava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E3%80%81java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE.md)

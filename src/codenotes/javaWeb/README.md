@@ -6,6 +6,8 @@ article: false
 timeline: false
 ---
 
+> 学习笔记源码开源地址：[noby338/stage2 (github.com)](https://github.com/noby338/stage2)
+
 ## 目录
 
 - [day01 XML 配置文件及解析方式](day01%20XML%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%8A%E8%A7%A3%E6%9E%90%E6%96%B9%E5%BC%8F.md)
