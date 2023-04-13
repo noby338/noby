@@ -154,40 +154,37 @@ public class ArrayNote {//数组笔记
         //endregion
     }
 
-    private static void method3() {
-        //region 选择排序
-        int[] array = {5, 2, 3, 4, 6, 1};
-        for (int i = 0; i < array.length - 1; i++) {
-            int min = array[i];
-            int index = i;
-            for (int j = i; j < array.length; j++) {
-                if (min > array[j]) {
-                    min = array[j];
-                    index = j;
-                }
-            }
-            int temp = array[i];
-            array[i] = array[index];
-            array[index] = temp;
-        }
-        System.out.println("Arrays.toString(array) = " + Arrays.toString(array));
-        //endregion
-    }
-
-    private static void method2() {
-        //region 冒泡排序
-        int[] array = {1, 2, 3, 4, 6, 5};
-        for (int i = 0; i < array.length - 1; i++) {//比较的轮次
-            for (int j = 0; j < array.length - i - 1; j++) {//比较的索引
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
-            }
-        }
-        System.out.println("Arrays.toString(array2) = " + Arrays.toString(array));
-        //endregion
+    private static void method3() {  
+        int[] arr = {3, 1, 2, 4, 6, 5};  
+        int n = arr.length;  
+        for (int i = 0; i < n - 1; i++) {  
+            int minIndex = i;  
+            for (int j = i + 1; j < n; j++) {  
+                if (arr[j] < arr[minIndex]) {  
+                    minIndex = j;  
+                }  
+            }  
+            int temp = arr[minIndex];  
+            arr[minIndex] = arr[i];  
+            arr[i] = temp;  
+        }  
+        System.out.println("Arrays.toString(arr) = " + Arrays.toString(arr));  
+    }  
+  
+  
+    private static void method2() {  
+        int[] arr = {3, 1, 2, 4, 6, 5};  
+        int n = arr.length;  
+        for (int i = 0; i < n; i++) {//比较的轮次  
+            for (int j = 0; j < n - i - 1; j++) {//比较的索引  
+                if (arr[j] > arr[j + 1]) {  
+                    int temp = arr[j];  
+                    arr[j] = arr[j + 1];  
+                    arr[j + 1] = temp;  
+                }  
+            }  
+        }  
+        System.out.println("Arrays.toString(arr) = " + Arrays.toString(arr));  
     }
 
     private static void method1() {

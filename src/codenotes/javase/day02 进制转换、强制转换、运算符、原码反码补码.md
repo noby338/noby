@@ -300,7 +300,7 @@ public class ConversionNote {
 
 ### intanceof
 
-intanceof 为 java 中的二元运算符，用来判断某个对象是否属于某个类，返回布尔值。例如：`new Integer() instanceof Integer()`
+intanceof 为 java 中的二元运算符，用来判断某个对象是否属于某个类或其子类，返回布尔值。例如：`new Integer() instanceof Integer`
 
 ## 源码反码补码
 

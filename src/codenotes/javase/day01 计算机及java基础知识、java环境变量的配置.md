@@ -32,13 +32,13 @@ timeline: true
 
 ### JVM、JRE、JDK
 
-- JDK (Java Development Kit) 是太阳微系统针对 Java 开发人员发布的免费软件开发工具包（SDK，Software development kit）。自从 Java 推出以来，JDK 已经成为使用最广泛的 Java SDK。(JDK=JVM+运行所需核心类库+调试所需各种工具)
-- JRE (Java Runtime Environment) ，java 运行环境，普通用户并不需要安装 JDK 来运行 Java 程序，而只需要安装 JRE。而程序开发者必须安装 JDK 来编译、调试程序。(JRE=JVM+运行所需核心类库)
+- JDK (Java Development Kit) 是太阳微系统针对 Java 开发人员发布的免费软件开发工具包（SDK，Software development kit）。自从 Java 推出以来，JDK 已经成为使用最广泛的 Java SDK。(JDK=JVM+Java 核心类库+Java 编译器等其他开发工具)
+- JRE (Java Runtime Environment) ，java 运行环境，普通用户并不需要安装 JDK 来运行 Java 程序，而只需要安装 JRE。而程序开发者必须安装 JDK 来编译、调试程序。(JRE=JVM+Java 核心类库)
 - JVM (Java virtual machine) 意为 Java 虚拟机，主要负责运行 Java 程序，不管什么操作系统，只要安装了 Java 虚拟机就可以运行 Java 程序，这也就是为什么 Java 跨平台的原因。
 
 ### 程序的运行过程
 
-1. JDK 编译生成字节码文件
+1. JDK 中的 java 编译器编译生成字节码文件
 2. 不同平台的 JVM 解析字节码文件生成机器码
 3. 运行机器码
 
@@ -185,7 +185,7 @@ timeline: true
 
 ## 标识符
 
-- 定义：为包、类、方法、变量定义名称；
+- 定义：标识符是用来唯一标识包、类、方法、对象、变量、文件名的字符串；
 
 - 标识符命名规则：
 
@@ -198,7 +198,7 @@ timeline: true
   - 大驼峰命名法：多单词组成的标识符，所有单词的首字母大写
 
     - 例如：MyName
-    - 常用于类名，属性
+    - 常用于类名
 
   - 小驼峰命名法：多单词组成的标识符，首单词的首字母小写，其他单词首字母大写
 
