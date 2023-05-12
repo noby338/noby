@@ -13,11 +13,11 @@ git commit -m "${info}"
 git push git@github.com:noby338/noby.git master
 
 # 进入生成的文件夹
-cd src/.vuepress/dist
+# cd src/.vuepress/dist
 
-git init
-git add .
-git commit -m "${info}"
-git push -f git@github.com:noby338/noby338.github.io.git master
+# git init
+# git add .
+# git commit -m "${info}"
+# git push -f git@github.com:noby338/noby338.github.io.git master
 
-cd -
+# cd -
