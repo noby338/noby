@@ -6,7 +6,7 @@ set -e
 info=$(date +"%Y/%m/%d %T")
 
 # 生成静态文件
-npm run docs:build
+# npm run docs:build
 
 git add .
 git commit -m "${info}"
