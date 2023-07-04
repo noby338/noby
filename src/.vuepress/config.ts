@@ -18,9 +18,22 @@ export default defineUserConfig({
       title: "Noby",
       // 设置favicon
       head: [
-        ["link", { rel: "icon", href: "/site_logo.png" }]
-        , ['meta', { name: "baidu-site-verification", content: "codeva-2o7EWQ18Dr" }]
-        , ['meta', { name: "description", content: "诺比的个人技术博客" }]
+        ["link", { rel: "icon", href: "/site_logo.png" }],
+        ['meta', { name: "baidu-site-verification", content: "codeva-2o7EWQ18Dr" }],
+        ['meta', { name: "description", content: "诺比的个人技术博客" }],
+        [
+          "script",
+          {},
+          `
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?20478574e92b6344aaff41781542e446";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+          })();
+            `
+        ]
       ]
     },
   },
