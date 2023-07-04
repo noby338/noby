@@ -39,18 +39,17 @@ timeline: true
     - 需要的 jar 包
       - dom4j-1.1.jar
   - xdm 中的#和$的区别： \* $相当于字符串拼接，#相当于转义字符
-        ```sql
-          #    PreparedStatment
-          insert into student values(null,#{name},#{age},#{score})
-          ```
+```sql
+#    PreparedStatment
+insert into student values(null,#{name},#{age},#{score})
+```
     ![image-20220424142329325](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/20220424142329.png)
 
-````sql
-      $    Statment
-      insert into student values(null,'${name}',${age},${score})
-      ```
+```sql
+$    Statment
+insert into student values(null,'${name}',${age},${score})
+```
 ![image-20220424142511698](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/20220424142511.png)
-
 
 
 ```java
@@ -99,7 +98,7 @@ import java.util.Iterator;
         }
     }
 }
-````
+```
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?><!--文档类型说明-->

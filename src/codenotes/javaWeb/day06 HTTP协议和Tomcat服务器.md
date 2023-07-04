@@ -22,14 +22,14 @@ timeline: true
     - 缺点:多次请求间不能共享数据
     - 优点:速度快
 - http://www.baidu.com/index.htm
-  - 请求方式
+  - RESTful请求方式
     - GET 查
     - POST 增
     - PUT 改
     - DELETE 删
   - http://：协议
   - www.baidu.com：主机地址和端口号
-    - 可以通过其找到 DNS，通过 DNS 可以找到主机地址和端口号
+    - 可以通过电脑设置的DNS服务器找到主机地址和端口号
 
 ### 请求数据的格式
 
@@ -115,7 +115,7 @@ timeline: true
 - Tomcat 的相关概念:
   - Tomcat 是 Apache 软件基金会一个核心项目，是一个开源免费的轻量级 Web 服务器，支持 Servlet/JSP 少量 JavaEE 规范。
   - 概念中提到了 JavaEE 规范，那什么又是 JavaEE 规范呢?
-    JavaEE: Java Enterprise Edition,Java 企业版。指 Java 企业级开发的技术规范总和。包含 13 项技术规范:JDBC、JNDI、EJB、RMI、JSP、Servlet、XML、JMS、Java IDL、JTS、JTA、JavaMail、JAF。
+    - JavaEE: Java Enterprise Edition,Java 企业版。指 Java 企业级开发的技术规范总和。包含 13 项技术规范:JDBC、JNDI、EJB、RMI、JSP、Servlet、XML、JMS、Java IDL、JTS、JTA、JavaMail、JAF。
   - 因为 Tomcat 支持 Servlet/JSP 规范，所以 Tomcat 也被称为 Web 容器、Servlet 容器。Servlet 需要依赖 Tomcat 才能运行。
   - Tomcat 的官网: https://tomcat.apache.org/ 从官网上可以下载对应的版本进行使用。
 

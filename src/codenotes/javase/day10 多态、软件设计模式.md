@@ -39,7 +39,8 @@ public class PolymorphicNote {
         //region  
         /*        引用指向哪个对象就会调用该对象的方法，如果子类重写了父类的方法，  
         那么调用的就是子类中重写的方法，否则调用的是父类的方法  
-         */        System.out.println("animal.name = " + animal.name);//Animal  
+         */        
+        System.out.println("animal.name = " + animal.name);//Animal  
         System.out.println("animal.color = " + animal.color);//black  
 //        animal.hobby 错误  
         System.out.println("new Animal().name = " + new Animal().name);//Animal  
