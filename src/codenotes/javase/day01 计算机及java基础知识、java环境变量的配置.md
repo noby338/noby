@@ -10,7 +10,6 @@ star: false
 article: true
 timeline: true
 ---
-test1
 ## 计算机及 java 知识
 
 ### 计算机基础

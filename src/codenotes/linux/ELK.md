@@ -1,3 +1,19 @@
+---
+title: ELK
+icon: write
+category:
+  - Linux
+tag:
+  - Linux
+  - ELK
+  - Elasticsearch
+  - Logstash
+  - Kibana
+sticky: false
+star: false
+article: true
+timeline: true
+---
 ## elasticsearch
 
 - 定义：Elasticsearch 是基于 JSON 的 DSL（Domain Specific Language）来定义查询。

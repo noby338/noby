@@ -1,3 +1,16 @@
+---
+title: MongoDB
+icon: write
+category:
+  - Linux
+tag:
+  - Linux
+  - MongoDB
+sticky: false
+star: false
+article: true
+timeline: true
+---
 ### 数据库结构
 - 库
   - 集合

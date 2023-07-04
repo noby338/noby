@@ -1,3 +1,16 @@
+---
+title: Ubuntu
+icon: write
+category:
+  - Linux
+tag:
+  - Linux
+  - Ubuntu
+sticky: false
+star: false
+article: true
+timeline: true
+---
 ## 系统的安装
 
 - 在 ubuntu 的官网下载 iso 文件
