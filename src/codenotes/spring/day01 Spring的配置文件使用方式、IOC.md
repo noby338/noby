@@ -65,7 +65,7 @@ timeline: true
 
 ### Spring 的作用
 
-- 便于解耦
+- 控制翻转 IOC，便于解耦
 - 面向切面编程 AOP
 - 声明式事务的支持
 - 集成 junit 方便程序的测试

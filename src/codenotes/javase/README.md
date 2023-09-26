@@ -15,7 +15,7 @@ timeline: false
 
 ## 目录
 
-- [day01 计算机及 java 基础知识、java 环境变量的配置](day01%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%8Ajava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E3%80%81java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE.md)
+- [day01 计算机及 java 基础知识、java 环境变量的配置](day01%20计算机及java基础知识、java环境变量的配置、命名规范、注释.md)
 - [day02 进制转换、强制转换、运算符、原码反码补码](day02%20%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E3%80%81%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81.md)
 - [day03 循环语句、条件判断](day03%20%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E3%80%81%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD.md)
 - [day04 函数（方法）](day04%20函数（方法）.md)

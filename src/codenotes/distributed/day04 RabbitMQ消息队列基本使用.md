@@ -76,10 +76,10 @@ timeline: true
     - 交换机，配置队列，路由，绑定关系
   - 对象序列化的方式（配置类）
 
-### 5 中工作模式
+### 5 种工作模式
 
 - 无交换机，一个管道，一个消费者 simple queue 模式
-- 无交换机，一个管道，多个消费者 work queues 模式
+- 无交换机，一个管道，多个消费者 work queue 模式
 - publish/subscribe(发布/订阅模式)
   - 有交换机，无路由，多个管道，多个消费者 fanout
   - 有交换机，有路由，多个管道，多个消费者 Direct(Routing)

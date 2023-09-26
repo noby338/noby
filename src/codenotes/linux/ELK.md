@@ -3,7 +3,7 @@ title: ELK
 icon: write
 category:
   - Linux
-tag:
+tags:
   - Linux
   - ELK
   - Elasticsearch
@@ -17,7 +17,7 @@ timeline: true
 ## elasticsearch
 
 - 定义：Elasticsearch 是基于 JSON 的 DSL（Domain Specific Language）来定义查询。
-- Mysql：
+1. Mysql：
   - 擅长事务类型操作，可以确保数据的安全和一致性
 - Elasticsearch：
   - 擅长海量数据的搜索、分析、计算

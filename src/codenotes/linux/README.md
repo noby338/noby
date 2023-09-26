@@ -15,7 +15,7 @@ timeline: false
 
 - [docker](docker.md)
 - [ELK](ELK.md)
-- [git](git.md)
+- [git](git/git.md)
 - [hexo](hexo.md)
 - [java](java.md)
 - [linux](linux.md)

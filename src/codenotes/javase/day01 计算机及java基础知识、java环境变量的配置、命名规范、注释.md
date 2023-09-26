@@ -1,9 +1,9 @@
 ---
-title: day01 计算机及java基础知识、java环境变量的配置
+title: day01 计算机及java基础知识、java环境变量的配置、命名规范、注释
 icon: write
 category:
   - JavaSE
-tag:
+tags:
   - JavaSE
 sticky: false
 star: false
@@ -60,9 +60,6 @@ timeline: true
 
 1. 点击 java 开发工具安装包
 2. 点击”下一步“
-
-![image-20221220182659243](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182659243.png)
-
 3. 点击“更改”，修改安装到 D:\java\jdk 文件夹
 
 ![image-20221220182725069](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182725069.png)

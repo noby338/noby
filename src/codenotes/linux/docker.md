@@ -167,16 +167,16 @@ Environment="HTTP_PROXY=http://192.168.1.104:7890/" "HTTPS_PROXY=http://192.168.
   - 容器的 ip 地址
   - 宿主机的 ip:宿主机映射到容器的端口
   - 容器名(需要使用自定义的网桥)
-- 在linux环境下，docker的启动会创建一个docker0虚拟网卡（通过ip addr命令查看）
-  - 当docker创建一个容器时，linux宿主机会给系统其分配一个eth0网络接口，该接口在未指定的情况下连接到docker0虚拟网卡，并且容器内部也会有一个eth0接口，他们是一对。此时的eth0充当一个网桥，实现了容器和宿主机的通信。（evth-pair 技术）
-  - 如果容器再次创建一个容器，会再次创建一对eth0，直至容器被删除该网络接口才会消失
-  - 如果一个容器通过分配的IP地址访问另一个容器，会先通过eth0访问宿主机，在通过宿主机再通过eth0访问另一个容器
-- --link参数（不推荐使用的老参数）
-  - 默认情况下，通过容器名是无法实现容器之间的连接，通过run容器的时候指定 --link参数可实现容器的单项访问
-    - 实现的原理是在容器的系统hosts文件中将访问的容器名绑定了访问的容器的ip
+- 在 linux 环境下，docker 的启动会创建一个 docker0 虚拟网卡（通过 ip addr 命令查看）
+  - 当 docker 创建一个容器时，linux 宿主机会给系统其分配一个 eth0 网络接口，该接口在未指定的情况下连接到 docker0 虚拟网卡，并且容器内部也会有一个 eth0 接口，他们是一对。此时的 eth0 充当一个网桥，实现了容器和宿主机的通信。（evth-pair 技术）
+  - 如果容器再次创建一个容器，会再次创建一对 eth0，直至容器被删除该网络接口才会消失
+  - 如果一个容器通过分配的 IP 地址访问另一个容器，会先通过 eth0 访问宿主机，在通过宿主机再通过 eth0 访问另一个容器
+- --link 参数（不推荐使用的老参数）
+  - 默认情况下，通过容器名是无法实现容器之间的连接，通过 run 容器的时候指定 --link 参数可实现容器的单项访问
+    - 实现的原理是在容器的系统 hosts 文件中将访问的容器名绑定了访问的容器的 ip
 - --net 参数
   - 可以指定在容器创建的时候连接的网络，默认为 --net docker0
-  - 自定义的桥接网络和docker0的最大区别是，容器加入自定义的桥接网络可以通过容器名相互通信
+  - 自定义的桥接网络和 docker0 的最大区别是，容器加入自定义的桥接网络可以通过容器名相互通信
   - 一个加入了网络的容器还可以通过 `docker network connect mybrige tomcat` 命令连接另一个网络，实现不同网络之间的容器通信
 
 ## docker 的镜像层级
@@ -217,7 +217,8 @@ VORKDIR /usr
 CMD /bin/bash
 ```
 
-- 命名springboot_dockerfile
+- 命名 springboot_dockerfile
+
 ```
 FROM java:8
 MAINTAINER noby <1326981297@qq.com>
@@ -226,11 +227,13 @@ CMD java -jar app.jar
 ```
 
 `docker build -f ./springboot_dockerfile -t springboot .`
+
 ## docker compose
+
 - docker-compose.yml 是文件的默认名，通常不更改
   - `docker compose -f docker-compose1.yml up`
     - 可指定启动的文件
-- docker compose服务启动后，会在docker下创建新的bridge网络dockerfile_default用于docker compose中的容器通信
+- docker compose 服务启动后，会在 docker 下创建新的 bridge 网络 dockerfile_default 用于 docker compose 中的容器通信
 - `docker compose up`
   - 创建镜像，创建并运行容器
 - `docker compose down`
@@ -259,7 +262,7 @@ services:
             - "8080"
         links:
             - mysql: db # 将mysql容器重命名为db，这样在springboot中就可以使用db访问mysql
-        depends_on: # 在指定容器之后启动 
+        depends_on: # 在指定容器之后启动
             - mysql
     mysql:
         image: mysql:5.7
@@ -275,6 +278,7 @@ services:
 ```
 
 ## macos 拉取镜像
+
 - 加上该参数
   - --platform linux/amd64
 
@@ -659,23 +663,26 @@ docker pull kibana:7.17.3
 docker pull mongo:4
 docker pull minio/minio
 
-
 #### mysql
+
 docker run -p 3306:3306 --name mysql \
 -v /Users/noby/dockervolume/mysql/log:/var/log/mysql \
 -v /Users/noby/dockervolume/mysql/data:/var/lib/mysql \
 -v /Users/noby/dockervolume/mysql/conf:/etc/mysql/conf.d \
--e MYSQL_ROOT_PASSWORD=root  \
+-e MYSQL_ROOT_PASSWORD=root \
 -d mysql:5.7
+
 #### redis
+
 docker run -p 6379:6379 --name redis \
 -v /Users/noby/dockervolume/redis/data:/data \
 -d redis:7 redis-server --appendonly yes
 
 #### nginx
+
 docker run -p 80:80 --name nginx \
 -v /Users/noby/dockervolume/nginx/html:/usr/share/nginx/html \
--v /Users/noby/dockervolume/nginx/logs:/var/log/nginx  \
+-v /Users/noby/dockervolume/nginx/logs:/var/log/nginx \
 -d nginx:1.22
 
 docker container cp nginx:/etc/nginx /Users/noby/dockervolume/nginx/
@@ -685,7 +692,7 @@ docker rm nginx
 
 docker run -p 80:80 --name nginx \
 -v /Users/noby/dockervolume/nginx/html:/usr/share/nginx/html \
--v /Users/noby/dockervolume/nginx/logs:/var/log/nginx  \
+-v /Users/noby/dockervolume/nginx/logs:/var/log/nginx \
 -v /Users/noby/dockervolume/nginx/conf:/etc/nginx \
 -d nginx:1.22
 
@@ -700,6 +707,7 @@ docker run -p 5672:5672 -p 15672:15672 --name rabbitmq \
 -d rabbitmq:3-management
 
 #### elasticsearch
+
 sysctl -w vm.max_map_count=262144
 
 docker run -p 9200:9200 -p 9300:9300 --name elasticsearch \
@@ -713,63 +721,111 @@ docker run -p 9200:9200 -p 9300:9300 --name elasticsearch \
 chmod 777 /Users/noby/dockervolume/elasticsearch/data/
 
 https://github.com/medcl/elasticsearch-analysis-ik/releases
+
 #### logstatsh
-output {
-  elasticsearch {
-    hosts => "es:9200"
-    index => "mall-%{type}-%{+YYYY.MM.dd}"
-  }
+
+```
+input {
+ tcp {
+   mode => "server"
+   host => "0.0.0.0"
+   port => 4560
+   codec => json_lines
+   type => "debug"
+ }
+ tcp {
+   mode => "server"
+   host => "0.0.0.0"
+   port => 4561
+   codec => json_lines
+   type => "error"
+ }
+ tcp {
+   mode => "server"
+   host => "0.0.0.0"
+   port => 4562
+   codec => json_lines
+   type => "business"
+ }
+ tcp {
+   mode => "server"
+   host => "0.0.0.0"
+   port => 4563
+   codec => json_lines
+   type => "record"
+ }
 }
+filter{
+ if [type] == "record" {
+   mutate {
+     remove_field => "port"
+     remove_field => "host"
+     remove_field => "@version"
+   }
+   json {
+     source => "message"
+     remove_field => ["message"]
+   }
+ }
+}
+output {
+ elasticsearch {
+   hosts => "es:9200"
+   index => "mall-%{type}-%{+YYYY.MM.dd}"
+ }
+}
+
+```
 
 docker run --name logstash -p 4560:4560 -p 4561:4561 -p 4562:4562 -p 4563:4563 \
 --link elasticsearch:es \
 -v /Users/noby/dockervolume/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf \
 -d logstash:7.17.3
+
 logstash-plugin install logstash-codec-json_lines
+
 #### kibana
+
 docker run --name kibana -p 5601:5601 \
 --link elasticsearch:es \
 -e "elasticsearch.hosts=http://es:9200" \
 -d kibana:7.17.3
+
 #### mongodb
+
 docker run -p 27017:27017 --name mongo \
 -v /Users/noby/dockervolume/mongo/db:/data/db \
 -d mongo:4
+
 #### minio
+
 docker run -p 9090:9000 -p 9001:9001 --name minio \
 -v /Users/noby/dockervolume/minio/data:/data \
 -e MINIO_ROOT_USER=minioadmin \
 -e MINIO_ROOT_PASSWORD=minioadmin \
 -d minio/minio server /data --console-address ":9001"
 
-
-
-
-
-
-
 docker run -d \
-	--name es \
-    -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
-    -e "discovery.type=single-node" \
-    -v /Users/noby/dockervolume/es/data:/usr/share/elasticsearch/data \
-    -v /Users/noby/dockervolume/es/plugins:/usr/share/elasticsearch/plugins \
-    --privileged \
-    --network es-net \
-    -p 9200:9200 \
-    -p 9300:9300 \
+ --name es \
+ -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
+ -e "discovery.type=single-node" \
+ -v /Users/noby/dockervolume/es/data:/usr/share/elasticsearch/data \
+ -v /Users/noby/dockervolume/es/plugins:/usr/share/elasticsearch/plugins \
+ --privileged \
+ --network es-net \
+ -p 9200:9200 \
+ -p 9300:9300 \
 elasticsearch:7.12.1
 
 docker run -d \
-	--name es \
-    -p 9200:9200 \
-    -p 9300:9300 \
+ --name es \
+ -p 9200:9200 \
+ -p 9300:9300 \
 elasticsearch:7.12.1
-
 
 docker run -d \
 --name kb \
 -e ELASTICSEARCH_HOSTS=http://es:9200 \
 --network=es-net \
--p 5601:5601  \
+-p 5601:5601 \
 kibana:7.12.1
