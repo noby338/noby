@@ -122,7 +122,7 @@ export default hopeTheme({
     sidebarDisplay: "mobile",
     // 每页展示的文章数量
     articlePerPage: 20,
-    timeline: "Noby's 时光轴🍃",
+    timeline: "Noby's time line",
   },
   plugins: {
     // 在MD文件中启用的组件
