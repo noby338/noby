@@ -15,7 +15,7 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "个人新站",
+      title: "诺比的技术角",
       // 设置favicon
       head: [
         ["link", { rel: "icon", href: "/site_logo.png" }],

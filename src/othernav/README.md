@@ -16,6 +16,7 @@ timeline: false
 
 <OtherNav arr='[
   {"title":"谷歌","url":"https://www.google.com/","desc":"被墙的国内外搜索引擎","icon":"/navicon/google.ico"},
+  {"title":"工具达人","url":"https://toolsdar.cn/","desc":"好用的万能导航","icon":"https://toolsdar.cn/wp-content/uploads/2022/03/favicon.ico"},
   {"title":"编程导航","url":"https://www.code-nav.cn/","desc":"鱼皮的编程导航，知识囊括全面","icon":"/navicon/codenav.png"},
   {"title":"找代码","url":"https://www.programcreek.com/java-api-examples/index.php","desc":"搜一下某个类的使用方法","icon":"/navicon/java.ico"}
   ]'>
