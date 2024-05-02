@@ -73,7 +73,7 @@ export default hopeTheme({
   editLink: false,
 
   // 文章所在仓库
-  docsRepo: "https://github.com/noby338/noby338.github.io",
+  // docsRepo: "https://github.com/noby338/noby338.github.io",
 
   // 文章所在分支
   docsBranch: "master",
@@ -130,11 +130,11 @@ export default hopeTheme({
       // 为站点提供了在MD文档中自定义颜色的徽章
       "Badge",
       // 为站点提供了在MD文档中加载B站视频的功能，但是不建议使用
-      "BiliBili",
+      // "BiliBili",
       // 为站点提供了在MD文档中加载PDF阅读器的功能，但是不建议使用
       // 原因一：PDF书籍较大，上传到码云后会大量占用码云空间
       // 原因二：当PDF阅读器较多的时候，将MD文档渲染成HTML页面比较耗费性能，使页面加载速度变慢
-      "PDF",
+      // "PDF",
     ],
     // 代码复制功能-vuepress-plugin-copy-code2
     copyCode: {
@@ -147,20 +147,20 @@ export default hopeTheme({
     },
     // MarkDown文件增强
     mdEnhance: {
-      align: true,
-      attrs: true,
-      chart: true,
-      codetabs: true,
-      container: true,
-      demo: true,
-      echarts: true,
-      flowchart: true,
-      gfm: true,
-      imageSize: true,
-      include: true,
-      katex: true,
-      mark: true,
-      mermaid: true,
+      align: false,
+      attrs: false,
+      chart: false,
+      codetabs: false,
+      container: false,
+      demo: false,
+      echarts: false,
+      flowchart: false,
+      gfm: false,
+      imageSize: false,
+      include: false,
+      katex: false,
+      mark: false,
+      mermaid: false,
       playground: {
         presets: ["ts", "vue"],
       },
@@ -189,7 +189,7 @@ export default hopeTheme({
     // 打开博客功能
     blog: {
       // 在文章列表页面自动提取文章的摘要进行显示
-      autoExcerpt: true,
+      autoExcerpt: false,
     },
     // 开启git实现编辑此页面-最后更新时间-贡献者功能
     git: true,
