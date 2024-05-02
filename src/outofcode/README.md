@@ -13,9 +13,4 @@ timeline: false
 
 >本模块作为个人兴趣爱好及其他与IT技术无关的笔记总结
 
-### ← ← ← 右侧目录菜单
-
-## 目录
-
--   [公路自行车](roadbike/README.md)
--   [胡思乱想](wildimagin/README.md)
+## ← ← ← 右侧打开目录
