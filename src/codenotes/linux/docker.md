@@ -642,7 +642,7 @@ server {
         - 关闭某个容器的自启动
     - `docker inspect --format='{{.Name}} {{.HostConfig.RestartPolicy.Name}}' $(docker ps -aq)`
         - 查看当前自启动的容器
-        - --format：这个选项允许使用 Go 的模板语言来指定输出的格式。这对于提取特定的信息非常有用。{{.Name}} {{.HostConfig.RestartPolicy.Name}}：这是一个模板字符串，告诉 docker inspect 命令只输出每个容器的名称（.Name）和重启策略（.HostConfig.RestartPolicy.Name）。
+        - --format：这个选项允许使用 Go 的模板语言来指定输出的格式。这对于提取特定的信息非常有用。`{{.Name}} {{.HostConfig.RestartPolicy.Name}}`：这是一个模板字符串，告诉 docker inspect 命令只输出每个容器的名称`（.Name）`和重启策略`（.HostConfig.RestartPolicy.Name）`。
         - $()：这是 Bash 和其他类Unix shell中的命令替换功能。它会执行括号内的命令，然后将输出结果（在这种情况下是所有容器的ID）作为字符串返回。这意味着 $(docker ps -aq) 会被替换成所有容器 ID 的列表。
 
 ### docker commit
