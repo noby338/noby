@@ -2,25 +2,25 @@
 title: day04 Mybatis多表查询关系、连表查询、分布查询、缓存
 icon: write
 category:
-  - JavaWeb
-  - MyBatis
+    - JavaWeb
+    - MyBatis
 tag:
-  - JavaWeb
-  - MyBatis
-  - 多表查询
-  - 多对一查询
-  - 一对多查询
-  - 多对多查询
-  - 连表查询
-  - 分步查询
-  - 缓存
+    - JavaWeb
+    - MyBatis
+    - 多表查询
+    - 多对一查询
+    - 一对多查询
+    - 多对多查询
+    - 连表查询
+    - 分步查询
+    - 缓存
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### mybaits 的配置文件
+## mybaits 的配置文件
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?><!--文档类型说明-->
@@ -76,7 +76,7 @@ timeline: true
 </configuration>
 ```
 
-### 数据库的 properties
+## 数据库的 properties
 
 ```properties
 jdbc.driver=com.mysql.jdbc.Driver
@@ -85,7 +85,7 @@ jdbc.username=root
 jdbc.password=123
 ```
 
-### log4j 的配置 properties
+## log4j 的配置 properties
 
 ```properties
 # 这段代码是使用log4j进行日志输出的配置。
@@ -116,7 +116,7 @@ log4j.appender.FILE.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%p] %m [%t
 log4j.appender.FILE.File=file.log
 ```
 
-### 生成 sqlssesion 的工具类
+## 生成 sqlssesion 的工具类
 
 ```java
 package note.util;
@@ -150,7 +150,7 @@ import java.io.InputStream;
 }
 ```
 
-### entity 实体类
+## entity 实体类
 
 ```java
 package note.entity;
@@ -245,7 +245,7 @@ public class Teacher {
 }
 ```
 
-### dao 接口
+## dao 接口
 
 ```java
 package note.dao;
@@ -291,7 +291,7 @@ public interface EmpDao {
 }
 ```
 
-### 接口的 mapper
+## 接口的 mapper
 
 ```java
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -443,7 +443,7 @@ public interface EmpDao {
 </mapper>
 ```
 
-### 测试类
+## 测试类
 
 ```java
 package note.dao;
@@ -671,13 +671,13 @@ public class EmpDaoTest {
 }
 ```
 
-### mybaitis 的缓存
+## mybaitis 的缓存
 
 - MyBatis 的缓存是一种可选的提高性能的方式，它可以缓存查询结果，避免反复查询数据库，减少与数据库的交互次数，提高系统性能。MyBatis 中的缓存主要分为一级缓存和二级缓存，本质上都是一个内存区域，在不同的作用域内起作用。
-  - 一级缓存：一级缓存也称为本地缓存，它是在  `SqlSession`  对象的生命周期内有效。当前  `SqlSession`  内多次查询相同数据，第一次查询后，数据将会被缓存在本地内存中，等待下一次请求使用，从而避免重复查询，降低数据库压力。
-    - 一级缓存是 MyBatis 默认开启的，如果某个  `SqlSession`  关闭了或者提交了事务，则该  `SqlSession`  的一级缓存也将被清空。一级缓存是基于对象引用的，查询结果是以  `Map`  为基础进行存储，其中 key 是 SQL 语句和查询条件组成的唯一标识符，value 是对应的查询结果所对应的 Java 对象。
-  - 二级缓存：二级缓存也称为全局缓存，它是基于命名空间的缓存，多个  `SqlSession`  可以共享同一个命名空间的缓存数据。二级缓存的作用域是同一个 Mapper（namespace）下。
-    - 二级缓存需要通过配置开启，其默认是关闭的。可以设置缓存的实现方式，默认情况下，MyBatis 提供了多种缓存实现，包括延迟加载缓存（LruCache）、FIFO 缓存（FifoCache）、SoftReference 缓存（SoftCache）、弱引用缓存（WeakCache）等。用户也可以自定义缓存实现策略。
+    - 一级缓存：一级缓存也称为本地缓存，它是在  `SqlSession`  对象的生命周期内有效。当前  `SqlSession`  内多次查询相同数据，第一次查询后，数据将会被缓存在本地内存中，等待下一次请求使用，从而避免重复查询，降低数据库压力。
+        - 一级缓存是 MyBatis 默认开启的，如果某个  `SqlSession`  关闭了或者提交了事务，则该  `SqlSession`  的一级缓存也将被清空。一级缓存是基于对象引用的，查询结果是以  `Map`  为基础进行存储，其中 key 是 SQL 语句和查询条件组成的唯一标识符，value 是对应的查询结果所对应的 Java 对象。
+    - 二级缓存：二级缓存也称为全局缓存，它是基于命名空间的缓存，多个  `SqlSession`  可以共享同一个命名空间的缓存数据。二级缓存的作用域是同一个 Mapper（namespace）下。
+        - 二级缓存需要通过配置开启，其默认是关闭的。可以设置缓存的实现方式，默认情况下，MyBatis 提供了多种缓存实现，包括延迟加载缓存（LruCache）、FIFO 缓存（FifoCache）、SoftReference 缓存（SoftCache）、弱引用缓存（WeakCache）等。用户也可以自定义缓存实现策略。
 - 需要注意的是，缓存虽然可以提高系统性能，但是如果缓存数据过多、过期配置不合理或者缓存策略不当，反而会降低系统性能，甚至导致数据一致性问题。因此，应该根据具体情况和需求选择合适的缓存方案，并进行有效的缓存监控和管理，确保缓存的正常运行和数据一致性。
 
 ```java

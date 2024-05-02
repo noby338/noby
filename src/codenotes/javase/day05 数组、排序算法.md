@@ -2,9 +2,9 @@
 title: day05 数组、排序算法
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
@@ -14,20 +14,17 @@ timeline: true
 ## 算法
 
 定义：解决问题的方法和步骤
-
 算法书籍：算法大全
-
 常用算法：
-
 - 排序
-  - 冒泡排序
-  - 选择排序
-  - 插入排序
-  - 快速排序
-  - 堆排序
+    - 冒泡排序
+    - 选择排序
+    - 插入排序
+    - 快速排序
+    - 堆排序
 - 递归
 - 递推
-- 加密算法(MD5)
+- 加密算法 (MD5)
 
 ## 数组
 

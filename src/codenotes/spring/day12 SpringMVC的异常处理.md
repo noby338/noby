@@ -2,28 +2,28 @@
 title: day12 SpringMVC的异常处理
 icon: write
 category:
-  - Spring
-  - SpringMVC
+    - Spring
+    - SpringMVC
 tag:
-  - Spring
-  - SpringMVC
-  - 异常处理
+    - Spring
+    - SpringMVC
+    - 异常处理
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 - SpringMVC 中异常的处理方式
-  - 系统的 Dao、Service、Controller 出现都通过 throws Exception 向上抛出，最后由 SpringMVC 前端控制器交 由异常处理器进行异常处理，如下图
+    - 系统的 Dao、Service、Controller 出现都通过 throws Exception 向上抛出，最后由 SpringMVC 前端控制器交 由异常处理器进行异常处理，如下图
     ![image-20221014221229532](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221014221229532.png)
-  - 两种处理的方式
-    - 使用 Spring MVC 提供的简单异常处理器 SimpleMappingExceptionResolver
-      - 配置文件配置简单异常处理器
-      - 定义异常页面
-    - 实现 Spring 的异常处理接口 HandlerExceptionResolver 自定义自己的异常处理器
-      - 定义实现了 HandlerExceptionResolver 接口的异常处理器
-      - 将该类
-      - 定义异常页面
+    - 两种处理的方式
+        - 使用 Spring MVC 提供的简单异常处理器 SimpleMappingExceptionResolver
+            - 配置文件配置简单异常处理器
+            - 定义异常页面
+        - 实现 Spring 的异常处理接口 HandlerExceptionResolver 自定义自己的异常处理器
+            - 定义实现了 HandlerExceptionResolver 接口的异常处理器
+            - 将该类
+            - 定义异常页面
 
 ## 代码
 

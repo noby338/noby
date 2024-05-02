@@ -2,30 +2,31 @@
 title: ELK
 icon: write
 category:
-  - Linux
+    - Linux
 tags:
-  - Linux
-  - ELK
-  - Elasticsearch
-  - Logstash
-  - Kibana
+    - Linux
+    - ELK
+    - Elasticsearch
+    - Logstash
+    - Kibana
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## elasticsearch
 
 - 定义：Elasticsearch 是基于 JSON 的 DSL（Domain Specific Language）来定义查询。
 1. Mysql：
-  - 擅长事务类型操作，可以确保数据的安全和一致性
+    - 擅长事务类型操作，可以确保数据的安全和一致性
 - Elasticsearch：
-  - 擅长海量数据的搜索、分析、计算
-  - 对查询性能要求较高的搜索需求
+    - 擅长海量数据的搜索、分析、计算
+    - 对查询性能要求较高的搜索需求
 
 | **MySQL** | **Elasticsearch** | **说明**                                                                           |
 | --------- | ----------------- | ---------------------------------------------------------------------------------- |
-| Table     | Index             | 索引(index)，就是文档的集合，类似数据库的表(table)                                 |
+| Table     | Index             | 索引 (index)，就是文档的集合，类似数据库的表 (table)                                 |
 | Row       | Document          | 文档（Document），就是一条条的数据，类似数据库中的行（Row），文档都是 JSON 格式    |
 | Column    | Field             | 字段（Field），就是 JSON 文档中的字段，类似数据库中的列（Column）                  |
 | Schema    | Mapping           | Mapping（映射）是索引中文档的约束，例如字段类型约束。类似数据库的表结构（Schema）  |
@@ -52,15 +53,15 @@ POST /_analyze
 ### 索引库
 
 - mapping 映射属性
-  - type：字段数据类型，常见的简单类型有：
-    - 字符串：text（可分词的文本）、keyword（精确值，例如：品牌、国家、ip 地址）、completion（可自动补全类型）
-    - 数值：long、integer、short、byte、double、float、
-    - 布尔：boolean
-    - 日期：date
-    - 对象：object
-  - index：是否创建索引，默认为 true
-  - analyzer：使用哪种分词器
-  - properties：该字段的子字段
+    - type：字段数据类型，常见的简单类型有：
+        - 字符串：text（可分词的文本）、keyword（精确值，例如：品牌、国家、ip 地址）、completion（可自动补全类型）
+        - 数值：long、integer、short、byte、double、float、
+        - 布尔：boolean
+        - 日期：date
+        - 对象：object
+    - index：是否创建索引，默认为 true
+    - analyzer：使用哪种分词器
+    - properties：该字段的子字段
 
 ```json
 {     
@@ -221,20 +222,20 @@ GET /person/_search
 #### 查询
 
 - 查询的分类
-  - match_all 查询所有
-  - full text 全文检索：对用户的查询内容分词，然后到已经生成的倒排索引库中匹配
-    - match
-    - multi_match
-  - 精确查询：根据精确词条值查找数据，一般为 keyword、数值、日期
-    - ids
-    - term
-    - range
-  - 地理查询（geo）
-    - geo_distance
-    - geo_bounding_box
-  - 复合查询（compound）：将上述查询组合
-    - bool
-    - function_score
+    - match_all 查询所有
+    - full text 全文检索：对用户的查询内容分词，然后到已经生成的倒排索引库中匹配
+        - match
+        - multi_match
+    - 精确查询：根据精确词条值查找数据，一般为 keyword、数值、日期
+        - ids
+        - term
+        - range
+    - 地理查询（geo）
+        - geo_distance
+        - geo_bounding_box
+    - 复合查询（compound）：将上述查询组合
+        - bool
+        - function_score
 
 ##### 简单查询
 
@@ -324,20 +325,20 @@ function score 查询中包含四部分内容：
 - 原始查询条件：query 部分，基于这个条件搜索文档，并且基于 BM25 算法给文档打分，原始算分（query score)
 - 过滤条件：filter 部分，符合该条件的文档才会重新算分
 - 算分函数：符合 filter 条件的文档要根据这个函数做运算，得到的函数算分（function score），有四种函数
-  - weight：函数结果是常量
-  - field_value_factor：以文档中的某个字段值作为函数结果
-  - random_score：以随机数作为函数结果
-  - script_score：自定义算分函数算法
+    - weight：函数结果是常量
+    - field_value_factor：以文档中的某个字段值作为函数结果
+    - random_score：以随机数作为函数结果
+    - script_score：自定义算分函数算法
 - 运算模式：算分函数的结果、原始查询的相关性算分，两者之间的运算方式，包括：
-  - multiply：相乘
-  - replace：用 function score 替换 query score
-  - 其它，例如：sum、avg、max、min
+    - multiply：相乘
+    - replace：用 function score 替换 query score
+    - 其它，例如：sum、avg、max、min
 
 boolean 复合查询是一个或多个查询子句的组合，每一个子句就是一个子查询。子查询的组合方式有：
 
-- must：必须匹配每个子查询，类似“与”
-- should：选择性匹配子查询，类似“或”
-- must_not：必须不匹配，不参与算分，类似“非”
+- must：必须匹配每个子查询，类似 " 与 "
+- should：选择性匹配子查询，类似 " 或 "
+- must_not：必须不匹配，不参与算分，类似 " 非 "
 - filter：必须匹配，不参与算分
 
 ```json
@@ -483,13 +484,13 @@ GET /hotel/_search
 聚合常见的有三类：
 
 - 桶（Bucket）聚合：用来对文档做分组
-  - TermAggregation：按照文档字段值分组，例如按照品牌值分组、按照国家分组
-  - Date Histogram：按照日期阶梯分组，例如一周为一组，或者一月为一组
+    - TermAggregation：按照文档字段值分组，例如按照品牌值分组、按照国家分组
+    - Date Histogram：按照日期阶梯分组，例如一周为一组，或者一月为一组
 - 度量（Metric）聚合：用以计算一些值，比如：最大值、最小值、平均值等
-  - Avg：求平均值
-  - Max：求最大值
-  - Min：求最小值
-  - Stats：同时求 max、min、avg、sum 等
+    - Avg：求平均值
+    - Max：求最大值
+    - Min：求最小值
+    - Stats：同时求 max、min、avg、sum 等
 - 管道（pipeline）聚合：其它聚合的结果为基础做聚合
 
 > 注意：参加聚合的字段必须是 keyword、日期、数值、布尔类型
@@ -603,12 +604,12 @@ GET /hotel/_search
 #### 分词
 
 - 分词执行的三个过程
-  - character filters
-    - 做删除多余字符、替换字符等处理
-  - tokenizer
-    - 将文本按照一定的规则切割成词条。例如 keyword、ik_smart
-  - tokenizer filter
-    - 将 tokenizer 处理后的文本进行大小写转换、同义词处理、拼音处理（pinyin 插件）等
+    - character filters
+        - 做删除多余字符、替换字符等处理
+    - tokenizer
+        - 将文本按照一定的规则切割成词条。例如 keyword、ik_smart
+    - tokenizer filter
+        - 将 tokenizer 处理后的文本进行大小写转换、同义词处理、拼音处理（pinyin 插件）等
 
 ```json
 ## 测试插件是否安装成功

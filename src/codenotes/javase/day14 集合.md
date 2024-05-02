@@ -2,9 +2,9 @@
 title: day14 集合
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
@@ -22,17 +22,17 @@ timeline: true
 ### 各种集合的区别
 
 - List：元素有序、元素可重复、有索引
-  - ArrayList：基于数组实现、遍历快（数组空间连续的）、增删慢（需要移动数据）
-  - LinkedList：基于双向链表实现、增删块（只需要改变指向）、遍历慢（数据分散在内存各个地方）
-  - Vuector：基于数组实现，过期
+    - ArrayList：基于数组实现、遍历快（数组空间连续的）、增删慢（需要移动数据）
+    - LinkedList：基于双向链表实现、增删块（只需要改变指向）、遍历慢（数据分散在内存各个地方）
+    - Vuector：基于数组实现，过期
 - Set：元素无序、元素不可重复、无索引
-  - HashSet：基于 HashMap 实现
-  - LinkedHashSet：有序(存入顺序)
-  - TreeSet：有序(自然排序)基于 TreeMap 实现
+    - HashSet：基于 HashMap 实现
+    - LinkedHashSet：有序 (存入顺序)
+    - TreeSet：有序 (自然排序) 基于 TreeMap 实现
 - Map：key 不可重复
-  - HashMap：无序、key 不重复，基于数组+单链表+红黑树实现的
-  - LinkedHashMap：有序(存入顺序)、key 不重复，基于数组+单链表+红黑树+双向链表实现的
-  - TreeMap：有序(自然排序)、key 不重复，基于红黑树实现
+    - HashMap：无序、key 不重复，基于数组 + 单链表 + 红黑树实现的
+    - LinkedHashMap：有序 (存入顺序)、key 不重复，基于数组 + 单链表 + 红黑树 + 双向链表实现的
+    - TreeMap：有序 (自然排序)、key 不重复，基于红黑树实现
 
 ### 单列集合
 
@@ -763,8 +763,8 @@ import java.util.Set;
 ### 快速失败和安全失败
 
 - 安全失败（fail-safe）和快速失败（fail-fast）是两种处理并发访问数据结构时出现冲突的策略。
-  - 安全失败：指的是在并发访问数据结构时，不会抛出异常或导致程序崩溃，而是通过复制数据结构或使用锁等方式来保证并发安全。
-  - 快速失败：指的是在并发访问数据结构时，一旦检测到冲突，立即抛出 ConcurrentModificationException 异常，以避免出现数据不一致的情况。这种策略通常用于迭代器等需要遍历数据的场景。
+    - 安全失败：指的是在并发访问数据结构时，不会抛出异常或导致程序崩溃，而是通过复制数据结构或使用锁等方式来保证并发安全。
+    - 快速失败：指的是在并发访问数据结构时，一旦检测到冲突，立即抛出 ConcurrentModificationException 异常，以避免出现数据不一致的情况。这种策略通常用于迭代器等需要遍历数据的场景。
 
 ```java
 package note;

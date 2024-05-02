@@ -2,58 +2,58 @@
 title: day06 Spring事务
 icon: write
 category:
-  - Spring
+    - Spring
 tag:
-  - Spring
-  - 事务
+    - Spring
+    - 事务
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### 编程式事务和声明式事务
+## 编程式事务和声明式事务
 
 - 编程式事务：使用代码控制事务
-  - Spring 中编程式事务的相关对象
-    - PlatformTransactionManager 接口是 spring 的事务管理器，它里面提供了我们常用的操作事务的方法。
-      - 根据不同的 DAO(JDBC,Mybatis)指定不同的事务实现
-    - TransactionDefinition 是事务的定义信息对象
-      - 事务的隔离级别
-        - 读未提交
-        - 读提交
-        - 可重复度
-        - 序列化读
-      - 事务的传播行为：当一个业务逻辑层调用另一个业务逻辑层时，调用业务逻辑层的事务和被调用业务逻辑层事务的关系
-        - REQUIRED：如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。一般的选择（默认值）
-        - SUPPORTS：支持当前事务，如果当前没有事务，就以非事务方式执行（没有事务）
-        - MANDATORY：使用当前的事务，如果当前没有事务，就抛出异常
-        - REQUERS_NEW：新建事务，如果当前在事务中，把当前事务挂起。
-        - NOT_SUPPORTED：以非事务方式执行操作，如果当前存在事务，就把当前事务挂起
-        - NEVER：以非事务方式运行，如果当前存在事务，抛出异常
-        - NESTED：如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则执行 REQUIRED 类似的操作
-      - 超时时间：默认值是-1，没有超时限制。如果有，以秒为单位进行设置
-      - 是否只读：建议查询时设置为只读
-    - TransactionDefinition 接口提供的是事务具体的运行状态
+    - Spring 中编程式事务的相关对象
+        - PlatformTransactionManager 接口是 spring 的事务管理器，它里面提供了我们常用的操作事务的方法。
+            - 根据不同的 DAO(JDBC,Mybatis) 指定不同的事务实现
+        - TransactionDefinition 是事务的定义信息对象
+            - 事务的隔离级别
+                - 读未提交
+                - 读提交
+                - 可重复度
+                - 序列化读
+            - 事务的传播行为：当一个业务逻辑层调用另一个业务逻辑层时，调用业务逻辑层的事务和被调用业务逻辑层事务的关系
+                - REQUIRED：如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。一般的选择（默认值）
+                - SUPPORTS：支持当前事务，如果当前没有事务，就以非事务方式执行（没有事务）
+                - MANDATORY：使用当前的事务，如果当前没有事务，就抛出异常
+                - REQUERS_NEW：新建事务，如果当前在事务中，把当前事务挂起。
+                - NOT_SUPPORTED：以非事务方式执行操作，如果当前存在事务，就把当前事务挂起
+                - NEVER：以非事务方式运行，如果当前存在事务，抛出异常
+                - NESTED：如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则执行 REQUIRED 类似的操作
+            - 超时时间：默认值是 -1，没有超时限制。如果有，以秒为单位进行设置
+            - 是否只读：建议查询时设置为只读
+        - TransactionDefinition 接口提供的是事务具体的运行状态
 - 声明式事务：使用配置控制事务，底层通过 AOP 技术实现
-  - 事务管理不侵入开发的组件。具体来说，业务逻辑对象就不会意识到正在事务管理之中，事实上也应该如 此，因为事务管理是属于系统层面的服务，而不是业务逻辑的一部分，如果想要改变事务管理策划的话， 也只需要在定义文件中重新配置即可
-  - 在不需要事务管理的时候，只要在设定文件上修改一下，即可移去事务管理服务，无需改变代码重新编译 ，这样维护起来极其方便
+    - 事务管理不侵入开发的组件。具体来说，业务逻辑对象就不会意识到正在事务管理之中，事实上也应该如 此，因为事务管理是属于系统层面的服务，而不是业务逻辑的一部分，如果想要改变事务管理策划的话， 也只需要在定义文件中重新配置即可
+    - 在不需要事务管理的时候，只要在设定文件上修改一下，即可移去事务管理服务，无需改变代码重新编译 ，这样维护起来极其方便
 
-### 知识点
+## 知识点
 
 - Spring 中的事务
-  - 事务的配置
-    - 约束头
-      - xmlns:tx="http://www.springframework.org/schema/tx"
-      - http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
-    - 配置事务注解驱动
-    - 配置事务管理 bean
-  - 需要事务管理的方法上加入注解 @Transactional
-    - 设置隔离级别：@Transactional(propagation=Propagation.REQUIRES_NEW)
+    - 事务的配置
+        - 约束头
+            - xmlns:tx="http://www.springframework.org/schema/tx"
+            - http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+        - 配置事务注解驱动
+        - 配置事务管理 bean
+    - 需要事务管理的方法上加入注解 @Transactional
+        - 设置隔离级别：@Transactional(propagation=Propagation.REQUIRES_NEW)
 
-### 代码示例
+## 代码示例
 
-#### pom
+### pom
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -145,7 +145,7 @@ timeline: true
 </project>
 ```
 
-#### Resource
+### Resource
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -282,7 +282,7 @@ log4j.appender.FILE.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%p] %m [%t
 log4j.appender.FILE.File=file.log
 ```
 
-#### entity
+### entity
 
 ```java
 package priv.noby.spring7.entity;
@@ -301,7 +301,7 @@ public class Account {
 }
 ```
 
-#### dao
+### dao
 
 ```java
 package priv.noby.spring7.dao;
@@ -330,7 +330,7 @@ public interface AccountDao {
 </mapper>
 ```
 
-#### service
+### service
 
 ```java
 package priv.noby.spring7.service;
@@ -427,7 +427,7 @@ public class AccountServiceImpl2 implements AccountService {
 }
 ```
 
-#### test
+### test
 
 ```java
 package priv.noby.spring7.service.impl;

@@ -2,30 +2,32 @@
 title: day03 MongoDB 数据库
 icon: write
 category:
-  - SQL
+    - SQL
 tag:
-  - SQL
-  - MongoDB
+    - SQL
+    - MongoDB
 sticky: false
 star: false
 article: true
 timeline: true
 ---
-### 数据库结构
-- 库
-  - 集合
-    - 文档
-- 默认的库
-  - admin
-    - 用户和权限
-  - local
-    - 在集群模式下，该库的集合不会复制
-  - config
-    - 分片设置
 
-- 默认端口号27017
+## 数据库结构
+
+- 库
+    - 集合
+        - 文档
+- 默认的库
+    - admin
+        - 用户和权限
+    - local
+        - 在集群模式下，该库的集合不会复制
+    - config
+        - 分片设置
+- 默认端口号 27017
 
 ## 命令
+
 ### 库
 
 ```json
@@ -39,8 +41,6 @@ show dbs
 db.dropDatabase()
 
 ```
-
-
 
 ### 集合
 

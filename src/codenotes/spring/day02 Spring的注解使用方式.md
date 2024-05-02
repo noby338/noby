@@ -2,43 +2,43 @@
 title: day02 Spring的注解使用方式
 icon: write
 category:
-  - Spring
+    - Spring
 tag:
-  - Spring
-  - Spring注解
+    - Spring
+    - Spring注解
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### 知识点
+## 知识点
 
 - 使用注解配置 Spring
-  - 使用注解之前配置文件必须配置组件扫描
-  - 注解
-    - Spring 实例化
-      - @Component 使用在类上用于实例化 Bean
-      - @Controller 使用在 web 层类上用于实例化 Bean
-      - @Service 使用在 service 层类上用于实例化 Bean
-      - @Repository 使用在 dao 层类上用于实例化 Bean
-    - @Scope bean 的作用范围
-    - @Value 基本数据类型赋值
-    - 引用数据类型注入
-      - @Autowired 引用数据类型属性类型自动注入 @Qualifier 属性名自动注入
-      - @Qualifier("") 配合 @Autowired 通过属性名赋值
-      - @Resource("") (新注解)引用数据类型自动注入（属性类型、属性名）
-    - @PostConstruct 使用在方法上标注该方法是 Bean 的初始化方法
-    - @PreDestroy 使用在方法上标注该方法是 Bean 的销毁方法
+    - 使用注解之前配置文件必须配置组件扫描
+    - 注解
+        - Spring 实例化
+            - @Component 使用在类上用于实例化 Bean
+            - @Controller 使用在 web 层类上用于实例化 Bean
+            - @Service 使用在 service 层类上用于实例化 Bean
+            - @Repository 使用在 dao 层类上用于实例化 Bean
+        - @Scope bean 的作用范围
+        - @Value 基本数据类型赋值
+        - 引用数据类型注入
+            - @Autowired 引用数据类型属性类型自动注入 @Qualifier 属性名自动注入
+            - @Qualifier("") 配合 @Autowired 通过属性名赋值
+            - @Resource("") (新注解) 引用数据类型自动注入（属性类型、属性名）
+        - @PostConstruct 使用在方法上标注该方法是 Bean 的初始化方法
+        - @PreDestroy 使用在方法上标注该方法是 Bean 的销毁方法
 - 复杂属性赋值必须通过配置文件或配置类
 
-### @Autowired 和@Resource 注解的区别
+## @Autowired 和@Resource 注解的区别
 
 - 如果用@Autowired 属性注入的方式，只是按照 type 方式进行匹配注入，不会去匹配 name，如果涉及到 type 无法辨别注入对象时，就需要配合@Qualifier 或@Primary 注解一起用。而@Resource 注解默认是通过 byName 来匹配对象的，也可以指定 type 通过 byType 来匹配对象。 这是@Resource 注解比@Autowired 注解的一个优点吧。
 
-### 代码示例
+## 代码示例
 
-#### pom
+### pom
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -74,7 +74,7 @@ timeline: true
 </project>
 ```
 
-#### Resource
+### Resource
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -87,7 +87,7 @@ timeline: true
     配置组件扫描器：包扫描：指定扫描哪些包中的注解
     priv.noby.note.service 扫描当前包及其子包
     priv.noby.note.service.*扫描当前包的子包
-    -->
+        -->
     <context:component-scan base-package="priv.noby.spring2.entity"/>
 
     <!--引入properties配置文件到spring容器中-->
@@ -102,7 +102,7 @@ jdbc.username=root
 jdbc.password=123
 ```
 
-#### entity
+### entity
 
 ```java
 package priv.noby.spring2.entity;
@@ -206,7 +206,7 @@ public class School {
 }
 ```
 
-#### test
+### test
 
 ```java
 package priv.noby.spring2.entity;

@@ -2,9 +2,9 @@
 title: day17 异常
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
@@ -15,36 +15,35 @@ timeline: true
 
 ![image-20220217102836068](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220217102836068.png)
 
-- 定义：Java的异常体系提供了一种机制，使得程序可以在遇到错误或异常时进行相应的处理，保证程序的稳定性和可靠性。程序员可以通过try-catch-finally语句来捕获和处理异常，以及通过throw和throws语句来抛出异常和声明方法可能会抛出的异常。
-- Error是指在程序运行期间发生的不可恢复的系统错误。当程序出现Error时，通常无法处理，只能让程序终止运行。
-  - OutOfMemoryError: Java堆空间溢出
-  - NoSuchMethodError: 未找到方法
-  - NoClassDefFoundError: 找不到类定义
-  - ExceptionInInitializerError: 静态初始化块引发的异常
-  - LinkageError: 连接错误。
-- Exception是指在程序运行期间发生的可恢复的异常，例如输入错误、网络连接中断等。Exception包括两种类型：
-  - Checked Exception在代码中需要进行异常处理，否则会编译错误。
-    - IOException: 输入/输出异常
-    - ClassNotFoundException: 找不到类异常
-    - SQLException: SQL异常
-    - ParseException: 解析异常
-    - InterruptedException: 中断异常。
-  - Runtime Exception通常是由于程序代码逻辑错误造成的，例如数组越界、空指针引用等。Runtime Exception可以不进行异常处理，但如果不处理，程序会在运行时抛出异常并终止运行。
-    - NullPointerException: 空指针异常
-    - ArrayIndexOutOfBoundsException: 数组下标越界异常
-    - IllegalArgumentException: 非法参数异常
-    - ClassCastException: 类型转换异常
-    - ArithmeticException: 算术异常。
-
+- 定义：Java 的异常体系提供了一种机制，使得程序可以在遇到错误或异常时进行相应的处理，保证程序的稳定性和可靠性。程序员可以通过 try-catch-finally 语句来捕获和处理异常，以及通过 throw 和 throws 语句来抛出异常和声明方法可能会抛出的异常。
+- Error 是指在程序运行期间发生的不可恢复的系统错误。当程序出现 Error 时，通常无法处理，只能让程序终止运行。
+    - OutOfMemoryError: Java 堆空间溢出
+    - NoSuchMethodError: 未找到方法
+    - NoClassDefFoundError: 找不到类定义
+    - ExceptionInInitializerError: 静态初始化块引发的异常
+    - LinkageError: 连接错误。
+- Exception 是指在程序运行期间发生的可恢复的异常，例如输入错误、网络连接中断等。Exception 包括两种类型：
+    - Checked Exception 在代码中需要进行异常处理，否则会编译错误。
+        - IOException: 输入/输出异常
+        - ClassNotFoundException: 找不到类异常
+        - SQLException: SQL 异常
+        - ParseException: 解析异常
+        - InterruptedException: 中断异常。
+    - Runtime Exception 通常是由于程序代码逻辑错误造成的，例如数组越界、空指针引用等。Runtime Exception 可以不进行异常处理，但如果不处理，程序会在运行时抛出异常并终止运行。
+        - NullPointerException: 空指针异常
+        - ArrayIndexOutOfBoundsException: 数组下标越界异常
+        - IllegalArgumentException: 非法参数异常
+        - ClassCastException: 类型转换异常
+        - ArithmeticException: 算术异常。
 
 ### Exception
 
-* 在Java中，可以在方法声明中使用throws关键字来声明该方法可能抛出的异常。但是，并不是所有情况下都需要使用throws关键字来声明异常。以下情况下可以省略throws关键字（但是在实际开发中建议尽可能使用throws关键字声明可能抛出的异常，以便提高代码的可读性和可维护性。）：
-  -  方法声明的异常类型为RuntimeException或其子类，这些异常通常被称为非受检异常，不需要在方法声明中使用throws关键字声明。
-  -  方法不会抛出任何异常，或者方法中的异常已经被处理或转化为非受检异常，这种情况下也可以省略throws关键字。
-  -  方法重写父类方法时，可以不使用throws关键字声明与父类方法相同的异常，但是如果方法声明了父类方法没有声明的异常，则需要使用throws关键字声明这些异常。
-  -  接口方法不能声明任何异常，因此在实现接口方法时不需要使用throws关键字声明异常。
-- 运行时异常通常是由程序逻辑错误引起的，例如空指针异常、数组越界异常等。这些异常通常发生在程序运行时，而不是在编译时。由于这些异常在程序运行时才会被抛出，因此在方法声明中使用throws关键字声明这些异常并不能提高代码的安全性，反而会增加代码的冗余性和复杂性。
+- 在 Java 中，可以在方法声明中使用 throws 关键字来声明该方法可能抛出的异常。但是，并不是所有情况下都需要使用 throws 关键字来声明异常。以下情况下可以省略 throws 关键字（但是在实际开发中建议尽可能使用 throws 关键字声明可能抛出的异常，以便提高代码的可读性和可维护性。）：
+    - 方法声明的异常类型为 RuntimeException 或其子类，这些异常通常被称为非受检异常，不需要在方法声明中使用 throws 关键字声明。
+    - 方法不会抛出任何异常，或者方法中的异常已经被处理或转化为非受检异常，这种情况下也可以省略 throws 关键字。
+    - 方法重写父类方法时，可以不使用 throws 关键字声明与父类方法相同的异常，但是如果方法声明了父类方法没有声明的异常，则需要使用 throws 关键字声明这些异常。
+    - 接口方法不能声明任何异常，因此在实现接口方法时不需要使用 throws 关键字声明异常。
+- 运行时异常通常是由程序逻辑错误引起的，例如空指针异常、数组越界异常等。这些异常通常发生在程序运行时，而不是在编译时。由于这些异常在程序运行时才会被抛出，因此在方法声明中使用 throws 关键字声明这些异常并不能提高代码的安全性，反而会增加代码的冗余性和复杂性。
 
 ```java
 package note;  
@@ -152,7 +151,6 @@ class A {
  */class C extends A {  
 }
 ```
-
 
 ### 自定义异常
 

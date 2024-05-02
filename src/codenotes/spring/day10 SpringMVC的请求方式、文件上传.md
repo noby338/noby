@@ -2,13 +2,13 @@
 title: day10 SpringMVC的请求方式、文件上传
 icon: write
 category:
-  - Spring
-  - SpringMVC
+    - Spring
+    - SpringMVC
 tag:
-  - Spring
-  - SpringMVC
-  - SpringMVC请求
-  - SpringMVC文件上传
+    - Spring
+    - SpringMVC
+    - SpringMVC请求
+    - SpringMVC文件上传
 sticky: false
 star: false
 article: true
@@ -16,35 +16,35 @@ timeline: true
 ---
 
 - SpringMVC 数据的请求参数的类型
-  - 基本类型参数
-    - 参数列表中的参数将会直接由请求参数获取并赋值
-    - @RequestParam()注解修改请求参数和 controller 方法参数列表的参数名映射关系
-    - @PathVariable()注解配置 Restful 风格请求参数名和 controller 方法参数列表的参数名映射关系
-    - 通过@RequestHeader()获取指定的请求头
-    - 通过@CookieValue()获取指定的 Cookie
-  - entity 类型参数
-    - 参数列表中对象的属性将会直接由请求参数获取并封装
-    - 解析请求体中的 json 字符串使用@RequestBody 注解，且将其封装到形参的对象中
-    - 自定义类型转换器的使用
-  - 数组类型参数
-    - 参数列表中的参数将会直接由请求中的多个同名请求参数获取并赋值到数组
-  - 集合类型参数
-    - urlencoded 参数集合类型的封装有别于其他类型，他一般借助其他类进行封装
-    - 解析请求体中的 json 字符串使用@RequestBody 注解，且将其封装到形参的对象中
+    - 基本类型参数
+        - 参数列表中的参数将会直接由请求参数获取并赋值
+        - @RequestParam() 注解修改请求参数和 controller 方法参数列表的参数名映射关系
+        - @PathVariable() 注解配置 Restful 风格请求参数名和 controller 方法参数列表的参数名映射关系
+        - 通过@RequestHeader() 获取指定的请求头
+        - 通过@CookieValue() 获取指定的 Cookie
+    - entity 类型参数
+        - 参数列表中对象的属性将会直接由请求参数获取并封装
+        - 解析请求体中的 json 字符串使用@RequestBody 注解，且将其封装到形参的对象中
+        - 自定义类型转换器的使用
+    - 数组类型参数
+        - 参数列表中的参数将会直接由请求中的多个同名请求参数获取并赋值到数组
+    - 集合类型参数
+        - urlencoded 参数集合类型的封装有别于其他类型，他一般借助其他类进行封装
+        - 解析请求体中的 json 字符串使用@RequestBody 注解，且将其封装到形参的对象中
 - 文件的上传
 
 ## Restful 请求风格
 
-- Restful 风格的请求是使用“url+请求方式”表示一次请求目的的，HTTP 协议里面四个表示操作方式的动词如下：
-  - GET：用于获取资源
-  - POST：用于新建资源
-  - PUT：用于更新资源
-  - DELETE：用于删除资源
+- Restful 风格的请求是使用 "url+ 请求方式 " 表示一次请求目的的，HTTP 协议里面四个表示操作方式的动词如下：
+    - GET：用于获取资源
+    - POST：用于新建资源
+    - PUT：用于更新资源
+    - DELETE：用于删除资源
 - 例如：
-  - /user/1 GET ： 得到 id = 1 的 user
-  - /user/1 DELETE： 删除 id = 1 的 user
-  - /user/1 PUT： 更新 id = 1 的 user
-  - /user POST： 新增 use
+    - /user/1 GET ： 得到 id = 1 的 user
+    - /user/1 DELETE： 删除 id = 1 的 user
+    - /user/1 PUT： 更新 id = 1 的 user
+    - /user POST： 新增 use
 
 ## 代码
 

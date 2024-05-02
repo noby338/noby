@@ -2,14 +2,15 @@
 title: windows创建定时任务
 icon: write
 category:
-  - Windows
+    - Windows
 tag:
-  - Windows
+    - Windows
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## schtasks 函数
 
 ```bat
@@ -27,4 +28,3 @@ rem 删除任务
 SCHTASKS /Delete /TN notepad
 
 ```
-

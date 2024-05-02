@@ -2,28 +2,25 @@
 title: day03 bootstrap
 icon: write
 category:
-  - Bootstrap
+    - Bootstrap
 tag:
-  - Bootstrap
+    - Bootstrap
 sticky: false
 star: false
 article: true
 timeline: true
 ---
-## Boostrap
+
+## Bootstrap
 
 - 官网：https://v3.bootcss.com/components/#dropdowns
-
 - 核心文件：
+    - bootstrap.min.css Bootstrap4 核心 CSS 文
+    - jquery.min.js jQuery 文件。务必在 bootstrap.min.js 之前引入
+    - popper.min.js 用于弹窗、提示、下拉菜单
+    - bootstrap.min.js 最新的 Bootstrap4 核心 JavaScript 文件
 
-  - bootstrap.min.css				Bootstrap4 核心 CSS 文
-  - jquery.min.js					jQuery文件。务必在bootstrap.min.js 之前引入
-  - popper.min.js 					用于弹窗、提示、下拉菜单
-  - bootstrap.min.js				最新的 Bootstrap4 核心 JavaScript 文件
-
-  
-
-### Boostrap的样式
+### Bootstrap 的样式
 
 ```html
 <!DOCTYPE html>
@@ -49,11 +46,11 @@ timeline: true
     <code>code</code><br>
     <strong>strong</strong>
 
-    <!-- 
+    <!--
         在boostrap中的两种容器
         大容器：container-fluid
         小容器；container
-     -->
+          -->
 
     <!-- bootstrap的自定义选择器 -->
     <div class="container-fluid"></div>
@@ -82,13 +79,13 @@ timeline: true
 
         <!-- 表格 -->
         <table class="table table-striped table-hover table-bordered table-primary">
-            <!-- 
+            <!--
                 table           对表格做了基础的处理
                 table-striped   带条纹表格
                 table-bordered  带边框的表格
                 table-hover     添加鼠标悬停效果
                 table-dark      表格颜色
-            -->
+                        -->
             <tr class="table-dark">
                 <td>1</td>
                 <td>2</td>
@@ -116,13 +113,13 @@ timeline: true
         </table>
 
         <!-- 按钮 -->
-        <!-- 
+        <!--
             btn表示为表格
             btn-primary表示颜色
             btn-outline-danger表示边框颜色
             btn-link以超链接的形式展示按钮
             btn-block表示块级按钮
-         -->
+                  -->
         <button class="btn btn-primary">基础按钮</button>
         <button class="btn btn-outline-danger">带边框按钮</button>
         <button class="btn btn-link">超链接按钮</button>
@@ -141,9 +138,9 @@ timeline: true
         <div class="dropdown">
             <!-- dropdown表示为下拉菜单 -->
             <button class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
-            <!-- 
+            <!--
                 dropdown-toggle显示下拉图标
-            -->
+                        -->
             <div class="dropdown-menu">
                 <a href="http://www.cctv.com" class="dropdown-item">cctv</a>
                 <a href="http://www.taobao.com" class="dropdown-item">淘宝</a>
@@ -156,9 +153,7 @@ timeline: true
 </html>
 ```
 
-
-
-### Boostrap的栅格系统
+### Bootstrap 的栅格系统
 
 ```html
 <!DOCTYPE html>
@@ -231,12 +226,12 @@ timeline: true
                     <div class="col-4" style="height: 40px;"></div>
                     <div class="col-2 offset-6" style="height: 40px;"></div>
                 </div>
-                <div class="row"> 
+                <div class="row">
                     <!-- 响应式布局
                         col-xs-12 浏览器宽度匹配手机宽度时，该单元格占12小列
                         col-sm-6 浏览器宽度匹配平板宽度时，该单元格占6小列
                         col-md-3 浏览器宽度匹配电脑宽度时，该单元格占3小列
-                     -->
+                                          -->
                     <div class="col-xs-12 col-sm-6 col-md-3" style="height: 260px;"></div>
                     <div class="col-xs-12 col-sm-6 col-md-3" style="height: 260px;"></div>
                     <div class="col-xs-12 col-sm-6 col-md-3" style="height: 260px;"></div>
@@ -249,7 +244,7 @@ timeline: true
             </div>
             <div class="col-3">
                 <div class="row" style="height: 30px;">
-                
+
                 </div>
                 <div class="row" style="height: 200px;">
 
@@ -262,4 +257,3 @@ timeline: true
 
 </html>
 ```
-

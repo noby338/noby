@@ -2,55 +2,55 @@
 title: nginx
 icon: write
 category:
-  - Linux
+    - Linux
 tag:
-  - Linux
+    - Linux
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### nginx 的安装和基本命令
+## nginx 的安装和基本命令
 
-#### 第一种方式（使用 yum 安装）
+### 第一种方式（使用 yum 安装）
 
 - 安装
-  - yum install -y nginx
+    - yum install -y nginx
 - 启用 Nginx
-  - systemctl start nginx
+    - systemctl start nginx
 - 设置为在系统启动时自动启动
-  - systemctl enable nginx
+    - systemctl enable nginx
 - 配置文件位置
-  - cd /etc/nginx
+    - cd /etc/nginx
 
-#### 第二种方式（使用 makefile 文件安装）
+### 第二种方式（使用 makefile 文件安装）
 
 - 安装包及解压文件夹的位置为/usr/local/src/nginx/
-  - 安装步骤
-    - 前提
-      - 安装 gcc 的环境(c 和 c++的编译) yum install gcc-c++
-      - 安装 PCRE perl 库(nginx 的 http 模块中的正则表达式使用) yum install -y pcre pcre-devel
-      - 安装 openssl 密码库(用于 nginx 中 https 协议的加密) yum install -y openssl openssl-devel
-  - 执行 ./configure 命令生成 makefile 文件
-  - 执行 make install 命令安装 nginx
+    - 安装步骤
+        - 前提
+            - 安装 gcc 的环境 (c 和 c++ 的编译) yum install gcc-c++
+            - 安装 PCRE perl 库 (nginx 的 http 模块中的正则表达式使用) yum install -y pcre pcre-devel
+            - 安装 openssl 密码库 (用于 nginx 中 https 协议的加密) yum install -y openssl openssl-devel
+    - 执行 ./configure 命令生成 makefile 文件
+    - 执行 make install 命令安装 nginx
 - 安装位置为/usr/local/nginx/
-  - 命令目录为/usr/local/nginx/sbin/
-  - 配置文件目录为/usr/local/nginx/conf/
+    - 命令目录为/usr/local/nginx/sbin/
+    - 配置文件目录为/usr/local/nginx/conf/
 - 命令
-  - 启动
-    - ./sbin/nginx
-  - 关闭
-    - ./sbin/nginx -s stop kill 杀死进程
-    - ./sbin/nginx -s quit 正常结束退出
-  - 重启
-    - ./sbin/nginx -s reload
+    - 启动
+        - ./sbin/nginx
+    - 关闭
+        - ./sbin/nginx -s stop kill 杀死进程
+        - ./sbin/nginx -s quit 正常结束退出
+    - 重启
+        - ./sbin/nginx -s reload
 
-### nginx 的使用
+## nginx 的使用
 
 - 配置文件路径 /usr/local/nginx/conf/nginx.conf
 
-#### 静态页面的部署
+### 静态页面的部署
 
 ```json
  http {
@@ -80,9 +80,9 @@ timeline: true
 }
 ```
 
-#### 虚拟主机的配置
+### 虚拟主机的配置
 
-##### 通过不同端口号实现虚拟主机的配置
+#### 通过不同端口号实现虚拟主机的配置
 
 ```json
  http {
@@ -126,7 +126,7 @@ timeline: true
 }
 ```
 
-##### 通过不同域名实现虚拟主机的配置
+#### 通过不同域名实现虚拟主机的配置
 
 ```json
  http {
@@ -170,7 +170,7 @@ timeline: true
 }
 ```
 
-#### 反向代理的配置
+### 反向代理的配置
 
 ```json
  http {
@@ -205,7 +205,7 @@ timeline: true
 }
 ```
 
-#### 负载均衡的配置
+### 负载均衡的配置
 
 ```json
  http {

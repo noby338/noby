@@ -2,21 +2,21 @@
 title: day03 Mybatis的动态SQL、PageHelper、CDATA区、字符实体引用
 icon: write
 category:
-  - JavaWeb
-  - MyBatis
+    - JavaWeb
+    - MyBatis
 tag:
-  - JavaWeb
-  - 动态SQL
-  - PageHelper
-  - CDATA区
-  - 字符实体引用
+    - JavaWeb
+    - 动态SQL
+    - PageHelper
+    - CDATA区
+    - 字符实体引用
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### mybaits 的配置文件
+## mybaits 的配置文件
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?><!--文档类型说明-->
@@ -66,7 +66,7 @@ timeline: true
 </configuration>
 ```
 
-### 数据库的 properties
+## 数据库的 properties
 
 ```properties
 jdbc.driver=com.mysql.jdbc.Driver
@@ -75,7 +75,7 @@ jdbc.username=root
 jdbc.password=123
 ```
 
-### log4j 的配置 properties
+## log4j 的配置 properties
 
 ```properties
 # 这段代码是使用log4j进行日志输出的配置。
@@ -106,7 +106,7 @@ log4j.appender.FILE.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%p] %m [%t
 log4j.appender.FILE.File=file.log
 ```
 
-### 生成 sqlssesion 的工具类
+## 生成 sqlssesion 的工具类
 
 ```java
 package note.util;
@@ -140,7 +140,7 @@ import java.io.InputStream;
 }
 ```
 
-### entity 实体类
+## entity 实体类
 
 ```java
 package note.entity;
@@ -191,7 +191,7 @@ public class Page {
 }
 ```
 
-### dao 接口
+## dao 接口
 
 ```java
 package note.dao;
@@ -267,7 +267,7 @@ public interface StudentDao {
 }
 ```
 
-### 接口的 mapper
+## 接口的 mapper
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -388,7 +388,7 @@ public interface StudentDao {
 </mapper>
 ```
 
-### 测试类
+## 测试类
 
 ```java
 package note.dao;

@@ -2,32 +2,32 @@
 title: day04 Spring配置类整合MyBatis
 icon: write
 category:
-  - Spring
+    - Spring
 tag:
-  - Spring
-  - 配置类
-  - Spring整合MyBatis
+    - Spring
+    - 配置类
+    - Spring整合MyBatis
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### 知识点
+## 知识点
 
-- 通过注解和配置类使用 Spring  
-  - @Configuration 用于指定当前类是一个Spring配置类，当创建容器时会从该类上加载注解  
-  - @ComponentScan("") 用于指定Spring在初始化容器时要扫描的包。作用和在Spring的xml配置文件中的一样 <context:component-scan base-package="priv.noby.note.entity"/>  
-  - @Bean 使用在方法上，标注将该方法的返回值存储到Spring容器中  
-  - @PropertySource 用于加载.properties文件中的配置   
-- @Import 用于导入其他配置类  
-- Spring整合junit(先导入Spring整合Junit包)  
-  - @RunWith(SpringJUnit4ClassRunner.class)  
-  - ContextConfiguration("classpath:applicationContext.xml")
+- 通过注解和配置类使用 Spring
+    - @Configuration 用于指定当前类是一个 Spring 配置类，当创建容器时会从该类上加载注解
+    - @ComponentScan("") 用于指定 Spring 在初始化容器时要扫描的包。作用和在 Spring 的 xml 配置文件中的一样 <context:component-scan base-package="priv.noby.note.entity"/>
+    - @Bean 使用在方法上，标注将该方法的返回值存储到 Spring 容器中
+    - @PropertySource 用于加载.properties 文件中的配置
+- @Import 用于导入其他配置类
+- Spring 整合 junit(先导入 Spring 整合 Junit 包)
+    - @RunWith(SpringJUnit4ClassRunner.class)
+    - ContextConfiguration("classpath:applicationContext.xml")
 
-### 代码示例
+## 代码示例
 
-#### pom
+### pom
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -108,7 +108,7 @@ timeline: true
 </project>
 ```
 
-#### Resource
+### Resource
 
 ```xml
 <!--
@@ -124,7 +124,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     <!--
     读取配置文件，使用该标签前必须引入context的命名空间及地址
     system-properties-mode="NEVER"表示不读取系统的属性（解决自定义属性名和系统属性名冲突）
-    -->
+        -->
 <!--    <context:property-placeholder location="db.properties" system-properties-mode="NEVER"/>-->
     <context:property-placeholder location="classpath:db.properties"/>
     <!--配置数据源-->
@@ -187,8 +187,8 @@ log4j.appender.FILE.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%p] %m [%t
 log4j.appender.FILE.File=file.log
 ```
 
+### 配置类
 
-#### 配置类
 ```java
 package priv.noby.spring4.config;  
   
@@ -276,7 +276,8 @@ public class MybatisConfiguration {
 }
 
 ```
-#### entity
+
+### entity
 
 ```java
 package priv.noby.spring3.entity;
@@ -295,7 +296,7 @@ public class Student {
 }
 ```
 
-#### dao
+### dao
 
 ```java
 package priv.noby.spring3.dao;
@@ -323,7 +324,7 @@ public interface StudentDao {
 </mapper>
 ```
 
-#### service
+### service
 
 ```java
 package priv.noby.spring3.service;
@@ -369,7 +370,7 @@ public class StudentServiceImpl implements StudentService {
 }
 ```
 
-#### test
+### test
 
 - 使用注解在测试时注入 ac 和配置文件
 

@@ -2,68 +2,68 @@
 title: day01 Spring的配置文件使用方式、IOC
 icon: write
 category:
-  - Spring
+    - Spring
 tag:
-  - Spring
-  - Spring配置文件
-  - bean的作用域
-  - bean的创建和销毁
-  - IOC
-  - 静态工厂
-  - 动态工厂
-  - 依赖注入
-  - 设值注入
-  - 构造注入
-  - 自动注入
+    - Spring
+    - Spring配置文件
+    - bean的作用域
+    - bean的创建和销毁
+    - IOC
+    - 静态工厂
+    - 动态工厂
+    - 依赖注入
+    - 设值注入
+    - 构造注入
+    - 自动注入
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### 知识点
+## 知识点
 
 - spring 的基础使用（配置文件的方式）
-  - 新建配置文件 applicationContext.xml （官方推荐命名）
-    - 配置文件中配置 `<bean>` 标签，定义 id 和 class
-  - 调用
-    - ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
-    - StudentService studentSer = (StudentService)ac.getBean("studentSer");
+    - 新建配置文件 applicationContext.xml （官方推荐命名）
+        - 配置文件中配置 `<bean>` 标签，定义 id 和 class
+    - 调用
+        - ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+        - StudentService studentSer = (StudentService)ac.getBean("studentSer");
 - ApplicationContext 和 BeanFactory 实例化的区别
-  - ApplicationContext 是 BeanFactory 的子接口
-  - 使用 ApplicationContext 初始化 Spring 容器时，立即创建所有的 Bean（启动慢，第一个用户的访问速度不受影响）（推荐）
-  - 使用 BeanFactory 初始化 Spring 容器时，实例化某个类时才创建该 Bean（启动快，占用更少的系统资源）
+    - ApplicationContext 是 BeanFactory 的子接口
+    - 使用 ApplicationContext 初始化 Spring 容器时，立即创建所有的 Bean（启动慢，第一个用户的访问速度不受影响）（推荐）
+    - 使用 BeanFactory 初始化 Spring 容器时，实例化某个类时才创建该 Bean（启动快，占用更少的系统资源）
 - import 标签引入子配置文件
 - Bean
-  - Bean 的装配方式
-    - 默认装配方式（常用）
-      - 设值注入
-        - 基本数据类型注入
-        - 集合数据类型
-          - 数组
-          - list
-          - set
-          - map
-          - properties
-        - 引用数据类型注入
-          - ref
-          - 自动注入
-            - byName
-            - byType
-      - 构造注入
-    - 动态工厂装配方式
-    - 静态工厂装配方式
-  - Bean 的作用范围
-    - singleton 单例（默认）：单例的实例化个数为一个，实例化时机为 Spring 容器创建时，单例对象的销毁时机为 Spring 容器被销毁时
-    - prototype 原型：原型的实例化个数一般为多个，实例化时机为容器调用 getBean()方法，原型对象的销毁时机为 java 的垃圾回收机制作用时
-    - request
-    - session
-    - globalSession
-  - Bean 的创建和销毁
-    - init()
-    - destroy()
+    - Bean 的装配方式
+        - 默认装配方式（常用）
+            - 设值注入
+                - 基本数据类型注入
+                - 集合数据类型
+                    - 数组
+                    - list
+                    - set
+                    - map
+                    - properties
+                - 引用数据类型注入
+                    - ref
+                    - 自动注入
+                        - byName
+                        - byType
+            - 构造注入
+        - 动态工厂装配方式
+        - 静态工厂装配方式
+    - Bean 的作用范围
+        - singleton 单例（默认）：单例的实例化个数为一个，实例化时机为 Spring 容器创建时，单例对象的销毁时机为 Spring 容器被销毁时
+        - prototype 原型：原型的实例化个数一般为多个，实例化时机为容器调用 getBean() 方法，原型对象的销毁时机为 java 的垃圾回收机制作用时
+        - request
+        - session
+        - globalSession
+    - Bean 的创建和销毁
+        - init()
+        - destroy()
 
-### Spring 的作用
+## Spring 的作用
 
 - 控制翻转 IOC，便于解耦
 - 面向切面编程 AOP
@@ -72,49 +72,49 @@ timeline: true
 - 方便集成各种优秀的框架
 - 降低 javaEE API 的使用难度
 
-### Spring 中 bean 的单例和原型的区别
+## Spring 中 bean 的单例和原型的区别
 
 - 单例的实例化个数为一个，原型的实例化个数一般为多个
-- 单例实例化时机为 Spring 容器创建时，原型实例化时机为容器调用 getBean()方法
+- 单例实例化时机为 Spring 容器创建时，原型实例化时机为容器调用 getBean() 方法
 - 单例对象的销毁时机为 Spring 容器被销毁时，原型对象的销毁时机为 java 的垃圾回收机制作用时
 
-### Spring 注入
+## Spring 注入
 
 - Bean 的装配方式
-  - 默认装配方式（常用）
-    - 设值注入
-      - 基本数据类型注入
-      - 集合数据类型
-      - 引用数据类型注入
-        - ref
-        - 自动注入
-          - byName
-          - byType
-    - 构造注入
-  - 动态工厂装配方式
-  - 静态工厂装配方式
+    - 默认装配方式（常用）
+        - 设值注入
+            - 基本数据类型注入
+            - 集合数据类型
+            - 引用数据类型注入
+                - ref
+                - 自动注入
+                    - byName
+                    - byType
+        - 构造注入
+    - 动态工厂装配方式
+    - 静态工厂装配方式
 
-### 控制反转和依赖注入
+## 控制反转和依赖注入
 
 - 控制反转：
-  - 定义：面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度，其基本思想是借助于“第三方”实现具有依赖关系的对象之间的解耦。
-  - 分类
-    - 依赖注入（Dependency Injection）：依赖注入是控制反转的一种实现。把依赖的控制权交给第三方（我们称作 IOC 容器），把他通过构造函数、属性或者工厂模式等方法(通过构造函数或 set()方法对依赖对象进行一个参数传入，而非直接在 B 中实例化 A)，将 A 类注入到类 B 内，这样就极大程度的对类 B 和类 A 进行了解耦。
-      - 依赖：如果一个类 B 的功能实现需要借助于类 A，那么就称类 A 是类 B 的依赖
-    - 依赖查找
-  - 解释：如果类 A 是类 B 的依赖，如果在类 B 的内部去实例化类 A，那么两者之间会出现较高的耦合，一旦类 A 出现了问题，类 B 也需要进行改造，如果这样的情况较多，每个类之间都有很多依赖，那么就会出现牵一发而动全身的情况，程序会极难维护，并且很容易出现问题。要解决这个问题，就要把 B 类对 A 类的控制权抽离出来，交给一个第三方去做，把控制权反转给第三方，就称作控制反转（IOC Inversion Of Control）。
+    - 定义：面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度，其基本思想是借助于 " 第三方 " 实现具有依赖关系的对象之间的解耦。
+    - 分类
+        - 依赖注入（Dependency Injection）：依赖注入是控制反转的一种实现。把依赖的控制权交给第三方（我们称作 IOC 容器），把他通过构造函数、属性或者工厂模式等方法 (通过构造函数或 set() 方法对依赖对象进行一个参数传入，而非直接在 B 中实例化 A)，将 A 类注入到类 B 内，这样就极大程度的对类 B 和类 A 进行了解耦。
+            - 依赖：如果一个类 B 的功能实现需要借助于类 A，那么就称类 A 是类 B 的依赖
+        - 依赖查找
+    - 解释：如果类 A 是类 B 的依赖，如果在类 B 的内部去实例化类 A，那么两者之间会出现较高的耦合，一旦类 A 出现了问题，类 B 也需要进行改造，如果这样的情况较多，每个类之间都有很多依赖，那么就会出现牵一发而动全身的情况，程序会极难维护，并且很容易出现问题。要解决这个问题，就要把 B 类对 A 类的控制权抽离出来，交给一个第三方去做，把控制权反转给第三方，就称作控制反转（IOC Inversion Of Control）。
 
-### 静态工厂和动态工厂
+## 静态工厂和动态工厂
 
 - 在 Spring 中，我们可以使用静态工厂方法或者动态工厂方法来创建 Bean 实例。二者的主要区别如下：
-  - 实例化方式
-    - 静态工厂方法是指在静态工厂类中定义一个静态方法来创建 Bean 实例。我们可以直接通过静态方法名来调用这个方法来获得 Bean 实例。
-    - 动态工厂方法是指在一个非静态的类中定义一个普通的方法来创建 Bean 实例。我们通过实例化工厂，根据工厂对象调用这个方法来获得 Bean 实例。
-  - 使用场景
-    - 静态工厂方法适用于创建那些无需频繁变更的 Bean 实例。在创建这些实例时，我们可以直接调用静态工厂类中的方法，而无需考虑创建哪个具体的实例。比如，可以使用静态工厂方法来创建日志工厂、数据库连接池等单例对象。
-    - 动态工厂方法则更加灵活，适用于创建那些需要根据不同情况动态变更的 Bean 实例。我们可以在动态工厂方法中根据实际情况来创建不同的 Bean 实例。比如，可以使用动态工厂方法来根据用户请求的不同，创建不同的服务实例。
-  - 灵活性
-    - 由于动态工厂方法是在运行时动态地创建 Bean 实例，因此它具有更高的灵活性。我们可以在方法中添加一些逻辑来控制实例化过程，比如根据参数的不同创建不同的 Bean 实例。
+    - 实例化方式
+        - 静态工厂方法是指在静态工厂类中定义一个静态方法来创建 Bean 实例。我们可以直接通过静态方法名来调用这个方法来获得 Bean 实例。
+        - 动态工厂方法是指在一个非静态的类中定义一个普通的方法来创建 Bean 实例。我们通过实例化工厂，根据工厂对象调用这个方法来获得 Bean 实例。
+    - 使用场景
+        - 静态工厂方法适用于创建那些无需频繁变更的 Bean 实例。在创建这些实例时，我们可以直接调用静态工厂类中的方法，而无需考虑创建哪个具体的实例。比如，可以使用静态工厂方法来创建日志工厂、数据库连接池等单例对象。
+        - 动态工厂方法则更加灵活，适用于创建那些需要根据不同情况动态变更的 Bean 实例。我们可以在动态工厂方法中根据实际情况来创建不同的 Bean 实例。比如，可以使用动态工厂方法来根据用户请求的不同，创建不同的服务实例。
+    - 灵活性
+        - 由于动态工厂方法是在运行时动态地创建 Bean 实例，因此它具有更高的灵活性。我们可以在方法中添加一些逻辑来控制实例化过程，比如根据参数的不同创建不同的 Bean 实例。
 - 以下是一个静态工厂方法的示例代码：
 
 ```java
@@ -141,9 +141,9 @@ public class MyBeanFactory {
 }
 ```
 
-### 代码示例
+## 代码示例
 
-#### pom
+### pom
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -192,7 +192,7 @@ public class MyBeanFactory {
 </project>
 ```
 
-#### xml
+### xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -330,7 +330,7 @@ public class MyBeanFactory {
 </beans>
 ```
 
-#### entity
+### entity
 
 ```java
 package priv.noby.spring.entity;
@@ -533,7 +533,7 @@ public class Student {
 }
 ```
 
-#### dao
+### dao
 
 ```java
 package priv.noby.spring.dao;
@@ -565,7 +565,7 @@ import priv.noby.spring.entity.Student;
 }
 ```
 
-#### factory
+### factory
 
 ```java
 package priv.noby.spring.factory;
@@ -609,7 +609,7 @@ import priv.noby.spring.entity.School;
 }
 ```
 
-#### service
+### service
 
 ```java
 package priv.noby.spring.service;
@@ -671,7 +671,7 @@ public class StudentServiceImpl implements StudentService {
 }
 ```
 
-#### test
+### test
 
 ```java
 package priv.noby.spring.entity;

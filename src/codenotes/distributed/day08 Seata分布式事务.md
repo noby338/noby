@@ -2,22 +2,23 @@
 title: day08 Seata分布式事务
 icon: write
 category:
-  - Distributed
+    - Distributed
 tag:
-  - Distributed
+    - Distributed
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## Seata 介绍
 
 - 在单体应用中，可以使用传统的本地事务机制来管理事务，这种方式比较简单和直观。但是，在微服务架构下，由于每个服务都是独立的进程，它们通常使用不同的存储介质、部署在不同的物理机器。这样随着业务逻辑的增加，以及服务数量的增加，由原本的本地事务转变为分布式事务，通常会出现一些难以预料的问题，比如：并发事务执行导致数据不一致、网络异常导致数据丢失等。
 - Seata（Simple Extensible Autonomous Transaction Architecture）是一个分布式事务解决方案，可以帮助解决微服务架构下，多个服务之间的事务一致性问题。Seata 提供了一个完整的事务解决方案，涵盖了分布式事务协调者、事务管理器和参与者三个组件。
 - 以下是 Seata 的三个组件的简介：
-  1.  事务协调者 Transaction Coordinator（TC）：维护全局和分支事务的状态，协调全局事务提交或回滚。
-  2.  事务管理器 Transaction Manager（TM）：定义全局事务的范围、开始全局事务、提交或回滚全局事务。
-  3.  资源管理器 Resource Manager（RM）：管理分支事务处理的资源，与 TC 交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚。
+    1. 事务协调者 Transaction Coordinator（TC）：维护全局和分支事务的状态，协调全局事务提交或回滚。
+    2. 事务管理器 Transaction Manager（TM）：定义全局事务的范围、开始全局事务、提交或回滚全局事务。
+    3. 资源管理器 Resource Manager（RM）：管理分支事务处理的资源，与 TC 交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚。
 
 ## 分布式事务理论
 
@@ -50,14 +51,15 @@ BASE 理论是对分布式系统常见问题的一种哲学性的思考方式。
 ## Seata 的配置
 
 - seata 中的表
-  - seata 库
-    1.  Branch Table（分支事务表）：存储所有分支事务的相关信息，包括其所属的全局事务 ID、分支事务 ID、分支事务状态、分支事务类型等等。Seata 通过这张表来跟踪每个分支事务的状态，协调分支事务的提交或回滚。
-    2.  Global Table（全局事务表）：存储所有全局事务的相关信息，包括全局事务 ID、全局事务状态、全局事务类型、参与事务的应用数量等等。Seata 使用这张表来管理全局事务的状态，以及全局 ID 和分支 ID 对应关系的映射。
-    3.  Lock Table（分布式锁表）：在 Seata 中，分布式锁用来保护全局事务的执行过程中的并发问题。Lock Table 存储了全局事务 ID 和锁的相关信息，同时支持乐观锁和悲观锁两种锁方式。
-  - 各个微服务库
-    1. Undo Log（回滚日志表）：Undo Log 是 Seata 中非常重要的一张表，用来记录每个分支事务执行的 SQL 操作，以支持执行回滚操作。当分支事务需要回滚时，Seata 会根据 Undo Log 的信息将修改的数据还原到事务执行前的状态。
+    - seata 库
+        1. Branch Table（分支事务表）：存储所有分支事务的相关信息，包括其所属的全局事务 ID、分支事务 ID、分支事务状态、分支事务类型等等。Seata 通过这张表来跟踪每个分支事务的状态，协调分支事务的提交或回滚。
+        2. Global Table（全局事务表）：存储所有全局事务的相关信息，包括全局事务 ID、全局事务状态、全局事务类型、参与事务的应用数量等等。Seata 使用这张表来管理全局事务的状态，以及全局 ID 和分支 ID 对应关系的映射。
+        3. Lock Table（分布式锁表）：在 Seata 中，分布式锁用来保护全局事务的执行过程中的并发问题。Lock Table 存储了全局事务 ID 和锁的相关信息，同时支持乐观锁和悲观锁两种锁方式。
+    - 各个微服务库
+        1. Undo Log（回滚日志表）：Undo Log 是 Seata 中非常重要的一张表，用来记录每个分支事务执行的 SQL 操作，以支持执行回滚操作。当分支事务需要回滚时，Seata 会根据 Undo Log 的信息将修改的数据还原到事务执行前的状态。
 - 修改配置文件
-  - 修改conf目录下的registry.conf文件：
+    - 修改 conf 目录下的 registry.conf 文件：
+
 ```properties
 registry {
   # tc服务的注册中心类，这里选择nacos，也可以是eureka、zookeeper等
@@ -90,7 +92,9 @@ config {
  
 }
 ```
-- 在nacos添加配置seataServer.properties，DEFAULT_GROUP
+
+- 在 nacos 添加配置 seataServer.properties，DEFAULT_GROUP
+
 ```properties
 # 数据存储方式，db代表数据库
 store.mode=db
@@ -131,13 +135,13 @@ metrics.exporterPrometheusPort=9898
 ## 执行的流程
 
 - 在 Seata AT 模式中，全局事务由事务协调器（Transaction Coordinator）控制。资源管理器负责执行本地事务的提交和回滚操作。branch table、global table、lock table 和 undo log 则用于记录全局事务和分支事务的执行状态和信息，实现分布式事务的可靠性和一致性。具体的流程如下：
-- AT模式
-  - 第一阶段
-    1. 所有的分支事务RM注册分支事务到全局事务TM
-    2. 记录当前分支事务的undo-log记录
-    3. 执行sql并提交
-    4. 向TC报告事务的状态
-  - 第二阶段
-    1. 根据事务的状态回滚或提交
-      1. 提交：删除undo-log对应分支记录
-      2. 回滚：所有RM根据对应的undo-log记录回滚，删除undo-log对应分支记录
+- AT 模式
+    - 第一阶段
+        1. 所有的分支事务 RM 注册分支事务到全局事务 TM
+        2. 记录当前分支事务的 undo-log 记录
+        3. 执行 sql 并提交
+        4. 向 TC 报告事务的状态
+    - 第二阶段
+        1. 根据事务的状态回滚或提交
+            1. 提交：删除 undo-log 对应分支记录
+            2. 回滚：所有 RM 根据对应的 undo-log 记录回滚，删除 undo-log 对应分支记录

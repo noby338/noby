@@ -2,14 +2,15 @@
 title: day02 css
 icon: write
 category:
-  - Css
+    - Css
 tag:
-  - Css
+    - Css
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## Css 选择器
 
 ```html
@@ -55,8 +56,8 @@ timeline: true
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -moz-user-select: none;
-            -khtml-user-select: none;
+                        -moz-user-select: none;
+                        -khtml-user-select: none;
             user-select: none;
             font-family: system-ui;
         }
@@ -228,8 +229,8 @@ timeline: true
 | [:link](https://www.w3school.com.cn/cssref/selector_link.asp)                              | a:link                | 选择所有未被访问的链接。                                         |
 | [:not(_selector_)](https://www.w3school.com.cn/cssref/selector_not.asp)                    | :not(p)               | 选择每个非 `<p>` 元素的元素。                                    |
 | [:nth-child(_n_)](https://www.w3school.com.cn/cssref/selector_nth-child.asp)               | p:nth-child(2)        | 选择作为其父的第二个子元素的每个 `<p>` 元素。                    |
-| [:nth-last-child(_n_)](https://www.w3school.com.cn/cssref/selector_nth-last-child.asp)     | p:nth-last-child(2)   | 选择作为父的第二个子元素的每个`<p>`元素，从最后一个子元素计数。  |
-| [:nth-last-of-type(_n_)](https://www.w3school.com.cn/cssref/selector_nth-last-of-type.asp) | p:nth-last-of-type(2) | 选择作为父的第二个`<p>`元素的每个`<p>`元素，从最后一个子元素计数 |
+| [:nth-last-child(_n_)](https://www.w3school.com.cn/cssref/selector_nth-last-child.asp)     | p:nth-last-child(2)   | 选择作为父的第二个子元素的每个 `<p>` 元素，从最后一个子元素计数。  |
+| [:nth-last-of-type(_n_)](https://www.w3school.com.cn/cssref/selector_nth-last-of-type.asp) | p:nth-last-of-type(2) | 选择作为父的第二个 `<p>` 元素的每个 `<p>` 元素，从最后一个子元素计数 |
 | [:nth-of-type(_n_)](https://www.w3school.com.cn/cssref/selector_nth-of-type.asp)           | p:nth-of-type(2)      | 选择作为其父的第二个 `<p>` 元素的每个 `<p>` 元素。               |
 | [:only-of-type](https://www.w3school.com.cn/cssref/selector_only-of-type.asp)              | p:only-of-type        | 选择作为其父的唯一 `<p>` 元素的每个 `<p>` 元素。                 |
 | [:only-child](https://www.w3school.com.cn/cssref/selector_only-child.asp)                  | p:only-child          | 选择作为其父的唯一子元素的 `<p>` 元素。                          |
@@ -369,38 +370,38 @@ timeline: true
 ## 网页布局方式
 
 - 普通流（标准流）
-  - 块级元素会独占一行，从上向下顺序排列。
-  - 行内元素会按照顺序，从左到右顺序排列，碰到父元素边缘则自动换行。
+    - 块级元素会独占一行，从上向下顺序排列。
+    - 行内元素会按照顺序，从左到右顺序排列，碰到父元素边缘则自动换行。
 - 浮动
-  - 浮动元素会脱离标准流(脱标)
-  - 浮动的元素会一行内显示并且元素顶部对齐
-  - 浮动的元素会具有行内块元素的特性
+    - 浮动元素会脱离标准流 (脱标)
+    - 浮动的元素会一行内显示并且元素顶部对齐
+    - 浮动的元素会具有行内块元素的特性
 - 定位
-  - 定位 = 定位模式 + 边偏移 。
-  - 子级是绝对定位的话，父级要用相对定位。
-    - 子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他的兄弟盒子。
-    - 父盒子需要加定位限制子盒子在父盒子内显示。
-    - 父盒子布局时，需要占有位置，因此父亲只能是相对定位。
-  - 静态定位
-    - 静态定位按照标准流特性摆放位置，它没有边偏移，即默认状态为静态定位
-  - 相对定位
-    - 它是相对于自己原来的位置来移动的。
-    - 原来在标准流的位置继续占有，后面的盒子仍然以标准流的方式对待它。
-  - 绝对定位
-    - 如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位（Document 文档）。
-    - 如果祖先元素有定位（相对、绝对、固定定位），则以最近一级的有定位祖先元素为参考点移动位置。
-    - 绝对定位不再占有原先的位置。（脱标）
-  - 固定定位
-    - 以浏览器的可视窗口为参照点移动元素。
-    - 固定定位也是脱标的，固定定位不在占有原先的位置。
+    - 定位 = 定位模式 + 边偏移 。
+    - 子级是绝对定位的话，父级要用相对定位。
+        - 子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他的兄弟盒子。
+        - 父盒子需要加定位限制子盒子在父盒子内显示。
+        - 父盒子布局时，需要占有位置，因此父亲只能是相对定位。
+    - 静态定位
+        - 静态定位按照标准流特性摆放位置，它没有边偏移，即默认状态为静态定位
+    - 相对定位
+        - 它是相对于自己原来的位置来移动的。
+        - 原来在标准流的位置继续占有，后面的盒子仍然以标准流的方式对待它。
+    - 绝对定位
+        - 如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位（Document 文档）。
+        - 如果祖先元素有定位（相对、绝对、固定定位），则以最近一级的有定位祖先元素为参考点移动位置。
+        - 绝对定位不再占有原先的位置。（脱标）
+    - 固定定位
+        - 以浏览器的可视窗口为参照点移动元素。
+        - 固定定位也是脱标的，固定定位不在占有原先的位置。
 
 ## 盒子模型
 
 - 一个标签由 4 个部分组成
-  - margin：外边距
-  - border：边框
-  - padding：内边距
-  - content：内容部分
+    - margin：外边距
+    - border：边框
+    - padding：内边距
+    - content：内容部分
 
 ## Emmet 语法
 

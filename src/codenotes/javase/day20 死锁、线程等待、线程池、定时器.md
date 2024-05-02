@@ -2,18 +2,18 @@
 title: day20 死锁、线程等待、线程池、定时器
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### 死锁
+## 死锁
 
-定义：是指两个或两个以上的进程(线程)在执行过程中,因争夺资源而造成的一种互相等待的现象,若无外力作用,它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁,这些永远在互相等待的进程(线程)称为死锁进程(线程)
+定义：是指两个或两个以上的进程 (线程) 在执行过程中,因争夺资源而造成的一种互相等待的现象,若无外力作用,它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁,这些永远在互相等待的进程 (线程) 称为死锁进程 (线程)
 
 死锁解决方案：
 
@@ -77,17 +77,17 @@ class MyRunnable implements Runnable {
     }
     /*
     死锁解决方案：
-    1. 杀掉其中一个线程
-    2. 避免死锁发生（代码优化，再加一把锁）
+        1. 杀掉其中一个线程
+        2. 避免死锁发生（代码优化，再加一把锁）
      */}
 ```
 
-### 多线程实现等待唤醒机制
+## 多线程实现等待唤醒机制
 
 - 生产者消费者模式
-  - 供不应求：对于消费者无法及时得到自己想要的东西
-  - 供过于求：生产的速度快于消费的速度
-  - 最理想的模式：生产等于消费
+    - 供不应求：对于消费者无法及时得到自己想要的东西
+    - 供过于求：生产的速度快于消费的速度
+    - 最理想的模式：生产等于消费
 
 ```java
 package note;
@@ -163,7 +163,7 @@ class ProducerConsumer{
 }
 ```
 
-### 守护线程
+## 守护线程
 
 ```java
 package note.senior;
@@ -231,7 +231,7 @@ package note.senior;
 }
 ```
 
-### 线程中断
+## 线程中断
 
 ```java
 package note.senior;
@@ -265,7 +265,7 @@ package note.senior;
 }
 ```
 
-#### 使用布尔变量实现线程停止
+### 使用布尔变量实现线程停止
 
 ```java
 package note.senior;
@@ -308,7 +308,7 @@ public class Stop {
 }
 ```
 
-### 线程强制加入
+## 线程强制加入
 
 ```java
 package note.senior;
@@ -368,7 +368,7 @@ package note.senior;
 }
 ```
 
-### 线程的优先级
+## 线程的优先级
 
 ```java
 package note.senior;
@@ -423,24 +423,24 @@ package note.senior;
 }
 ```
 
-### 线程池
+## 线程池
 
 - 定义：是一种线程的使用模式，它为了降低线程使用中频繁的创建和销毁所带来的资源消耗与代价。
 - 原理：通过创建一定数量的线程，让他们时刻准备就绪等待新任务的到达，而任务执行结束之后再重新回来继续待命。这就是线程池最核心的设计思路。
 - 相比于来一个任务创建一个线程的方式，使用线程池的优势体现在如下几点：
-  1. 避免了线程的重复创建与开销带来的资源消耗代价
-  2. 提升了任务响应速度，任务来了直接选一个线程执行而无需等待线程的创建
-  3. 线程的统一分配和管理，也方便统一的监控和调优
+    1. 避免了线程的重复创建与开销带来的资源消耗代价
+    2. 提升了任务响应速度，任务来了直接选一个线程执行而无需等待线程的创建
+    3. 线程的统一分配和管理，也方便统一的监控和调优
 - java 线程池分类：
-  - 使用 Executors 类
-    - 单线程池：线程池中只有一个线程，经常用于执行需要顺序执行的任务
-    - 固定线程池：线程池中的线程数量是固定不变的，经常用来限制开启线程的数量，避免程序卡顿
-    - 缓存线程池：线程池中的线程数量可以自动增加、减少，执行的任务越多线程就越多，是为了尽快执行完所有任务
-    - 定时线程池：作用与 Timer 一样
-  - 使用 ThreadPoolExecutor 类
-    - 自定义线程池：程序员根据自己的需求创建线程池
+    - 使用 Executors 类
+        - 单线程池：线程池中只有一个线程，经常用于执行需要顺序执行的任务
+        - 固定线程池：线程池中的线程数量是固定不变的，经常用来限制开启线程的数量，避免程序卡顿
+        - 缓存线程池：线程池中的线程数量可以自动增加、减少，执行的任务越多线程就越多，是为了尽快执行完所有任务
+        - 定时线程池：作用与 Timer 一样
+    - 使用 ThreadPoolExecutor 类
+        - 自定义线程池：程序员根据自己的需求创建线程池
 
-#### Executors
+### Executors
 
 ```java
 package note;
@@ -593,7 +593,7 @@ class MyRunnable4 implements Runnable {
 }
 ```
 
-#### ThreadPoolExecutor
+### ThreadPoolExecutor
 
 ```java
 package note;
@@ -614,7 +614,7 @@ import java.util.concurrent.*;
  */public class ThreadPoolNote {
     public static void main(String[] args) {
         ThreadPoolExecutor pool = new ThreadPoolExecutor(3,
-                5, 6, TimeUnit.SECONDS,
+                                5, 6, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<>(5),
                 Executors.defaultThreadFactory(),
                 new ThreadPoolExecutor.AbortPolicy());
@@ -683,7 +683,7 @@ import java.util.concurrent.*;
  */public class ThreadPoolNote2 {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ThreadPoolExecutor pool = new ThreadPoolExecutor(3,
-                5, 6, TimeUnit.SECONDS,
+                                5, 6, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<>(5),
                 Executors.defaultThreadFactory(),
                 new ThreadPoolExecutor.AbortPolicy());
@@ -737,7 +737,7 @@ class MyCallable2 implements Callable<String> {
 }
 ```
 
-### 定时器 Timer
+## 定时器 Timer
 
 ```java
 package note;
@@ -788,9 +788,9 @@ import java.util.TimerTask;
 }
 ```
 
-### 面试题：
+## 面试题
 
-#### wait()和 sleep()的区别
+### wait() 和 sleep() 的区别
 
-- wait()是 object 类中的普通方法。sleep()是 Thread 类中的静态方法
-- wait()是等待，通过 notify()唤醒。sleep()是睡眠，通过 sleep()中的传入的而时间结束唤醒
+- wait() 是 object 类中的普通方法。sleep() 是 Thread 类中的静态方法
+- wait() 是等待，通过 notify() 唤醒。sleep() 是睡眠，通过 sleep() 中的传入的而时间结束唤醒

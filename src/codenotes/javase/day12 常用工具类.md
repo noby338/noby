@@ -2,9 +2,9 @@
 title: day12 常用工具类
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
@@ -69,7 +69,7 @@ public class ArraysNote {
 ## UUID
 
 - 定义：UUID 是 Universally Unique Identifier 的缩写，翻译成中文意为通用唯一标识码类，它是在一定的范围内（从特定的名字空间到全球）唯一的机器生成的标识符。
-- 作用：常用于区分不同的文件(文件名并不能区分文件)
+- 作用：常用于区分不同的文件 (文件名并不能区分文件)
 
 ```java
 package note;

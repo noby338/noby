@@ -2,64 +2,52 @@
 title: day04 javascript
 icon: write
 category:
-  - Js
+    - Js
 tag:
-  - Js
+    - Js
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## JavaScript
 
-* 脚本语言：调用其他第三方实现某功能(调用浏览器)
-
-* js代码边编译边执行（这种方式称为解释，对应Java中的编译）
-
-* js中字符串推荐使用单引号
-
-* JavaScript 代码是由浏览器中的 JavaScript 解析器来执行的。JavaScript 解析器在运行 JavaScript 代码的时候分为两步：预解析和代码执行。
-
-* javascript中的同步和异步
-
-* 先执行执行栈中的同步任务。
+- 脚本语言：调用其他第三方实现某功能 (调用浏览器)
+- js 代码边编译边执行（这种方式称为解释，对应 Java 中的编译）
+- js 中字符串推荐使用单引号
+- JavaScript 代码是由浏览器中的 JavaScript 解析器来执行的。JavaScript 解析器在运行 JavaScript 代码的时候分为两步：预解析和代码执行。
+- javascript 中的同步和异步
+- 先执行执行栈中的同步任务。
 
   异步任务（回调函数）放入任务队列中。
-
   一旦执行栈中的所有同步任务执行完毕，系统就会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行。
 
-* ![{40DCB19F-6204-4C17-9DDB-1695CA4E4245}](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/%7B40DCB19F-6204-4C17-9DDB-1695CA4E4245%7D.png)
+- ![{40DCB19F-6204-4C17-9DDB-1695CA4E4245}](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/%7B40DCB19F-6204-4C17-9DDB-1695CA4E4245%7D.png)
+    - 同步
+    - 异步
+        - 普通事件，如 click、resize 等
+        - 资源加载，如 load、error 等
+        - 定时器，包括 setInterval、setTimeout 等
+- script 与 html 结合方式
 
-  * 同步
-  * 异步
-    * 普通事件，如 click、resize 等
-    * 资源加载，如 load、error 等
-    * 定时器，包括 setInterval、setTimeout 等
+1. 内部 JS：
+   定义 `<script>`，标签体内容就是 js 代码
+    1. 外部 JS：
 
-* script与html结合方式
+     定义 `<script>`，通过 src 属性引入外部的 js 文件
 
-1. 内部JS：
+          - 例如：`<script src="./..">	</script>`
+          - css 引入方式：`<link rel="stylesheet" href="css/a.css">`
+          - html 超链接引入方式：`<a href="www….." target="_blank">我是一个链接</a>`	
+          - html 图片引入方式：`<img src="../html&css&js/image/jiangwai_1.jpg">`
 
-   定义`<script>`，标签体内容就是js代码
+### JSON
 
-  2. 外部JS：
-
-     定义`<script>`，通过src属性引入外部的js文件
-
-     * 例如：`<script src="./..">	</script>`
-     * css引入方式：`<link rel="stylesheet" href="css/a.css">`
-     * html超链接引入方式：`<a href="www....." target="_blank">我是一个链接</a>`	
-     * html图片引入方式：`<img src="../html&css&js/image/jiangwai_1.jpg">`
-
-#### JSON
-
-- 定义：JSON 英文全称 JavaScript Object Notation，是一种轻量级的数据交换格式。(他就是js中的一种特殊的对象)
-
+- 定义：JSON 英文全称 JavaScript Object Notation，是一种轻量级的数据交换格式。(他就是 js 中的一种特殊的对象)
 - 作用：JSON 是用于存储和传输数据的格式，通常用于服务端向网页传递数据 。
-
-- 常用的两种json格式：
-
-  - 以{}包含数据，表示该数据是一个对象
+- 常用的两种 json 格式：
+    - 以{}包含数据，表示该数据是一个对象
 
     ```js
       let JSONObject= {
@@ -68,7 +56,7 @@ timeline: true
       };
       ```
 
-  - 以[]包含数据，表示该数据时一个数组
+    - 以 [] 包含数据，表示该数据时一个数组
 
     ```js
       let sites = [
@@ -78,11 +66,11 @@ timeline: true
       ];
       ```
 
-### ECMAScript
+## ECMAScript
 
-#### API
+### API
 
-##### Number 对象方法
+#### Number 对象方法
 
 | 方法             | 解释                                               | 案例                                                         |
 | ---------------- | -------------------------------------------------- | ------------------------------------------------------------ |
@@ -92,7 +80,7 @@ timeline: true
 | toString()       | 把数字转换为字符串，使用指定的基数                 |                                                              |
 | valueOf()        | 返回一个 Number 对象的基本数字值                   |                                                              |
 
-##### Date 对象方法
+#### Date 对象方法
 
 | 方法                 | 解释                                                         |
 | -------------------- | ------------------------------------------------------------ |
@@ -110,27 +98,27 @@ timeline: true
 | setMinutes()         | 设置 Date 对象中的分钟 (0 ~ 59)                              |
 | setMonth()           | 设置 Date 对象中月份 (0 ~ 11)                                |
 | setSeconds()         | 设置 Date 对象中的秒钟 (0 ~ 59)                              |
-| toDateString()       | 把 Date 对象的日期部分转换为字符串var d = new Date();var n = d.toDateString(); |
+| toDateString()       | 把 Date 对象的日期部分转换为字符串 var d = new Date();var n = d.toDateString(); |
 | toLocaleDateString() | 根据本地时间格式，把 Date 对象的日期部分转换为字符串         |
 | toLocaleTimeString() | 根据本地时间格式，把 Date 对象的时间部分转换为字符串         |
 | toLocaleString()     | 据本地时间格式，把 Date 对象转换为字符串                     |
 | toString()           | 把 Date 对象转换为字符串                                     |
 | toTimeString()       | 把 Date 对象的时间部分转换为字符串                           |
 
-##### Math 对象方法
+#### Math 对象方法
 
 | 方法             | 解释                        | 案例                                                         |
 | ---------------- | --------------------------- | ------------------------------------------------------------ |
-| abs(x)           | 返回 x 的绝对值             | 返回一个数的绝对值:Math.abs(-7.25);输出结果:7.25             |
-| ceil(x)          | 对数进行上舍入              | Math.ceil(1.4)输出结果:2                                     |
+| abs(x)           | 返回 x 的绝对值             | 返回一个数的绝对值:Math.abs(-7.25); 输出结果:7.25             |
+| ceil(x)          | 对数进行上舍入              | Math.ceil(1.4) 输出结果:2                                     |
 | floor(x)         | 对 x 进行下舍入             |                                                              |
-| max(x,y,z,...,n) | 返回 x,y,z,...,n 中的最高值 | 返回两个指定的数中带有较大的值的那个数：Math.max(5,10);输出结果：10 |
-| min(x,y,z,...,n) | 返回 x,y,z,...,n中的最低值  |                                                              |
-| random()         | 返回 0 ~ 1 之间的随机数     | 返回介于 0（包含） ~ 1（不包含） 之间的一个随机数：Math.random();输出结果：0.29910486307926476 |
+| max(x,y,z,…,n) | 返回 x,y,z,…,n 中的最高值 | 返回两个指定的数中带有较大的值的那个数：Math.max(5,10); 输出结果：10 |
+| min(x,y,z,…,n) | 返回 x,y,z,…,n 中的最低值  |                                                              |
+| random()         | 返回 0 ~ 1 之间的随机数     | 返回介于 0（包含） ~ 1（不包含） 之间的一个随机数：Math.random(); 输出结果：0.29910486307926476 |
 | round(x)         | 把数四舍五入为最接近的整数  |                                                              |
 | sqrt(x)          | 返回数的平方根              |                                                              |
 | pow(x,y)         | 返回 x 的 y 次幂            |                                                              |
-| sin(x)           | 返回数的正弦                | 返回数字的正弦值:Math.sin(3);输出结果:0.1411200080598672     |
+| sin(x)           | 返回数的正弦                | 返回数字的正弦值:Math.sin(3); 输出结果:0.1411200080598672     |
 | cos(x)           | 返回数的余弦                |                                                              |
 | tan(x)           | 返回角的正切                |                                                              |
 
@@ -146,9 +134,9 @@ timeline: true
 <body>
     <!-- 
         JavaScript代码写法有两种方式：
-        1.html文件script标签中：    script可以放在html中的任何位置（head、body）
-        2.可以将js单独放在JavaScript的文件中  xx.js文件
-   -->
+                1.html文件script标签中：    script可以放在html中的任何位置（head、body）
+                2.可以将js单独放在JavaScript的文件中  xx.js文件
+      -->
 
 
     <script>
@@ -393,28 +381,26 @@ timeline: true
 </html>
 ```
 
+## DOM
 
+- 定义：（Document Object Model，简称 DOM）文档对象模型 ，是 W3C 组织推荐的处理可扩展标记语言（HTML 或者 XML）的标准编程接口。
 
-### DOM
+### DOM 树
 
-* 定义：（Document Object Model，简称 DOM）文档对象模型 ，是 W3C 组织推荐的处理可扩展标记语言（HTML或者XML）的标准编程接口。
-
-#### DOM树 
-
-* 包括文档Document、元素Element、节点Node（网页的所有东西都是节点，如标签、属性Attribute、文本Text、注释Comment等）
+- 包括文档 Document、元素 Element、节点 Node（网页的所有东西都是节点，如标签、属性 Attribute、文本 Text、注释 Comment 等）
 
 ![image-20210927122254173](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20210927122254173.png)
 
-#### 	节点的三个基本属性
+### 	节点的三个基本属性
 
- * nodeType（节点类型）
-   * 元素节点  nodeType  为 1
-   * 属性节点  nodeType  为 2
-   * 文本节点  nodeType  为 3 （文本节点包含文字、空格、换行等）
- * nodeName（节点名称）
- * nodeValue（节点值）
+ - nodeType（节点类型）
+      - 元素节点 nodeType 为 1
+      - 属性节点 nodeType 为 2
+      - 文本节点 nodeType 为 3 （文本节点包含文字、空格、换行等）
+ - nodeName（节点名称）
+ - nodeValue（节点值）
 
-#### 一些常用的 HTML DOM 方法
+### 一些常用的 HTML DOM 方法
 
 | 方法                     | 描述                                                         |
 | ------------------------ | ------------------------------------------------------------ |
@@ -431,47 +417,47 @@ timeline: true
 | getAttribute()           | 返回指定的属性值。                                           |
 | setAttribute()           | 把指定属性设置或修改为指定的值。                             |
 
-#### dom事件 
+### dom 事件
 
-* 使用addEventlistener不用on
-* 按钮禁用：this.disable = true;
+- 使用 addEventlistener 不用 on
+- 按钮禁用：this.disable = true;
 
-##### 	1.  点击事件：
+#### 	1. 点击事件
 
  	1. onclick：单击事件
  	2. ondblclick：双击事件
 
-##### 	2.  焦点事件（没有冒泡）
+#### 	2. 焦点事件（没有冒泡）
 
 1. onblur：失去焦点
-2. onfocus:元素获得焦点。
+2. onfocus: 元素获得焦点。
 
-##### 3. 加载事件：
+#### 3. 加载事件
 
 1. onload：一张页面或一幅图像完成加载。
 
-##### 4. 鼠标事件：
+#### 4. 鼠标事件
 
 1. onmousedown	鼠标按钮被按下。
 2. onmouseup	鼠标按键被松开。
 3. onmousemove	鼠标被移动。
 4. onmouseover	鼠标移到某元素之上。
 5. onmouseout	鼠标从某元素移开。
-6. oncontextmenu 用于取消默认的上下文菜单（搭配事件对象preventDefault，实现禁止鼠标右击菜单）
-7. onselectstart  禁止鼠标选中（搭配事件对象preventDefault，实现禁止鼠标右击菜单）		
+6. oncontextmenu 用于取消默认的上下文菜单（搭配事件对象 preventDefault，实现禁止鼠标右击菜单）
+7. onselectstart 禁止鼠标选中（搭配事件对象 preventDefault，实现禁止鼠标右击菜单）
 
-##### 5. 键盘事件：
+#### 5. 键盘事件
 
-1. onkeydown	某个键盘按键被按下。	
+1. onkeydown	某个键盘按键被按下。
 2. onkeyup		某个键盘按键被松开。
 3. onkeypress	某个键盘按键被按下并松开。
 
-##### 6. 文本事件
+#### 6. 文本事件
 
 1. onchange	域的内容被改变。
 2. onselect	文本被选中。
 
-##### 7. 表单事件：
+#### 7. 表单事件
 
 1. onsubmit	确认按钮被点击。
 2. onreset	重置按钮被点击。
@@ -656,9 +642,7 @@ timeline: true
 </html>
 ```
 
-
-
-### BOM
+## BOM
 
 ```html
 <!DOCTYPE html>
@@ -726,8 +710,3 @@ timeline: true
 
 </html>
 ```
-
-
-
-
-

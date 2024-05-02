@@ -2,20 +2,21 @@
 title: day07 Spring整合Servlet
 icon: write
 category:
-  - Spring
+    - Spring
 tag:
-  - Spring
-  - Servlet
+    - Spring
+    - Servlet
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### 知识点
+## 知识点
 
-- spring 整合 servlet  
-  - 导入坐标  
+- spring 整合 servlet
+    - 导入坐标
+
 ```xml
 <dependency>  
     <groupId>org.springframework</groupId>  
@@ -23,19 +24,18 @@ timeline: true
     <version>5.2.15.RELEASE</version>  
 </dependency>  
 ```
-  - servlet 使用  
-    - 应用上下文对象(Spring上下文对象)如果是通过new ClasspathXmlApplicationContext(spring配置文件)方式获取的，那么每次从 容器中获得Bean时都要编写new ClasspathXmlApplicationContext(spring配置文件)，这样的弊端是配置文件加载多次，应用上下文对象创建多次。  在Web项目中，可以使用ServletContextListener.监听Web应用的启动，我们可以在Web应用启动时，就加  载Spring的配置文件，创建应用上下文对象Application Context,在将其存储到最大的域servletContext域  中，这样就可以在任意位置从域中获得应用上下文Application Context对象了。  上面的分析不用手动实现，Spring提供了一个监听器ContextLoaderListener就是对上述功能的封装，该监  听器内部加载Spring配置文件，创建应用上下文对象，并存储到ServletContext域中，提供了一个客户端工  具WebApplicationContextUtils供使用者获得应用上下文对象。  所以我们需要做的只有两件事：
-      - 在web.xml中配置ContextLoaderListener监听器（导入spring-web坐标  
-      - 使用WebApplicationContextUtils获得应用上下文对象ApplicationContext  
-    - 可通过读取web配置文件监听器的方式读取Spring配置文件  
-    - ApplicationContext applicationContext = (ApplicationContext) this.getServletContext()  
-        - .getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);  
 
+    - servlet 使用  
+        - 应用上下文对象 (Spring 上下文对象) 如果是通过 new ClasspathXmlApplicationContext(spring 配置文件) 方式获取的，那么每次从 容器中获得 Bean 时都要编写 new ClasspathXmlApplicationContext(spring 配置文件)，这样的弊端是配置文件加载多次，应用上下文对象创建多次。 在 Web 项目中，可以使用 ServletContextListener.监听 Web 应用的启动，我们可以在 Web 应用启动时，就加 载 Spring 的配置文件，创建应用上下文对象 Application Context,在将其存储到最大的域 servletContext 域 中，这样就可以在任意位置从域中获得应用上下文 Application Context 对象了。 上面的分析不用手动实现，Spring 提供了一个监听器 ContextLoaderListener 就是对上述功能的封装，该监 听器内部加载 Spring 配置文件，创建应用上下文对象，并存储到 ServletContext 域中，提供了一个客户端工 具 WebApplicationContextUtils 供使用者获得应用上下文对象。 所以我们需要做的只有两件事：
+            - 在 web.xml 中配置 ContextLoaderListener 监听器（导入 spring-web 坐标  
+            - 使用 WebApplicationContextUtils 获得应用上下文对象 ApplicationContext  
+        - 可通过读取 web 配置文件监听器的方式读取 Spring 配置文件  
+        - ApplicationContext applicationContext = (ApplicationContext) this.getServletContext()  
+                - .getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);  
 
+## 代码示例
 
-### 代码示例
-
-#### pom
+### pom
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>  
@@ -177,7 +177,7 @@ timeline: true
 </project>
 ```
 
-#### Resource
+### Resource
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"  
@@ -246,7 +246,7 @@ log4j.appender.FILE.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%p] %m [%t
 log4j.appender.FILE.File=file.log
 ```
 
-#### entity
+### entity
 
 ```java
 package priv.noby.spring8.entity;  
@@ -283,7 +283,7 @@ public class Emp {
 }
 ```
 
-#### dao
+### dao
 
 ```java
 package priv.noby.spring8.dao;  
@@ -318,7 +318,7 @@ public interface EmpDao {
 </mapper>
 ```
 
-#### service
+### service
 
 ```java
 package priv.noby.spring8.service;  
@@ -354,7 +354,8 @@ public class EmpServiceImpl implements EmpService {
     }  
 }
 ```
-#### servlet
+
+### servlet
 
 ```java
 package priv.noby.spring8.servlet;  
@@ -411,4 +412,3 @@ public class EmpServlet extends HttpServlet {
     }  
 }
 ```
-

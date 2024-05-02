@@ -2,44 +2,44 @@
 title: day09 异步请求、AJAX、AXIOS
 icon: write
 category:
-  - JavaWeb
+    - JavaWeb
 tag:
-  - JavaWeb
-  - 异步请求
-  - 同步请求
-  - AJAX
-  - AXIOS
+    - JavaWeb
+    - 异步请求
+    - 同步请求
+    - AJAX
+    - AXIOS
 sticky: false
 star: false
 article: true
 timeline: true
 ---
-### 同步请求和异步请求
+
+## 同步请求和异步请求
 
 - 同步：
-  - 特点
-    - 一个请求发出后，客户端在未收到该请求的响应之前不能发送第二个请求，需要等待服务器的响应。中间的时间只能等待。
-    - 刷新的是整个页面！给用户带来不好的体验
-  - 过程
-    - 浏览器发送同步请求给 servlet，servlet 调用 service 及 dao 获取数据，并将数据存储进 request 域对象中转发给 jsp，web 容器将 jsp 解析为 servlet_jsp.java 文件，该文件专用于生成展示了 request 域对象中的 html，服务器将该 html 响应给浏览器，浏览器接收到响应，渲染该 html。
-- 异步(asynchronous javascript and xml)：
-  - 特点
-    - 发一个请求后，客户端无需等待服务器的响应，然后就可以发出第二个请求！
-    - 可以使用 js 接收服务器的响应，然后使用 js 来局部刷新！
-  - 过程
-    - HTML 中的 js 发送异步请求给 servlet，servlet 调用 service 及 dao 获取数据，servlet 将数据封装成为 json 格式响应给客户端，客户端获取到 json 后通过操作 dom 实现 html 页面结构和内容的更新。
-  - 使用步骤(通过 js)
-    1. XMLHttpRequest 对象创建
-    2. XMLHttpRequest.open(请求方式,请求路径,是否使用同步请求)建立与服务器的连接
-    3. XMLHttpRequest.send("post 请求的请求参数")发送异步请求
-    4. 通过回调函数获取响应
-       - readyState 表示 XMLHttpRequest 对象的状态
-         1. 0 状态：XMLHttpRequest 对象刚创建，还没有调用 open()方法；
-         2. 1 状态：请求开始，调用了 open()方法，但还没有调用 send()方法
-         3. 2 状态：调用完了 send()方法，还未开始响应；
-         4. 3 状态：服务器已经开始响应，但不表示响应结束了！
-         5. 4 状态：服务器响应结束！(通常我们只关系这个状态！！！)
-
+    - 特点
+        - 一个请求发出后，客户端在未收到该请求的响应之前不能发送第二个请求，需要等待服务器的响应。中间的时间只能等待。
+        - 刷新的是整个页面！给用户带来不好的体验
+    - 过程
+        - 浏览器发送同步请求给 servlet，servlet 调用 service 及 dao 获取数据，并将数据存储进 request 域对象中转发给 jsp，web 容器将 jsp 解析为 servlet_jsp.java 文件，该文件专用于生成展示了 request 域对象中的 html，服务器将该 html 响应给浏览器，浏览器接收到响应，渲染该 html。
+- 异步 (asynchronous javascript and xml)：
+    - 特点
+        - 发一个请求后，客户端无需等待服务器的响应，然后就可以发出第二个请求！
+        - 可以使用 js 接收服务器的响应，然后使用 js 来局部刷新！
+    - 过程
+        - HTML 中的 js 发送异步请求给 servlet，servlet 调用 service 及 dao 获取数据，servlet 将数据封装成为 json 格式响应给客户端，客户端获取到 json 后通过操作 dom 实现 html 页面结构和内容的更新。
+    - 使用步骤 (通过 js)
+        1. XMLHttpRequest 对象创建
+        2. XMLHttpRequest.open(请求方式,请求路径,是否使用同步请求) 建立与服务器的连接
+        3. XMLHttpRequest.send("post 请求的请求参数 ") 发送异步请求
+        4. 通过回调函数获取响应
+              - readyState 表示 XMLHttpRequest 对象的状态
+                  1. 0 状态：XMLHttpRequest 对象刚创建，还没有调用 open() 方法；
+                  2. 1 状态：请求开始，调用了 open() 方法，但还没有调用 send() 方法
+                  3. 2 状态：调用完了 send() 方法，还未开始响应；
+                  4. 3 状态：服务器已经开始响应，但不表示响应结束了！
+                  5. 4 状态：服务器响应结束！(通常我们只关系这个状态！！！)
 
 ## AJAX
 
@@ -133,11 +133,11 @@ timeline: true
             if (this.readyState === 4 && this.status === 200) {
                 /*
                 readyState表示XMLHttpRequest对象的状态，
-                0状态：XMLHttpRequest对象刚创建，还没有调用open()方法；
-                1状态：请求开始，调用了open()方法，但还没有调用send()方法
-                2状态：调用完了send()方法，还未开始响应；
-                3状态：服务器已经开始响应，但不表示响应结束了！
-                4状态：服务器响应结束！(通常我们只关系这个状态！！！)
+                                0状态：XMLHttpRequest对象刚创建，还没有调用open()方法；
+                                1状态：请求开始，调用了open()方法，但还没有调用send()方法
+                                2状态：调用完了send()方法，还未开始响应；
+                                3状态：服务器已经开始响应，但不表示响应结束了！
+                                4状态：服务器响应结束！(通常我们只关系这个状态！！！)
 
                 status表示返回请求的状态
                  */                if (this.responseText === "true") {
@@ -289,12 +289,12 @@ public class AjaxServlet extends HttpServlet {
 ### AXIOS
 
 - Axios 是一个基于 Promise 的 HTTP 客户端，可以在浏览器和 Node.js 环境中使用，用于发送 HTTP 请求和处理响应。它是一个功能强大、易于使用和可定制的库，被广泛用于前端开发中。
-  - 支持 Promise API，可以轻松处理异步操作和错误处理。
-  - 提供简单而强大的 API，可以发送各种类型的请求，包括 GET、POST、PUT、DELETE 等。
-  - 支 和响应拦截器，可以在请求或响应被发送或接收之前或之后执行某些操作，例如添加认证令牌或对响应数据进行转换等。
-  - 支持取消请求，可以在请求被发送之前或之后取消请求。
-  - 自动转换请求和响应数据，可以自动将 JavaScript 对象转换为 JSON 数据，并将响应数据转换为 JavaScript 对象或数组。
-  - 提供客户端和服务器端请求防御，包括 XSRF（跨站请求伪造）防御和 CSRF（跨站请求伪造）防御。
+    - 支持 Promise API，可以轻松处理异步操作和错误处理。
+    - 提供简单而强大的 API，可以发送各种类型的请求，包括 GET、POST、PUT、DELETE 等。
+    - 支 和响应拦截器，可以在请求或响应被发送或接收之前或之后执行某些操作，例如添加认证令牌或对响应数据进行转换等。
+    - 支持取消请求，可以在请求被发送之前或之后取消请求。
+    - 自动转换请求和响应数据，可以自动将 JavaScript 对象转换为 JSON 数据，并将响应数据转换为 JavaScript 对象或数组。
+    - 提供客户端和服务器端请求防御，包括 XSRF（跨站请求伪造）防御和 CSRF（跨站请求伪造）防御。
 
 ```html
 <!DOCTYPE html>
@@ -370,13 +370,13 @@ public class AxiosServlet extends HttpServlet {
 ### 两者特点
 
 - 相同点：
-  - 都是用于在浏览器中发送 HTTP 请求。
-  - 都可以发送各种类型的请求，例如 GET、POST、PUT、DELETE 等。
-  - 都可以异步处理响应数据，并且可以在成功或失败时执行相应的回调函数。
+    - 都是用于在浏览器中发送 HTTP 请求。
+    - 都可以发送各种类型的请求，例如 GET、POST、PUT、DELETE 等。
+    - 都可以异步处理响应数据，并且可以在成功或失败时执行相应的回调函数。
 - 区别：
-  - Axios 是基于 Promise 的，而 AJAX 通常使用回调函数。
-  - Axios 可以在浏览器和 Node.js 环境中使用，而 AJAX 只能在浏览器中使用。
-  - Axios 提供了请求和响应拦截器，可以在请求或响应被发送或接收之前或之后执行某些操作，而 AJAX 没有提供这个功能。
-  - Axios 自动将 JavaScript 对象转换为 JSON 数据，并将响应数据转换为 JavaScript 对象或数组，而 AJAX 需要手动执行这些转换操作。
-  - Axios 提供了客户端和服务器端请求防御，包括 XSRF（跨站请求伪造）防御和 CSRF（跨站请求伪造）防御，而 AJAX 需要手动实现这些防御措施。
+    - Axios 是基于 Promise 的，而 AJAX 通常使用回调函数。
+    - Axios 可以在浏览器和 Node.js 环境中使用，而 AJAX 只能在浏览器中使用。
+    - Axios 提供了请求和响应拦截器，可以在请求或响应被发送或接收之前或之后执行某些操作，而 AJAX 没有提供这个功能。
+    - Axios 自动将 JavaScript 对象转换为 JSON 数据，并将响应数据转换为 JavaScript 对象或数组，而 AJAX 需要手动执行这些转换操作。
+    - Axios 提供了客户端和服务器端请求防御，包括 XSRF（跨站请求伪造）防御和 CSRF（跨站请求伪造）防御，而 AJAX 需要手动实现这些防御措施。
 - 总的来说，Axios 相比于 AJAX 具有更为强大和灵活的功能，且使用更加简单方便。但在一些简单的应用场景下，AJAX 也能够胜任。

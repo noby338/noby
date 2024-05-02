@@ -2,30 +2,30 @@
 title: day03 循环语句、条件判断
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 循环语句
 
 ### 三种循环的不同
 
 1、初始化变量。
 
-for循环当中定义的初始化变量，只有自己才能用（定义在循环体里 的局部变量，在栈内运行完释放，并不保存）；while和do-while循环，初始化变量本来就在外面，所以外面也照样可以使用。
+for 循环当中定义的初始化变量，只有自己才能用（定义在循环体里的局部变量，在栈内运行完释放，并不保存）；while 和 do-while 循环，初始化变量本来就在外面，所以外面也照样可以使用。
 
 2、执行次数。
 
-for循环和while循环是【先判断后执行】，但是do-while循环是【先执行后判断】。
+for 循环和 while 循环是【先判断后执行】，但是 do-while 循环是【先执行后判断】。
 
 3、使用的普遍性不同。
 
-绝大多数情况下，三种循环可以来回转换。但是凡是次数确定、范围确定的情况，使用for循环。
-
+绝大多数情况下，三种循环可以来回转换。但是凡是次数确定、范围确定的情况，使用 for 循环。
 
 ```java
 package note;
@@ -58,7 +58,7 @@ public class For_While_DoWhileNote {
 }
 ```
 
-## switch语句
+## switch 语句
 
 ```java
 package note;
@@ -93,7 +93,7 @@ public class SwitchNote {
 }
 ```
 
-## if语句
+## if 语句
 
 ```java
 package note;

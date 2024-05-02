@@ -2,60 +2,60 @@
 title: day02 Mybatis的基本用法、接口映射、注解映射、缓存
 icon: write
 category:
-  - JavaWeb
-  - MyBatis
+    - JavaWeb
+    - MyBatis
 tag:
-  - JavaWeb
-  - MyBatis缓存
-  - log4j
-  - JUnit
+    - JavaWeb
+    - MyBatis缓存
+    - log4j
+    - JUnit
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### mybatis 的介绍
+## mybatis 的介绍
 
 - MyBatis 是一种优秀的基于 Java 语言的持久层框架，它避免了很多传统的 JDBC 编程的冗余和复杂性，使得使用者只需关注 SQL 语句本身，而不必关心 SQL 执行的事务管理、结果集映射等操作细节，从而极大地简化了数据访问层的开发。
 - MyBatis 提供了很多便捷的功能，其中最重要的是它通过 XML 或注解来配置和映射 Java 对象和数据库表，支持非常灵活的 SQL 编写方式。MyBatis 可以将 SQL 语句、结果映射和 Java 对象连接到一起，从而使得数据访问变得更加快捷和高效。通过 MyBatis，可以实现一些日常开发中常见的操作，例如几种基本的 SQL 操作（增、删、改、查）、分页查询、动态 SQL、多表联合查询等。
 - MyBatis 的核心文件包括：
-  - `SqlSessionFactory`：用于生成 SqlSession 对象的工厂类。
-  - `SqlSession`：用于与数据库进行交互的 Session 对象。
-  - `Mapper`：由 MyBatis 自动生成的用于访问数据库的 DAO。
+    - `SqlSessionFactory`：用于生成 SqlSession 对象的工厂类。
+    - `SqlSession`：用于与数据库进行交互的 Session 对象。
+    - `Mapper`：由 MyBatis 自动生成的用于访问数据库的 DAO。
 - mybatis 需要导入的 jar
-  - mybatis-3.5.6.jar
-  - mysql-connector-java-5.1.20.jar
-  - dom4j-1.1.jar
+    - mybatis-3.5.6.jar
+    - mysql-connector-java-5.1.20.jar
+    - dom4j-1.1.jar
 - pagehelper 需要的 jar 包：
-  - pagehelper-5.1.11.jar
-  - jsqlparser-2.0.jar
+    - pagehelper-5.1.11.jar
+    - jsqlparser-2.0.jar
 - log4j 的 jar 包
-  - log4j-1.2.17.jar
+    - log4j-1.2.17.jar
 - junit 需要的 jar 包：
-  - junit-4.11.jar
+    - junit-4.11.jar
 
-### 模块的知识点
+## 模块的知识点
 
 - mybatis 的自动映射和不使用接口映射
-  - mybatis 的配置文件
-  - properties 配置数据库连接
-  - SqlSession 工具类的创建
-  - dao 及 dao 实现类的创建（使用 sqlSession 执行 sql 语句）
-    - 基本的 curd
-    - 使用 mapper 为参数传递多个 sql 参数
-    - 模糊查询
-  - 映射文件的配置
-  - log4j 日志框架的使用
-    1. 文件名为 log4j.properties
-    2. 设置需要输出日志的路径和级别
-  - 不使用接口映射
-  - 使用自动映射(动态代理)
-    - 使用 mybatis 注解实现 sql 的书写
-  - pageHelper 的使用
-  - 使用 param 注解传入多个参数
+    - mybatis 的配置文件
+    - properties 配置数据库连接
+    - SqlSession 工具类的创建
+    - dao 及 dao 实现类的创建（使用 sqlSession 执行 sql 语句）
+        - 基本的 curd
+        - 使用 mapper 为参数传递多个 sql 参数
+        - 模糊查询
+    - 映射文件的配置
+    - log4j 日志框架的使用
+        1. 文件名为 log4j.properties
+        2. 设置需要输出日志的路径和级别
+    - 不使用接口映射
+    - 使用自动映射 (动态代理)
+        - 使用 mybatis 注解实现 sql 的书写
+    - pageHelper 的使用
+    - 使用 param 注解传入多个参数
 
-### mybaits 的配置文件
+## mybaits 的配置文件
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?><!--文档类型说明-->
@@ -106,7 +106,7 @@ timeline: true
 </configuration>
 ```
 
-### 数据库的 properties
+## 数据库的 properties
 
 ```properties
 jdbc.driver=com.mysql.jdbc.Driver
@@ -117,7 +117,7 @@ jdbc.password=123
 jdbc.defaultAutoCommit=false
 ```
 
-### log4j 的配置 properties
+## log4j 的配置 properties
 
 ```properties
 # 这段代码是使用log4j进行日志输出的配置。
@@ -148,7 +148,7 @@ log4j.appender.FILE.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%p] %m [%t
 log4j.appender.FILE.File=file.log
 ```
 
-### 生成 sqlssesion 的工具类
+## 生成 sqlssesion 的工具类
 
 ```java
 package note.util;
@@ -182,7 +182,7 @@ import java.io.InputStream;
 }
 ```
 
-### entity 实体类
+## entity 实体类
 
 ```java
 package note.entity;
@@ -210,7 +210,7 @@ public class Student {
 }
 ```
 
-### dao 接口
+## dao 接口
 
 ```java
 package note.dao;
@@ -251,7 +251,7 @@ import org.apache.ibatis.annotations.Select;
 }
 ```
 
-### dao 接口实现类
+## dao 接口实现类
 
 ```java
 package note.dao.impl;
@@ -328,7 +328,7 @@ import java.util.List;
 }
 ```
 
-### 接口的 mapper
+## 接口的 mapper
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -340,12 +340,12 @@ import java.util.List;
     <!-- 加上cache标签之后表示当前mapper中产生的数据是"可以"被放到二级缓存中 -->
 <!--    <cache readOnly="true"/>-->
     <!-- insert标签就是写insert语句,id就为调用该SQL的名字，推荐执行对应SQL的方法名
-   -->
+      -->
     <!-- parameterType:            方法的参数类型，可以不写。
             为全限定名。
      useGeneratedKeys：为true时，表示如果插入的表id以自增列为主键，则插入成功之后使用JDBC的getGeneratedKeys方法获取主键并赋值keyProperty设置的领域模型属性中
      keyProperty：指明数据库中返回的主键id给实体类中的哪个属性。由于是数据库生成的主键，所以在这个对象持久化到数据库之前是对象中的这个属性是没有属性值的，但是在持久化之后又想使用这个主键.
-     -->    <insert id="insert" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+          -->    <insert id="insert" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
         insert into student(name, gender, birthday)
         values (#{name}, #{gender}, #{birthday});    </insert>
     <!--  #{属性名}相当jdbc中使用prepareStatement的?占位符，会对敏感字符进行转译，可避免sql注入   $(属性名)相对于使用字符串拼接，可能会产生sql注入 -->
@@ -358,7 +358,7 @@ import java.util.List;
                      MySQL数据库，先插入数据，在生成主键,使用AFTER
                      Oracle数据，刚好相反，使用BEFORE
                      新版本可以不写,框架会自动判断加载的驱动包，使用对应的策略参数
-        -->
+                -->
         <selectKey keyProperty="id" resultType="int" order="AFTER">
             SELECT @@identity
         </selectKey>
@@ -395,7 +395,7 @@ import java.util.List;
 </mapper>
 ```
 
-### 测试类
+## 测试类
 
 ```java
 package note.dao.impl;

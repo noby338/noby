@@ -2,17 +2,18 @@
 title: day11 字符串、字符串缓冲区、Object
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 字符串
 
-### String 
+### String
 
 ```java
 package note;
@@ -129,13 +130,13 @@ public class StringNote {
 
 ```
 
-### 字符串格式化format
+### 字符串格式化 format
 
 ![image-20220224155116684](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220224155116684.png)
 
 ### StringBuilder
 
-* StringBuffer与StringBuilder都继承自AbstractStringBuilder，它们最大的区别就在于StringBuffer是线程安全的，而StringBuilder不是。因为在StringBuffer所有的方法上都有synchronized修饰
+- StringBuffer 与 StringBuilder 都继承自 AbstractStringBuilder，它们最大的区别就在于 StringBuffer 是线程安全的，而 StringBuilder 不是。因为在 StringBuffer 所有的方法上都有 synchronized 修饰
 
 ```java
 package note;
@@ -184,8 +185,6 @@ public class StringBuilderNote {
 
 ```
 
-
-
 ### StringBuffer
 
 ```java
@@ -218,11 +217,11 @@ public class StringBufferNote {
 
 ### 三者的区别
 
-* 都是基于char数组实现的
-* String为final修饰的char数组，因此为不可变的字符串，String存储在常量池里面
-* StringBuilder、StringBuffer为可变字符串，而且操作都是在数组上，数组的默认长度为16(即为容量为16)，当容量不够是扩容到原来的2倍+2
-* StringBuffer线程安全、StringBuilder线程不安全
-* 三者效率为：StringBuilder>StringBuffer>String
+- 都是基于 char 数组实现的
+- String 为 final 修饰的 char 数组，因此为不可变的字符串，String 存储在常量池里面
+- StringBuilder、StringBuffer 为可变字符串，而且操作都是在数组上，数组的默认长度为 16(即为容量为 16)，当容量不够是扩容到原来的 2 倍 +2
+- StringBuffer 线程安全、StringBuilder 线程不安全
+- 三者效率为：StringBuilder>StringBuffer>String
 
 ## Object
 
@@ -364,6 +363,3 @@ class Toy implements Cloneable{
     }
 }
 ```
-
-
-

@@ -2,9 +2,9 @@
 title: day13 比较、BigDecimal、包装类、日期
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
@@ -171,7 +171,7 @@ class Person {
 ## Comparable 和 Comparetor 的区别
 
 - Comparator 位于 java.util 下，而 Comparable 位于   java.lang 下
-- Comparable 是在比较类的内部定义的 compareto()方法实现的排序（String 和包装类已实现 Comparable 接口），Comparator 是在比较类的外部定义的 compare()方法实现的排序
+- Comparable 是在比较类的内部定义的 compareto() 方法实现的排序（String 和包装类已实现 Comparable 接口），Comparator 是在比较类的外部定义的 compare() 方法实现的排序
 
 ## BigDecimal
 
@@ -314,23 +314,23 @@ public class IntegerNote {//包装类
 ## Date
 
 - 相关字符解释
-  - yyyy：年
-  - MM：月
-  - dd：日
-  - hh：1~12 小时制(1-12)
-  - HH：24 小时制(0-23)
-  - mm：分
-  - ss：秒
-  - S：毫秒
-  - E：星期几
-  - D：一年中的第几天
-  - F：一月中的第几个星期(会把这个月总共过的天数除以 7)
-  - w：一年中的第几个星期
-  - W：一月中的第几个星期(会根据实际情况来算)
-  - a：上下午标识
-  - k：和 HH 差不多，表示一天 24 小时制(1-24)。
-  - K：和 hh 差不多，表示一天 12 小时制(0-11)。
-  - z：表示时区
+    - yyyy：年
+    - MM：月
+    - dd：日
+    - hh：1~12 小时制 (1-12)
+    - HH：24 小时制 (0-23)
+    - mm：分
+    - ss：秒
+    - S：毫秒
+    - E：星期几
+    - D：一年中的第几天
+    - F：一月中的第几个星期 (会把这个月总共过的天数除以 7)
+    - w：一年中的第几个星期
+    - W：一月中的第几个星期 (会根据实际情况来算)
+    - a：上下午标识
+    - k：和 HH 差不多，表示一天 24 小时制 (1-24)。
+    - K：和 hh 差不多，表示一天 12 小时制 (0-11)。
+    - z：表示时区
 
 ```java
 package note.date;

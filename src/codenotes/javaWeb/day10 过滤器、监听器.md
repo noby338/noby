@@ -2,17 +2,19 @@
 title: day10 过滤器、监听器
 icon: write
 category:
-  - JavaWeb
+    - JavaWeb
 tag:
-  - JavaWeb
+    - JavaWeb
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 过滤器
-  
-- 在Java后端开发中，过滤器（Filter）是一种用于拦截请求和响应的组件，可以用于对请求进行预处理、对响应进行后处理，以及实现请求和响应的过滤和转换等操作。通常情况下，过滤器用于在请求到达Servlet之前或响应被发送到客户端之前，对请求或响应进行某些操作。如字符编码过滤器、登录验证过滤器、权限控制过滤器、异常处理过滤器。
+
+
+- 在 Java 后端开发中，过滤器（Filter）是一种用于拦截请求和响应的组件，可以用于对请求进行预处理、对响应进行后处理，以及实现请求和响应的过滤和转换等操作。通常情况下，过滤器用于在请求到达 Servlet 之前或响应被发送到客户端之前，对请求或响应进行某些操作。如字符编码过滤器、登录验证过滤器、权限控制过滤器、异常处理过滤器。
 - 拦截器的拦截顺序为拦截器类名的自然排序
 
 ```java
@@ -76,16 +78,16 @@ ajsp
 
 ## 监听器
 
-- 在Java后端开发中，监听器（Listener）是一种用于监听Web应用程序中的事件的组件。通过监听器，我们可以在Web应用程序的生命周期中，捕获和处理各种事件。监听器通常用于实现某些特定功能或提供一些服务，例如：在Web应用程序启动时加载某些资源或初始化一些参数、在Session创建时保存用户登录信息、在ServletContext销毁时释放资源等等。监听器可以在Web应用程序的Web.xml文件中进行配置，可以在多个Servlet或JSP之间共享，也可以通过注解方式进行配置。
-* 分类
-  * ServletContextListener 用于对ServletContexti对象进行监听（创建、销毁）
-  * ServletContextAttributeListener 对ServletContexti对象中属性的监听（增删改属性）
-  * HttpSessionListener 对Session对象的整体状态的监听（创建、销毁）
-  * HttpSessionAttributeListener 对Session对象中的属性监听（增删改属性）
-  * HttpSessionBindingListener 监听对象于Session的绑定和解除
-  * HttpSessionActivationListener 对Session数据的钝化和活化的监听
-  * ServletRequestListener 对Requesti对象进行监听（创建、销毁）】
-  * ServletRequestAttributeListener 对Requesti对象中属性的监听（增删改属性）
+- 在 Java 后端开发中，监听器（Listener）是一种用于监听 Web 应用程序中的事件的组件。通过监听器，我们可以在 Web 应用程序的生命周期中，捕获和处理各种事件。监听器通常用于实现某些特定功能或提供一些服务，例如：在 Web 应用程序启动时加载某些资源或初始化一些参数、在 Session 创建时保存用户登录信息、在 ServletContext 销毁时释放资源等等。监听器可以在 Web 应用程序的 Web.xml 文件中进行配置，可以在多个 Servlet 或 JSP 之间共享，也可以通过注解方式进行配置。
+- 分类
+    - ServletContextListener 用于对 ServletContexti 对象进行监听（创建、销毁）
+    - ServletContextAttributeListener 对 ServletContexti 对象中属性的监听（增删改属性）
+    - HttpSessionListener 对 Session 对象的整体状态的监听（创建、销毁）
+    - HttpSessionAttributeListener 对 Session 对象中的属性监听（增删改属性）
+    - HttpSessionBindingListener 监听对象于 Session 的绑定和解除
+    - HttpSessionActivationListener 对 Session 数据的钝化和活化的监听
+    - ServletRequestListener 对 Requesti 对象进行监听（创建、销毁）】
+    - ServletRequestAttributeListener 对 Requesti 对象中属性的监听（增删改属性）
 
 ```java
 package priv.noby.listener.listener;  

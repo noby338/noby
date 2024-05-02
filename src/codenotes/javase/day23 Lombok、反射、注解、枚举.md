@@ -2,27 +2,29 @@
 title: day23 Lombok、反射、注解、枚举
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
 timeline: true
 ---
-### lombok
-- Lombok是一个开源库，它通过注解的方式为Java类提供了简洁的方法、属性等简单操作的代码，从而简化了Java程序员的代码编写。使用Lombok可以通过简单的注解来自动生成在Java开发中经常需要的方法，如Getter/Setter、ToString、EqualsAndHashCode等，从而减少了Java程序员的代码量并且更加优雅。
-- Lombok为Java开发提供了很多实用的注解，以下是Lombok支持的主要注解：
-  - `@Getter`和`@Setter`：用于自动生成JavaBean的getter和setter方法。
-  - `@ToString`：用于自动生成toString()方法。
-  - `@EqualsAndHashCode`：自动生成equals和hashCode方法。
-  - `@NoArgsConstructor`：自动生成无参数构造函数。
-  - `@AllArgsConstructor`：自动生成全参数构造函数。
-  - `@Data`：自动生成setter/getter、equals()、hashCode()、toString()等方法。
-  - `@Builder`：使用Builder方式构建对象。
-  - `@Slf4j`：自动生成log对象，可直接使用log输出日志。
 
-### 反射
+## lombok
+
+- Lombok 是一个开源库，它通过注解的方式为 Java 类提供了简洁的方法、属性等简单操作的代码，从而简化了 Java 程序员的代码编写。使用 Lombok 可以通过简单的注解来自动生成在 Java 开发中经常需要的方法，如 Getter/Setter、ToString、EqualsAndHashCode 等，从而减少了 Java 程序员的代码量并且更加优雅。
+- Lombok 为 Java 开发提供了很多实用的注解，以下是 Lombok 支持的主要注解：
+    - `@Getter` 和 `@Setter`：用于自动生成 JavaBean 的 getter 和 setter 方法。
+    - `@ToString`：用于自动生成 toString() 方法。
+    - `@EqualsAndHashCode`：自动生成 equals 和 hashCode 方法。
+    - `@NoArgsConstructor`：自动生成无参数构造函数。
+    - `@AllArgsConstructor`：自动生成全参数构造函数。
+    - `@Data`：自动生成 setter/getter、equals()、hashCode()、toString() 等方法。
+    - `@Builder`：使用 Builder 方式构建对象。
+    - `@Slf4j`：自动生成 log 对象，可直接使用 log 输出日志。
+
+## 反射
 
 - Java 反射（Reflection）是 Java 语言的一种机制，它允许在运行时（程序运行过程中）动态地获取类的信息，并可以操作类、对象、方法等。Java 反射为我们提供了一种机制，可以在编译时无法确定类名、方法名、成员变量等信息的情况下，通过运行时获取相关信息并进行处理操作。
 - Java 反射的优点在于，它可以在程序运行时，根据条件动态地加载某个类，并获取类的信息并创建对象实例，从而提供了更大的灵活性和扩展性，例如通过反射机制实现 IOC（控制反转）和 AOP（面向切面编程）等，这在很多框架和应用中得到了广泛的应用。但是，由于反射操作需要消耗大量的计算资源，所以在实际的开发中应当谨慎使用，尽量使用直接的操作方式来提高程序的性能和效率。
@@ -114,7 +116,7 @@ class Person {
 }
 ```
 
-### 注解
+## 注解
 
 - 允许我们在 Java 程序中加入元数据（Metadata）信息，也就是给程序的注释加上更多的含义。Java 注解本质上是一种标记，可以通过反射机制在程序运行期获取类、方法、字段等的注解信息，并使用这些注解信息完成相应的处理操作。
 
@@ -366,7 +368,7 @@ public @interface Username {
 }
 ```
 
-### 枚举
+## 枚举
 
 - 定义：枚举（Enum）是一种特殊的数据类型，它定义了一组有限的常量值，每个常量都是枚举类型的实例，可以通过枚举常量名来引用它们。
 - 枚举常量可以具有属性，方法和构造函数，这使得它们可以像类一样进行扩展。枚举类型的实例是单例的，因此可以将它们用作常量，而不必担心实例化多个相同值的对象。

@@ -2,14 +2,15 @@
 title: day02 Jedis、RedisTemplate、StringRedisTemplate、声明式缓存
 icon: write
 category:
-  - Distributed
+    - Distributed
 tag:
-  - Distributed
+    - Distributed
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## Jedis
 
 ```java

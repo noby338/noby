@@ -2,34 +2,33 @@
 title: day16 SpringBoot拦截器，配置类，异常处理，虚拟目录
 icon: write
 category:
-  - Spring
-  - SpringBoot
+    - Spring
+    - SpringBoot
 tag:
-  - Spring
-  - SpringBoot
-  - 配置类
-  - 拦截器
-  - 异常处理
-  - 虚拟目录
+    - Spring
+    - SpringBoot
+    - 配置类
+    - 拦截器
+    - 异常处理
+    - 虚拟目录
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 内容
 
-  
-* springboot中拦截器的使用  
-  * 配置拦截器(实现HandlerInterceptor接口的类)  
-  * 定义配置类，配置拦截路径和放行路径  
-* springboot中添加虚拟目录映射  
-  * 配置类中配置  
-* springboot中转换器的使用  
-  * 配置文件中配置或使用@DateTimeFormat(pattern = "yyyy-MM-dd")注解  
-* springboot中项目虚拟目录和本地磁盘的映射配置  
-  * 配置类中配置  
-* 启动类可以作为配置类使用
-
+- springboot 中拦截器的使用
+    - 配置拦截器 (实现 HandlerInterceptor 接口的类)
+    - 定义配置类，配置拦截路径和放行路径
+- springboot 中添加虚拟目录映射
+    - 配置类中配置
+- springboot 中转换器的使用
+    - 配置文件中配置或使用@DateTimeFormat(pattern = "yyyy-MM-dd") 注解
+- springboot 中项目虚拟目录和本地磁盘的映射配置
+    - 配置类中配置
+- 启动类可以作为配置类使用
 
 ## 代码
 
@@ -143,7 +142,6 @@ public class User {
 }
 ```
 
-
 ```java
 package priv.noby.springboot4.entity;  
   
@@ -160,7 +158,6 @@ public class ResponseResult<T>{
     private T data;  
 }
 ```
-
 
 ### exception
 
@@ -285,6 +282,7 @@ public class MyWebMvcConfig {
   
 }
 ```
+
 ### controller
 
 ```java
@@ -437,7 +435,6 @@ GET http://localhost:8080/image/984271.jpg
 ### 类型转换器的使用  
 GET http://localhost:8080/emp/selectById?date=2022-10-12
 ```
-
 
 ```
 ### 测试全局异常  

@@ -2,14 +2,15 @@
 title: day01 计算机及java基础知识、java环境变量的配置、命名规范、注释
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tags:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 计算机及 java 知识
 
 ### 计算机基础
@@ -18,10 +19,10 @@ timeline: true
 - cmd（命令提示符）中给出路径和程序名即可运行该程序（可省略。exe）
 - win10 环境变量作用：给出某一第三方程序的路径，使之运行该程序时可省略路径的输入
   用户变量：在该用户生效 系统变量：全局生效
-- 环境变量中的%SystemRoot%等价于系统安装盘:\windows
+- 环境变量中的%SystemRoot% 等价于系统安装盘:\windows
 - 两种创建环境变量方法
-  - 直接在系统变量的 path 中输入路径
-  - 先在系统变量中创建 JAVA_HOME 路径 D:\Java\jdk-9.0.4，再在 path 中嵌套%JAVA_HOME%/bin
+    - 直接在系统变量的 path 中输入路径
+    - 先在系统变量中创建 JAVA_HOME 路径 D:\Java\jdk-9.0.4，再在 path 中嵌套%JAVA_HOME%/bin
 
 ### JDK 版本分类
 
@@ -31,14 +32,14 @@ timeline: true
 
 ### JVM、JRE、JDK
 
-- JDK (Java Development Kit) 是太阳微系统针对 Java 开发人员发布的免费软件开发工具包（SDK，Software development kit）。自从 Java 推出以来，JDK 已经成为使用最广泛的 Java SDK。(JDK=JVM+Java 核心类库+Java 编译器等其他开发工具)
+- JDK (Java Development Kit) 是太阳微系统针对 Java 开发人员发布的免费软件开发工具包（SDK，Software development kit）。自从 Java 推出以来，JDK 已经成为使用最广泛的 Java SDK。(JDK=JVM+Java 核心类库 +Java 编译器等其他开发工具)
 - JRE (Java Runtime Environment) ，java 运行环境，普通用户并不需要安装 JDK 来运行 Java 程序，而只需要安装 JRE。而程序开发者必须安装 JDK 来编译、调试程序。(JRE=JVM+Java 核心类库)
-- JVM (Java virtual machine) 意为 Java 虚拟机，主要负责运行 Java 程序，不管什么操作系统，只要安装了 Java 虚拟机就可以运行 Java 程序，这也就是为什么 Java 跨平台的原因。
+- JVM (Java virtual machine) 意为 Java 虚拟机，主要负责运行由 Java 编译器 Javac 编译后的 class 文件，在运行过程中 JVM 将字节码文件解释为机器码。不管什么操作系统，只要安装了 Java 虚拟机就可以运行 Java 程序，这也就是为什么 Java 跨平台的原因。
 
 ### 程序的运行过程
 
 1. JDK 中的 java 编译器编译生成字节码文件
-2. 不同平台的 JVM 解析字节码文件生成机器码
+2. 不同平台的 JVM 解释字节码文件生成机器码
 3. 运行机器码
 
 ### java 语言的版本
@@ -59,76 +60,75 @@ timeline: true
 ### JDK 的安装
 
 1. 点击 java 开发工具安装包
-2. 点击”下一步“
-3. 点击“更改”，修改安装到 D:\java\jdk 文件夹
+2. 点击 " 下一步 "
+3. 点击 " 更改 "，修改安装到 D:\java\jdk 文件夹
 
 ![image-20221220182725069](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182725069.png)
 
-4. 点击“下一步”
+1. 点击 " 下一步 "
 
 ![image-20221220182740205](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182740205.png)
 
-5. 等待安装完成
+1. 等待安装完成
 
 ### JRE 的安装
 
-1. 点击“更改”，将 JRE 安装的到 D:\java\jre
+1. 点击 " 更改 "，将 JRE 安装的到 D:\java\jre
 
 ![image-20221220182807748](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182807748.png)
 
 ![image-20221220182825725](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182825725.png)
 
-2. 点击“关闭”安装完成
+1. 点击 " 关闭 " 安装完成
 
 ![image-20221220182839060](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182839060.png)
 
 ### JDK 环境配置
 
-1. 在计算机/电脑图标上右键->属性，打开计算机属性
-2. 选择“高级系统设置”
+1. 在计算机/电脑图标上右键 ->属性，打开计算机属性
+2. 选择 " 高级系统设置 "
 
 ![image-20221220182905793](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182905793.png)
 
-3. 选择“环境变量”
+1. 选择 " 环境变量 "
 
 ![image-20221220182919601](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182919601.png)
 
-4. 选择系统环境变量下的 “新建”
+1. 选择系统环境变量下的 " 新建 "
 
 ![image-20221220182930798](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220182930798.png)
 
-5. 指定变量名为：JAVA_HOME 变量值为 jdk 的安装目录，然后点击确定
+1. 指定变量名为：JAVA_HOME 变量值为 jdk 的安装目录，然后点击确定
 
 ![image-20221220183001457](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220183001457.png)
 
-6. 再新建一个环境变量，变量名为：CLASSPATH 值为：.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;**注意：最前面有个点**
+1. 再新建一个环境变量，变量名为：CLASSPATH 值为：.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;**注意：最前面有个点**
 
 ![image-20221220183107808](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220183107808.png)
 
-7. 点击确定保存
-
-8. 在系统环境变量中找到 path，双击
+1. 点击确定保存
+2. 在系统环境变量中找到 path，双击
 
 ![image-20221220183116294](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220183116294.png)
 
-9. 点击“新建”，增加以下两个值
-   1. `%JAVA_HOME%\jre\bin`
-   2. `%JAVA_HOME%\bin`
+1. 点击 " 新建 "，增加以下两个值
+      1. `%JAVA_HOME%\jre\bin`
+      2. `%JAVA_HOME%\bin`
 
 ![image-20221220183129618](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220183129618.png)
 
 **注：如果是 win7 操作系统，在原变量值的最后面加上 ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin 然后一路确定，配置完毕**
 
-10. 打开 DOS 窗口输入 java -version 指令，看到以下内容表示 JDK 完全安装成功
+1. 打开 DOS 窗口输入 java -version 指令，看到以下内容表示 JDK 完全安装成功
 
 ![image-20221220183257185](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221220183257185.png)
 
 ## dos 命令运行 java 程序
 
 1. 编译：
-   - javac Hello.java(生成 Hello.class 字节码文件)
+      - javac Hello.java(生成 Hello.class 字节码文件)
 2. 运行：
-   - java Hello (运行 Hello.class 字节码文件)
+      - java Hello (运行 Hello.class 字节码文件)
 
 ## 变量
 
@@ -173,37 +173,27 @@ timeline: true
 ```
 
 - 变量的分类：
-
-  - 依据数据类型
-    - ![image-20220119105644986](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220119105644986.png)
-  - 依据声明的位置
-    - ![image-20220119105433881](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220119105433881.png)
+    - 依据数据类型
+        - ![image-20220119105644986](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220119105644986.png)
+    - 依据声明的位置
+        - ![image-20220119105433881](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220119105433881.png)
 
 ## 标识符
 
 - 定义：标识符是用来唯一标识包、类、方法、对象、变量、文件名的字符串；
-
 - 标识符命名规则：
-
-  - 标识符可以包含数字、字母、$、\_，但是不能以数字开头；
-  - 关键字和保留字不能用作标识符；
-  - 标识符是大小写敏感的；
-
+    - 标识符可以包含数字、字母、$、\_，但是不能以数字开头；
+    - 关键字和保留字不能用作标识符；
+    - 标识符是大小写敏感的；
 - 命名规范
-
-  - 大驼峰命名法：多单词组成的标识符，所有单词的首字母大写
-
-    - 例如：MyName
-    - 常用于类名
-
-  - 小驼峰命名法：多单词组成的标识符，首单词的首字母小写，其他单词首字母大写
-
-    - 例如：myNamue
-    - 常用于变量名，方法名。
-
-  - 下划线命名法：多单词组成的标识符，所有单词之间用下划线分割
-
-    - 例如：my_name
+    - 大驼峰命名法：多单词组成的标识符，所有单词的首字母大写
+        - 例如：MyName
+        - 常用于类名
+    - 小驼峰命名法：多单词组成的标识符，首单词的首字母小写，其他单词首字母大写
+        - 例如：myNamue
+        - 常用于变量名，方法名。
+    - 下划线命名法：多单词组成的标识符，所有单词之间用下划线分割
+        - 例如：my_name
 
 ## 基本数据类型
 

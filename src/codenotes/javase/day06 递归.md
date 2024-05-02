@@ -2,26 +2,25 @@
 title: day06 递归
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 递归
 
 递归程序的设计的条件
-
-1. 需要return
-2. 需要是结束条件有接近真(接近return)的操作
-3. 函数需要调用自己
+1. 函数需要调用自己
+2. 需要 return
+3. 需要是结束条件有接近真 (接近 return) 的操作
 
 特点：
-
-* 开辟过多空间，大量消耗内存，程序设计中如果有其他方法可以解决该问题，应该避免递归调用
-* 有些功能只能通过递归函数实现
+- 开辟过多空间，大量消耗内存，程序设计中如果有其他方法可以解决该问题，应该避免递归调用
+- 有些功能只能通过递归函数实现
 
 ```java
 package note;
@@ -74,4 +73,3 @@ public class RecursionNote {//递归算法
     }
 }
 ```
-

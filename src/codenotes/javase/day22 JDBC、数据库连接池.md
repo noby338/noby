@@ -2,9 +2,9 @@
 title: day22 JDBC、数据库连接池
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
@@ -17,10 +17,9 @@ timeline: true
 
 - 定义：通过 java 语言操作数据库
 - 如果插入中文时数据库出现乱码是因为三码不一致造成的
-
-  - 数据库编码：create database xxx default character set utf8
-  - IDE 编码：集成开发环境编码，例如 eclipse、IDEA 的编码
-  - Java 程序连接数据库的编码：&useUnicode=true&characterEncoding=utf8
+    - 数据库编码：create database xxx default character set utf8
+    - IDE 编码：集成开发环境编码，例如 eclipse、IDEA 的编码
+    - Java 程序连接数据库的编码：&useUnicode=true&characterEncoding=utf8
 
   ![image-20221003192009319](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221003192009319.png)
 

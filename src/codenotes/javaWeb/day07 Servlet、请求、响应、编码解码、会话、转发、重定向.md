@@ -2,22 +2,23 @@
 title: day07 Servlet、请求、响应、编码解码、会话、转发、重定向
 icon: write
 category:
-  - JavaWeb
-  - Servlet
+    - JavaWeb
+    - Servlet
 tag:
-  - JavaWeb
-  - Servlet
-  - 请求
-  - 响应
-  - 编码解码
-  - 会话
-  - 转发
-  - 重定向
+    - JavaWeb
+    - Servlet
+    - 请求
+    - 响应
+    - 编码解码
+    - 会话
+    - 转发
+    - 重定向
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 简介
 
 ![image-20220322160959439](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220322160959439.png)
@@ -33,12 +34,12 @@ timeline: true
 
 ## 生命周期
 
-- Servlet 运行在 Servlet 容器(web 服务器)中，其生命周期由容器来管理，分为 4 个阶段：
-  1. 加载和实例化：默认情况下，当 Servlet 第一次被访问时，由容器创建 Servlet 对象
-     - 可用 loadOnStartup 修改成在服务器启动的时候创建。
-  2. 初始化：在 Servlet 实例化之后，容器将调用 Servlet 的 init()方法初始化这个对象，完成一些如加载配置文件、创建连接等初始化的工作。该方法只调用一次
-  3. 请求处理：每次请求 Servlet 时，Servlet 容器都会调用 Servlet 的 service()方法对请求进行处理
-  4. 服务终止：当需要释放内存或者容器关闭时，容器就会调用 Servlet 实例的 destroy()方法完成资源的释放。在 destroy()方法调用之后，容器会释放这个 Servlet 实例，该实例随后会被 Java 的垃圾收集器所回收
+- Servlet 运行在 Servlet 容器 (web 服务器) 中，其生命周期由容器来管理，分为 4 个阶段：
+    1. 加载和实例化：默认情况下，当 Servlet 第一次被访问时，由容器创建 Servlet 对象
+          - 可用 loadOnStartup 修改成在服务器启动的时候创建。
+    2. 初始化：在 Servlet 实例化之后，容器将调用 Servlet 的 init() 方法初始化这个对象，完成一些如加载配置文件、创建连接等初始化的工作。该方法只调用一次
+    3. 请求处理：每次请求 Servlet 时，Servlet 容器都会调用 Servlet 的 service() 方法对请求进行处理
+    4. 服务终止：当需要释放内存或者容器关闭时，容器就会调用 Servlet 实例的 destroy() 方法完成资源的释放。在 destroy() 方法调用之后，容器会释放这个 Servlet 实例，该实例随后会被 Java 的垃圾收集器所回收
 
 ## Servlet 基础
 
@@ -119,15 +120,16 @@ public class ServletNote implements Servlet {
 
 ## HttpServlet
 
-### Tomcat对请求和响应的封装
-- request:获取请求数据
-  - 浏览器会发送 HTTP[请求行+请求头+请求体]请求到后台服务器[Tomcat]
-  - 后台服务器[Tomcat]会对 HTTP 请求中的数据进行解析并把解析结果存入到一个 request 对象中
-  - 我们可以从 request 对象中获取请求的相关参数获取到数据后就可以继续后续的业务，比如获取用户名和密码就可以实现登录操作的相关业务
-- response:设置响应数据
-  - 业务处理完毕，前端返回业务处理后，封装到 response 对象中的响应数据
-  - 后台服务器[Tomcat]会解析 response 对象,按照[响应行+响应头+响应体]格式拼接结果以 HTTP 协议返回给街蓝旗
-  - 浏览器最终解析结果，把内容展示在浏览器给用户浏览
+### Tomcat 对请求和响应的封装
+
+- request: 获取请求数据
+    - 浏览器会发送 HTTP[请求行 + 请求头 + 请求体] 请求到后台服务器 [Tomcat]
+    - 后台服务器 [Tomcat] 会对 HTTP 请求中的数据进行解析并把解析结果存入到一个 request 对象中
+    - 我们可以从 request 对象中获取请求的相关参数获取到数据后就可以继续后续的业务，比如获取用户名和密码就可以实现登录操作的相关业务
+- response: 设置响应数据
+    - 业务处理完毕，前端返回业务处理后，封装到 response 对象中的响应数据
+    - 后台服务器 [Tomcat] 会解析 response 对象,按照 [响应行 + 响应头 + 响应体] 格式拼接结果以 HTTP 协议返回给街蓝旗
+    - 浏览器最终解析结果，把内容展示在浏览器给用户浏览
 
 ### Get 和 Post 的区别
 
@@ -136,14 +138,14 @@ public class ServletNote implements Servlet {
 - get 的请求参数位于请求行中在浏览器地址栏可见，post 的请求参数封装与请求体中浏览器地址不可见
 - get 发送的请求数据量为一般为 1k(和浏览器有关)，post 请求数据量没有限制
 - get 只接受 ASCII 字符，对非 ascll 字符只能进行 url 编码，而 post 支持 utf-8 和 iso-8859-1 等多种编码方式。
-- get 请求的乱码处理为修改 tomcat 配置文件(乱码发生在 tomcat8 之前)，或将乱码字符通过 iso-8859-1 重新编码为字节码，再通过 utf-8 解码为正确字符；post 请求的乱码处理为设置请求体为 utf-8 解码(request.setCharacterEncoding("utf-8"))
+- get 请求的乱码处理为修改 tomcat 配置文件 (乱码发生在 tomcat8 之前)，或将乱码字符通过 iso-8859-1 重新编码为字节码，再通过 utf-8 解码为正确字符；post 请求的乱码处理为设置请求体为 utf-8 解码 (request.setCharacterEncoding("utf-8"))
 - get 效率高于 post
 - get 安全性低于 post
 - get 的请求有浏览器地址输入、超链接、get 表单、ajax 的 get 请求，post 的请求有 post 表单、ajax 的 post 请求
 
 ### 转发和重定向的区别
 
-- 转发通过 request 对象调用 getRequestDispatcher().forword()方法转发，重定向通过 response 对象调用 sendRedirect()方法重定向，转发路径参数可不包含 contextPath，重定向路径参数必须包含 contextPath
+- 转发通过 request 对象调用 getRequestDispatcher().forword() 方法转发，重定向通过 response 对象调用 sendRedirect() 方法重定向，转发路径参数可不包含 contextPath，重定向路径参数必须包含 contextPath
 - 转发过程中 request 域有效，重定向过程中 rquest 域无效
 - 转发请求的发起者为服务器，转发路径使用相对路径，重定向请求的发起者为浏览器，重定向路径使用绝对路径
 - 转发前后为同一次请求，重定向前后为两次不同的请求
@@ -155,24 +157,23 @@ public class ServletNote implements Servlet {
 
 - 200 正常响应
 - 302 重定向
-- 400 请求的条件不满足(必须携带某个参数)
-- 401 未认证(Authentication 判断用户是否登录)
-- 403 未授权(Authorization 登录的用户能否执行对应的操作)
+- 400 请求的条件不满足 (必须携带某个参数)
+- 401 未认证 (Authentication 判断用户是否登录)
+- 403 未授权 (Authorization 登录的用户能否执行对应的操作)
 - 404 未找到资源文件
 - 405 请求方式错误
 - 408 请求超时
 - 500 服务器异常
-- 502 错误网关(nginx)
+- 502 错误网关 (nginx)
 
 ### 编码和解码的方式
 
 - html 页面 `<meta charset="UTF-8">` 设置浏览器的解码方式
-- response.setContentType("text/html;charset=utf-8");响应的数据为 html,服务器编码方式为 utf-8
-  - 作为以下的简写，同时简写方式还能告诉浏览器自适应当前的编码
-    - response.setHeader("content-type", "text/html");//设置相应的内容类型
-    - response.setCharacterEncoding("utf-8");//设置内容的服务器编码方式
+- response.setContentType("text/html;charset=utf-8"); 响应的数据为 html,服务器编码方式为 utf-8
+    - 作为以下的简写，同时简写方式还能告诉浏览器自适应当前的编码
+        - response.setHeader("content-type", "text/html");//设置相应的内容类型
+        - response.setCharacterEncoding("utf-8");//设置内容的服务器编码方式
 - request.setCharacterEncoding("utf-8"); 设置服务器对请求体解码方式为 utf-8
-
 
 ```java
 package priv.noby.servlet.servlet;
@@ -215,11 +216,11 @@ loadOnStartup
     优先级：    精确目录>目录路径>扩展名路径>/*>/
 
 注解使用注意：
-    1、当注解的属性名为value时，可以省略value=的书写方式，直接写属性值；
-    2、当注解中的属性不唯一时，不能省略value=的书写；
-    3、使用某一注解，该注解的所有属性必须赋值（WebServlet注解没有全部赋值因为除urlPattern以外的所有属性都已通过default赋初值）
-    4、注解的属性可以是注解
-    5、注解的属性可以是数组，当数组的长度为一时，可以省略{}的书写
+        1、当注解的属性名为value时，可以省略value=的书写方式，直接写属性值；
+        2、当注解中的属性不唯一时，不能省略value=的书写；
+        3、使用某一注解，该注解的所有属性必须赋值（WebServlet注解没有全部赋值因为除urlPattern以外的所有属性都已通过default赋初值）
+        4、注解的属性可以是注解
+        5、注解的属性可以是数组，当数组的长度为一时，可以省略{}的书写
  */public class HttpServletNote extends HttpServlet {
     /**
      * Servlet接口中的方法
@@ -531,28 +532,28 @@ public class IncludeServlet extends HttpServlet {
 
 - 一次请求为浏览器发出请求到服务器响应数据结束
 - 一次会话为浏览器和服务器建立连接到其中一方关闭连接。一次会话为一个用户对应在服务器中的 session 和对应在浏览器中 cookie 的 sessionID 的有效期限，可为连写也可为断续的
-  - 一次会话通常包含多个请求
+    - 一次会话通常包含多个请求
 - 会话跟踪：浏览器使用的 http 协议为无状态协议，每次请求都是独立的，该技术是为了建立各个请求之间的数据共享，会话跟踪同一次会话中多次请求中间的数据的共享技术
 
 ### 如何实现会话跟踪
 
 - 第一次浏览器向服务器发起请求
-  - request 请求中不会携带来自浏览器中的任何 cookie
-    - 服务器调用 request.getSession()方法获取 session，未通过 cookie 获取到 JSESSIONID 的情况下服务器会新建一个 session
-      - 当服务器向浏览器响应数据时存在 Set-Cookie 响应头，该响应头存在该 session 的 JSESSIONID
-        - 浏览器接收到响应后将 Set-Cookie 响应头中的 JSESSIONID 存入该网站的 cookie 中
+    - request 请求中不会携带来自浏览器中的任何 cookie
+        - 服务器调用 request.getSession() 方法获取 session，未通过 cookie 获取到 JSESSIONID 的情况下服务器会新建一个 session
+            - 当服务器向浏览器响应数据时存在 Set-Cookie 响应头，该响应头存在该 session 的 JSESSIONID
+                - 浏览器接收到响应后将 Set-Cookie 响应头中的 JSESSIONID 存入该网站的 cookie 中
 - 第二次该浏览器向该服务器发起请求
-  - request 请求中携带来自浏览器中对应该网站包含 JSESSIONID 在内的所有 cookie
-    - 服务器调用 request.getSession()方法获取 session，服务器通过 cookie 中的 JSESSIONID 查询对应的 session 并返回，这样就可以保证和上次浏览器访问时获得的 session 为同一 session
+    - request 请求中携带来自浏览器中对应该网站包含 JSESSIONID 在内的所有 cookie
+        - 服务器调用 request.getSession() 方法获取 session，服务器通过 cookie 中的 JSESSIONID 查询对应的 session 并返回，这样就可以保证和上次浏览器访问时获得的 session 为同一 session
 
 ### Cookie 和 Session 的区别
 
 - 存储位置：Cookie 存储在浏览器；Session 存储在服务器
 - 安全性：Cookie 因为存在浏览器当中，有被窃取的风险，也会随请求在网络中传输，有被劫持的风险，因此不安全；Session 存在服务器当中且不再不随响应在网络中传输，所以较安全
 - 数据类型及大小：Cookie 只能存储字符串且不能直接存储中文字符串，中文通常使用 URL 编码的方式做传输前的处理，且大小为 3kb；Session 可以存储对象在内的所有数据，且没有大小限制
-- 存储时间：Cookie 默认为关闭浏览器失效，可调用 Cookie 的成员方法 setMaxAge()设置其有效时间，负数为关闭浏览器失效，正数为有效的秒数，0 为删除；Session 默认为 30 分钟失效，可通过配置文件设置其有效时间(单位为分)，setMaxInactiveInterval(int s)方法可覆盖配置文件的有效时间(单位为秒)，可调用 invalidate()的方法销毁，当服务器重启时会通过钝化和活化的方式保证在 Session 规定时间内的有效性
-  - 钝化：服务器关机前把 session 通过序列化的方式保存到硬盘文件中。
-  - 活化：服务器开机后把硬盘文件中的 session 在反序列化回内存。
+- 存储时间：Cookie 默认为关闭浏览器失效，可调用 Cookie 的成员方法 setMaxAge() 设置其有效时间，负数为关闭浏览器失效，正数为有效的秒数，0 为删除；Session 默认为 30 分钟失效，可通过配置文件设置其有效时间 (单位为分)，setMaxInactiveInterval(int s) 方法可覆盖配置文件的有效时间 (单位为秒)，可调用 invalidate() 的方法销毁，当服务器重启时会通过钝化和活化的方式保证在 Session 规定时间内的有效性
+    - 钝化：服务器关机前把 session 通过序列化的方式保存到硬盘文件中。
+    - 活化：服务器开机后把硬盘文件中的 session 在反序列化回内存。
 - 服务器性能：Cookie 不占用服务器资源，相对性能高；session 占用服务器资源，相对性能低
 
 ### Cookie

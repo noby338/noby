@@ -2,48 +2,48 @@
 title: day08 JSP、EL、JSTL
 icon: write
 category:
-  - JavaWeb
-  - JSP
+    - JavaWeb
+    - JSP
 tag:
-  - JavaWeb
-  - JSP
-  - EL
-  - JSTL
-  - 页面复用
+    - JavaWeb
+    - JSP
+    - EL
+    - JSTL
+    - 页面复用
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 介绍
 
 - JSP、EL（Expression Language）、JSTL（JavaServer Pages Standard Tag Library）是 Java Web 应用程序中常用的三种技术，它们的关系如下：
-  1.  JSP 是一种动态网页技术，它允许在 HTML 页面中嵌入 Java 代码，以便在 Web 服务器上动态生成页面内容。
-  2.  EL 是一种表达式语言，它可以在 JSP 页面中直接访问 Java 对象和变量，以便更方便地处理数据和执行业务逻辑。
-  3.  JSTL 是一种标签库，它提供了一组常用的自定义标签，可以在 JSP 页面中使用，以便更方便地处理数据和控制页面输出。
+    1. JSP 是一种动态网页技术，它允许在 HTML 页面中嵌入 Java 代码，以便在 Web 服务器上动态生成页面内容。
+    2. EL 是一种表达式语言，它可以在 JSP 页面中直接访问 Java 对象和变量，以便更方便地处理数据和执行业务逻辑。
+    3. JSTL 是一种标签库，它提供了一组常用的自定义标签，可以在 JSP 页面中使用，以便更方便地处理数据和控制页面输出。
 - 在 Java Web 应用程序中，通常会同时使用 JSP、EL 和 JSTL 这三种技术，以便更方便地完成 Web 应用程序的开发和维护。具体来说，JSP 页面可以使用 EL 表达式访问 Java 对象和变量，以便更方便地显示和处理数据；同时，JSTL 标签库可以使用 EL 表达式作为参数，以便更方便地控制标签的行为和输出结果。综合使用 JSP、EL 和 JSTL 这三种技术，可以大大提高 Java Web 应用程序的开发效率和维护性。
-
-* 注释区别
-  - HTML 注释 `<!-- HTML注释，静态资源，浏览器显示 -->`
-  - JSP 注释 `<%-- JSP注释，动态资源，浏览器不显示 --%>`
-* JSP 的组成
-  - 静态资源
-    - html
-  - Java 脚本
-    - Java 脚本 `<% 逻辑代码 %>`
-    - 表达式 `<%=输出 %>`
-    - 声明 `<%! 类中的代码 %>`
-  - JSP 标签:
-    - 动作
-      - `<jsp:include page="/footer.jsp"/>`
-    - 指令
-      - `<%@指令名 属性="属性值"%>`
-* EL
-  - 用于简化输出操作
-  - el 函数库需要导入`/jstl/function`标签库
-* JSTL
-  - 用于逻辑代码的书写
-  - jstl 需要导入`/jstl/core`标签库
+- 注释区别
+    - HTML 注释 `<!-- HTML注释，静态资源，浏览器显示 -->`
+    - JSP 注释 `<%-- JSP注释，动态资源，浏览器不显示 --%>`
+- JSP 的组成
+    - 静态资源
+        - html
+    - Java 脚本
+        - Java 脚本 `<% 逻辑代码 %>`
+        - 表达式 `<%=输出 %>`
+        - 声明 `<%! 类中的代码 %>`
+    - JSP 标签:
+        - 动作
+            - `<jsp:include page="/footer.jsp"/>`
+        - 指令
+            - `<%@指令名 属性="属性值"%>`
+- EL
+    - 用于简化输出操作
+    - el 函数库需要导入 `/jstl/function` 标签库
+- JSTL
+    - 用于逻辑代码的书写
+    - jstl 需要导入 `/jstl/core` 标签库
 
 ## Jsp
 

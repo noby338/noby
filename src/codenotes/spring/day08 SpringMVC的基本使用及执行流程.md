@@ -2,16 +2,17 @@
 title: day08 SpringMVC的基本使用及执行流程
 icon: write
 category:
-  - Spring
-  - SpringMVC
+    - Spring
+    - SpringMVC
 tag:
-  - Spring
-  - SpringMVC
+    - Spring
+    - SpringMVC
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## SpringMVC 的开发步骤
 
 1. 导入 SpringMVC 相关坐标
@@ -25,20 +26,18 @@ timeline: true
 ## Spring MVC 的执行流程
 
 - SpringMVC 的三大组件
-
-  - 处理器映射器
-  - 处理器适配器
-  - 视图解析器
-
+    - 处理器映射器
+    - 处理器适配器
+    - 视图解析器
 - Spring MVC 框架处理一个 HTTP 请求的完整流程如下：
-  1.  客户端（例如浏览器）发送 HTTP 请求到服务器，请求被 Web 容器（例如 Tomcat）接收。
-  2.  Web 容器将请求传递给 DispatcherServlet，DispatcherServlet 是 Spring MVC 的核心组件，负责处理所有 HTTP 请求和响应。(DispatcherServlet 为传统 servlet 共性部分的封装)
-  3.  DispatcherServlet 使用 HandlerMapping 组件查找并确定哪个 Handler（处理程序）将处理请求。HandlerMapping 会根据请求的 URL 和其他条件来查找匹配的 Handler。
-  4.  找到 Handler 之后，DispatcherServlet 会将请求委托给 HandlerAdapter 组件，HandlerAdapter 是一个适配器，负责将请求转换为 Handler 所需要的形式，并将结果转换为适当的响应。
-  5.  Handler 执行业务逻辑并返回一个 ModelAndView 对象，ModelAndView 包含数据模型（Model）和用于呈现模型的视图（View）的信息。
-  6.  DispatcherServlet 将 ModelAndView 对象传递给 ViewResolver 组件进行视图解析。ViewResolver 会根据视图名称（View Name）查找并确定用于呈现模型的视图。
-  7.  找到视图之后，DispatcherServlet 将模型传递给视图进行呈现。视图将使用模型中的数据呈现响应内容。
-  8.  DispatcherServlet 将响应返回给 Web 容器，Web 容器将响应发送回客户端（浏览器）。
+    1. 客户端（例如浏览器）发送 HTTP 请求到服务器，请求被 Web 容器（例如 Tomcat）接收。
+    2. Web 容器将请求传递给 DispatcherServlet，DispatcherServlet 是 Spring MVC 的核心组件，负责处理所有 HTTP 请求和响应。(DispatcherServlet 为传统 servlet 共性部分的封装)
+    3. DispatcherServlet 使用 HandlerMapping 组件查找并确定哪个 Handler（处理程序）将处理请求。HandlerMapping 会根据请求的 URL 和其他条件来查找匹配的 Handler。
+    4. 找到 Handler 之后，DispatcherServlet 会将请求委托给 HandlerAdapter 组件，HandlerAdapter 是一个适配器，负责将请求转换为 Handler 所需要的形式，并将结果转换为适当的响应。
+    5. Handler 执行业务逻辑并返回一个 ModelAndView 对象，ModelAndView 包含数据模型（Model）和用于呈现模型的视图（View）的信息。
+    6. DispatcherServlet 将 ModelAndView 对象传递给 ViewResolver 组件进行视图解析。ViewResolver 会根据视图名称（View Name）查找并确定用于呈现模型的视图。
+    7. 找到视图之后，DispatcherServlet 将模型传递给视图进行呈现。视图将使用模型中的数据呈现响应内容。
+    8. DispatcherServlet 将响应返回给 Web 容器，Web 容器将响应发送回客户端（浏览器）。
       ![image-20221011203410737](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221011203410737.png)
       ![image-20221011203422922](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20221011203422922.png)
 
@@ -120,6 +119,7 @@ timeline: true
 ```
 
 ### web.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"  
@@ -150,6 +150,7 @@ timeline: true
   
 </web-app>
 ```
+
 ### spring-mvc.xml
 
 ```xml
@@ -175,6 +176,7 @@ timeline: true
 ```
 
 ### controller
+
 ```java
 package priv.noby.springmvc3.controller;  
   
@@ -238,7 +240,9 @@ public class StudentController {
     }  
 }
 ```
+
 ### http
+
 ```
 ### springMVC 的基本使用，进入到 controllerGET http://localhost:8080/springMVC3/student/selectById  
   
@@ -249,6 +253,7 @@ public class StudentController {
 ### springMVC 的试图解析器的配置测试是否成功  
 GET http://localhost:8080/springMVC3/student/otherJsp
 ```
+
 ### jsp
 
 ```jsp

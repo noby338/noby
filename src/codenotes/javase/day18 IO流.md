@@ -2,9 +2,9 @@
 title: day18 IO流
 icon: write
 category:
-  - JavaSE
+    - JavaSE
 tag:
-  - JavaSE
+    - JavaSE
 sticky: false
 star: false
 article: true
@@ -14,20 +14,20 @@ timeline: true
 ## file
 
 - 持久化：永久的保存数据，在 java 中常见的持久化方式：
-  - 将数据写到文件中，然后将数据存放在硬盘
-  - 将数据存放在数据库
-  - 将数据放在网盘中(网络)
+    - 将数据写到文件中，然后将数据存放在硬盘
+    - 将数据存放在数据库
+    - 将数据放在网盘中 (网络)
 - 路径：
-  - 绝对路径：在 windows 下以盘符开始的路径（只有 windows 操作系统有盘符，其他如 linux 和 Unix 系统没有盘符），如： c:/abc/aaa/bbb/1.txt
-  - 相对路径：相对于当前目录的路径，如： aaa/bbb/1.txt
-  - 转义字符：
-    | 字符 | 行为 |
-    | ---- | ------ |
-    | \n | 换行 |
-    | \r | 回车 |
-    | \t | 制表符 |
-    | \b | 退格 |
-    | \\\\ | \\ |
+    - 绝对路径：在 windows 下以盘符开始的路径（只有 windows 操作系统有盘符，其他如 linux 和 Unix 系统没有盘符），如： c:/abc/aaa/bbb/1.txt
+    - 相对路径：相对于当前目录的路径，如： aaa/bbb/1.txt
+    - 转义字符：
+
+| 字符  | 行为  |
+| --- | --- |
+| \n  | 换行  |
+| \r  | 回车  |
+| \t  | 制表符 |
+| \b  | 退格  |
 
   ```java
   package note;
@@ -70,67 +70,65 @@ timeline: true
 
 ## 编码表
 
-- 一个汉字三个字节，若用字节流容易乱码，因此出现了字符流(底层仍然为字节流)
-- 字符流 = 字节流 + 编码表(不同的编码表)
-
-  - 依据汉字的第一个字节为负数判断其一次性读入的字节数，若某字节若为正数，则读取一个字节，通过其中包括的 ascll 码转换为对应的英文字节；若某字节为负数，则连续读取三个字节(utf-8)，并将其转换为其他字符(如汉字)
-  - ![image-20220105153638462](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220105153638462.png)
-
+- 一个汉字三个字节，若用字节流容易乱码，因此出现了字符流 (底层仍然为字节流)
+- 字符流 = 字节流 + 编码表 (不同的编码表)
+    - 依据汉字的第一个字节为负数判断其一次性读入的字节数，若某字节若为正数，则读取一个字节，通过其中包括的 ascll 码转换为对应的英文字节；若某字节为负数，则连续读取三个字节 (utf-8)，并将其转换为其他字符 (如汉字)
+    - ![image-20220105153638462](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220105153638462.png)
 - ascll 编码表
-  - 任何编码表都包括 ascll，如 GBK Unicode
+    - 任何编码表都包括 ascll，如 GBK Unicode
 - Unicode(万国码)
-  - UTF-8(一个中文 3 个字节)
-  - UTF-16(一个中文 2 个字节)
-  - UTF-32(一个中文 4 个字节)
+    - UTF-8(一个中文 3 个字节)
+    - UTF-16(一个中文 2 个字节)
+    - UTF-32(一个中文 4 个字节)
 - GBK(中国编码表)
-  - 一个汉字两个字节
+    - 一个汉字两个字节
 - 编码
-  - 字符串=>字节
+    - 字符串=>字节
 - 解码
-  - 字节=>字符串
+    - 字节=>字符串
 
 ## IO 流
 
 ![image-20220217210510485](https://markdown-1308523627.cos.ap-chengdu.myqcloud.com/typora/image-20220217210510485.png)
 
 - IO 流目的：通过内存数据和磁盘数据之间转换实现数据的的保存
-  - Input 输入到内存
-  - Output 输出到磁盘
+    - Input 输入到内存
+    - Output 输出到磁盘
 - 分类：
-  - 流向
-    - 输入流
-    - 输出流
-  - 类型
-    - 字符流
-      - 一般复制文本文件
-    - 字节流
-      - 万能流，可复制任何文件
-      - 读取中文会乱码
+    - 流向
+        - 输入流
+        - 输出流
+    - 类型
+        - 字符流
+            - 一般复制文本文件
+        - 字节流
+            - 万能流，可复制任何文件
+            - 读取中文会乱码
 - IO 流的体系结构？
-  - OutputStream 字节输出流的顶层抽象类
-    - _FileOutputStream_
-    - _ObjectOutputStream_
-  - InputStream 字节输入流的顶层抽象类
-    - ​*FileInputStream*
-    - ​*ObjectInputStream*
-  - Writer 字符输出流的顶层抽象类
-    - _OutputStreamWriter_
-      - _FileWriter_
-    - _BufferedWriter_
-  - Reader 字符输入流的顶层抽象类
-    - _InputStreamReader_
-      - _FileReader_
-    - _BufferedReader_
+    - OutputStream 字节输出流的顶层抽象类
+        - *FileOutputStream*
+        - *ObjectOutputStream*
+    - InputStream 字节输入流的顶层抽象类
+        - ​*FileInputStream*
+        - ​*ObjectInputStream*
+    - Writer 字符输出流的顶层抽象类
+        - *OutputStreamWriter*
+            - *FileWriter*
+        - *BufferedWriter*
+    - Reader 字符输入流的顶层抽象类
+        - *InputStreamReader*
+            - *FileReader*
+        - *BufferedReader*
 
 ### 字节流与字符流
 
 - 区别：
-  - 字节流操作是以字节为单位，字符流是以字符为单位
-  - 字节流不会对数据进行转码，字符流会进行转码
-  - 字符流底层通过字节流实现，并且添加了缓冲区，默认每次读写 8192 字节数据
+    - 字节流操作是以字节为单位，字符流是以字符为单位
+    - 字节流不会对数据进行转码，字符流会进行转码
+    - 字符流底层通过字节流实现，并且添加了缓冲区，默认每次读写 8192 字节数据
 - 选择：
-  - 在 Java 中大多数情况下使用字节流进行 IO，例如二进制文件的读写、网络数据的传输都是采用字节流
-  - 只有在需要将读取到的数据用于阅读时选择字符流，避免出现乱码影响阅读。
+    - 在 Java 中大多数情况下使用字节流进行 IO，例如二进制文件的读写、网络数据的传输都是采用字节流
+    - 只有在需要将读取到的数据用于阅读时选择字符流，避免出现乱码影响阅读。
 
 ### 编码
 

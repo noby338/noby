@@ -2,65 +2,69 @@
 title: day15 SpringBoot整合Mybatis
 icon: write
 category:
-  - Spring
-  - SpringBoot
+    - Spring
+    - SpringBoot
 tag:
-  - Spring
-  - SpringBoot
-  - logback日志
-  - 热部署
-  - 事务
-  - Mybatis
+    - Spring
+    - SpringBoot
+    - logback日志
+    - 热部署
+    - 事务
+    - Mybatis
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 内容
-* springboot 整合 MyBatis  
-  * 导入坐标  
-    * mybatis 的场景启动器  
-    * jdbc  
-  * properties 配置文件  
-    * 配置实体类包扫描  
-    * 配置映射文件路径  
-    * 配置数据库连接  
-  * 启动类上加 @MapperScan("priv.noby.springboot2.dao") 配置 dao 实体类包扫描   
-* 事务管理  
-    * 启动类配置 @EnableTransactionManagement  
-    * 事务类配置 @Transactional  
-  * 配置第三方数据源  
-    * pom 坐标设置  
-    * 配置文件配置连接参数  
-* 日志的使用  
-  * 配置文件中配置  
-* logback 的日志级别（级别从低到高）  
-  * Trace:是追踪，就是程序推进以下，你就可以写个trace输出，所以trace应该会特别多，不过没关系，我们可以设置最低日志级别不让他输出。  
-  * Debug:指出细粒度信息事件对调试应用程序是非常有帮助的。  
-  * Info:消息在粗粒度级别上突出强调应用程序的运行过程。  
-  * Warn:输出警告及warn以下级别的日志。  
-  * Error:输出错误信息日志。  
-* 通过lombok的注解@log4j使用log对象打印日志  
-* 热部署的配置  
-  * 导入pom坐标  
-  * 开启自动编译
+
+- springboot 整合 MyBatis
+    - 导入坐标
+        - mybatis 的场景启动器
+        - jdbc
+    - properties 配置文件
+        - 配置实体类包扫描
+        - 配置映射文件路径
+        - 配置数据库连接
+    - 启动类上加 @MapperScan("priv.noby.springboot2.dao") 配置 dao 实体类包扫描
+- 事务管理
+        - 启动类配置 @EnableTransactionManagement
+        - 事务类配置 @Transactional
+    - 配置第三方数据源
+        - pom 坐标设置
+        - 配置文件配置连接参数
+- 日志的使用
+    - 配置文件中配置
+- logback 的日志级别（级别从低到高）
+    - Trace: 是追踪，就是程序推进以下，你就可以写个 trace 输出，所以 trace 应该会特别多，不过没关系，我们可以设置最低日志级别不让他输出。
+    - Debug: 指出细粒度信息事件对调试应用程序是非常有帮助的。
+    - Info: 消息在粗粒度级别上突出强调应用程序的运行过程。
+    - Warn: 输出警告及 warn 以下级别的日志。
+    - Error: 输出错误信息日志。
+- 通过 lombok 的注解@log4j 使用 log 对象打印日志
+- 热部署的配置
+    - 导入 pom 坐标
+    - 开启自动编译
 
 ## logback
 
 - Logback 是一个流行的、灵活的、可扩展的日志框架，它由 Ceki Gülcü 开发并得到了广泛的应用。Logback 是由 log4j 项目的创始人 Ceki Gülcü 开发的，在其之前的版本中也包含了对 log4j 的完全兼容。
 - Logback 是一个分层的框架，它包含三个模块：
-  -  logback-core：提供了日志框架的核心功能，如日志事件、上下文和上下文管理等。
-  -  logback-classic：基于 log4j 的设计，提供了一个完整的日志实现，包括 log4j 的所有特性和一些新功能。Logback-classic 模块可以完全兼容 log4j，因此可以直接替换 log4j 以获得更好的性能和更好的灵活性。
-  -  logback-access：提供了访问日志（access log）的实现，包括 HTTP 请求和响应的详细信息等。
+    - logback-core：提供了日志框架的核心功能，如日志事件、上下文和上下文管理等。
+    - logback-classic：基于 log4j 的设计，提供了一个完整的日志实现，包括 log4j 的所有特性和一些新功能。Logback-classic 模块可以完全兼容 log4j，因此可以直接替换 log4j 以获得更好的性能和更好的灵活性。
+    - logback-access：提供了访问日志（access log）的实现，包括 HTTP 请求和响应的详细信息等。
 - Logback 支持多种配置方式，包括 XML、Groovy 和 Java Config 等，其中 XML 配置方式最为常用。它提供了丰富的日志级别、多种 Appender、Layout 等功能，可以根据需要对日志进行精确控制。
+
 ## 热部署
 
 - 热部署（Hot Deployment）是指在应用程序运行期间更新应用程序的代码或资源，无需停止和重启应用程序。热部署可以显著提高开发效率，特别是在开发过程中需要频繁修改代码时，通过热部署可以省去重启应用程序的时间，让开发者更加高效地进行代码开发和测试。
 - 在 Java 后端开发中，热部署通常是通过类加载器（ClassLoader）来实现的。当应用程序启动时，类加载器会从指定的路径中加载类和资源。在热部署过程中，新的类和资源将被加载到指定的路径中，类加载器会重新加载这些类和资源，使得应用程序能够立即使用新的代码和资源，无需重启应用程序。
 - 常见的 Java 热部署技术包括：
-  -  JRebel：JRebel 是一个商业化的 Java 热部署工具，它可以在运行时动态地替换应用程序中的类和资源，从而实现热部署。
-  -  Spring Boot DevTools：Spring Boot DevTools 是 Spring Boot 官方提供的开发工具，它包含了很多实用的功能，其中就包括热部署。
-  -  DCEVM：DCEVM 是一个增强版的 Java 虚拟机，它可以实现在运行时更新类定义，从而实现热部署。
+    - JRebel：JRebel 是一个商业化的 Java 热部署工具，它可以在运行时动态地替换应用程序中的类和资源，从而实现热部署。
+    - Spring Boot DevTools：Spring Boot DevTools 是 Spring Boot 官方提供的开发工具，它包含了很多实用的功能，其中就包括热部署。
+    - DCEVM：DCEVM 是一个增强版的 Java 虚拟机，它可以实现在运行时更新类定义，从而实现热部署。
+
 ## 代码
 
 ### pom

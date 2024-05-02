@@ -2,17 +2,18 @@
 title: day07 Nacos服务注册与发现
 icon: write
 category:
-  - Distributed
+    - Distributed
 tag:
-  - Distributed
+    - Distributed
 sticky: false
 star: false
 article: true
 timeline: true
 ---
+
 ## 介绍
 
-Nacos是阿里巴巴开源的一款面向云原生应用的服务发现、配置管理和动态 DNS 服务。它包括两个核心模块：Service Discovery 和 Config Service。它使用分级存储模型：Namespace>Group>Service>Clustrer>Instance
+Nacos 是阿里巴巴开源的一款面向云原生应用的服务发现、配置管理和动态 DNS 服务。它包括两个核心模块：Service Discovery 和 Config Service。它使用分级存储模型：Namespace>Group>Service>Clustrer>Instance
 
 ## 配置
 
@@ -27,7 +28,7 @@ startup.cmd -m standalone
 
 可通过修改 cmd，set MODE="standalone"，设置默认的启动方式为单机模式，此时双击运行即可
 
-启动后请求http://127.0.0.1:8848/nacos可访问管控台
+启动后请求 http://127.0.0.1:8848/nacos 可访问管控台
 
 ## 微服务使用 nacos 管理
 
@@ -56,10 +57,10 @@ spring:
 ## Nacos 和 Eureka
 
 - Nacos 与 eureka 的共同点
-  - 都支持服务注册和服务拉取
-  - 都支持服务提供者心跳方式做健康检测
+    - 都支持服务注册和服务拉取
+    - 都支持服务提供者心跳方式做健康检测
 - Nacos 与 Eureka 的区别
-  - Nacos 支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
-  - 临时实例心跳不正常会被剔除，非临时实例则不会被剔除
-  - Nacos 支持服务列表变更的消息推送模式，服务列表更新更及时
-  - Nacos 集群默认采用 AP 方式，当集群中存在非临时实例时，采用 CP 模式；Eureka 采用 AP 方式
+    - Nacos 支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
+    - 临时实例心跳不正常会被剔除，非临时实例则不会被剔除
+    - Nacos 支持服务列表变更的消息推送模式，服务列表更新更及时
+    - Nacos 集群默认采用 AP 方式，当集群中存在非临时实例时，采用 CP 模式；Eureka 采用 AP 方式

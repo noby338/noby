@@ -2,33 +2,33 @@
 title: day03 Spring配置文件整合MyBatis
 icon: write
 category:
-  - Spring
+    - Spring
 tag:
-  - Spring
-  - Spring整合MyBatis
+    - Spring
+    - Spring整合MyBatis
 sticky: false
 star: false
 article: true
 timeline: true
 ---
 
-### 知识点
+## 知识点
 
 - 通过 Spring 整合 Mybatis
-  - pom 文件加入的坐标
-    - Spring 的 Mybatis 的整合包
-    - Spring 的 jdbc 整合包
-    - 第三方数据源 druid
-    - Spring 对 log4j 的配置
-  - Spring 配置文件
-    - 导入 properties 配置文件
-    - DruidDataSource
-    - SqlSessionFactoryBean
-    - MapperScannerConfigurer
+    - pom 文件加入的坐标
+        - Spring 的 Mybatis 的整合包
+        - Spring 的 jdbc 整合包
+        - 第三方数据源 druid
+        - Spring 对 log4j 的配置
+    - Spring 配置文件
+        - 导入 properties 配置文件
+        - DruidDataSource
+        - SqlSessionFactoryBean
+        - MapperScannerConfigurer
 
-### 代码示例
+## 代码示例
 
-#### pom
+### pom
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -103,7 +103,7 @@ timeline: true
 </project>
 ```
 
-#### Resource
+### Resource
 
 ```xml
 <!--
@@ -119,7 +119,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     <!--
     读取配置文件，使用该标签前必须引入context的命名空间及地址
     system-properties-mode="NEVER"表示不读取系统的属性（解决自定义属性名和系统属性名冲突）
-    -->
+        -->
 <!--    <context:property-placeholder location="db.properties" system-properties-mode="NEVER"/>-->
     <context:property-placeholder location="classpath:db.properties"/>
     <!--配置数据源-->
@@ -182,7 +182,7 @@ log4j.appender.FILE.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%p] %m [%t
 log4j.appender.FILE.File=file.log
 ```
 
-#### entity
+### entity
 
 ```java
 package priv.noby.spring3.entity;
@@ -201,7 +201,7 @@ public class Student {
 }
 ```
 
-#### dao
+### dao
 
 ```java
 package priv.noby.spring3.dao;
@@ -229,7 +229,7 @@ public interface StudentDao {
 </mapper>
 ```
 
-#### service
+### service
 
 ```java
 package priv.noby.spring3.service;
@@ -269,7 +269,7 @@ public class StudentServiceImpl implements StudentService {
 }
 ```
 
-#### test
+### test
 
 ```java
 package priv.noby.spring3.dao;
