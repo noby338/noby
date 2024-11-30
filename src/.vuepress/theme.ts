@@ -180,11 +180,11 @@ export default hopeTheme({
           },
         },
       ],
-      sub: true,
-      sup: true,
-      tabs: true,
+      sub: false,
+      sup: false,
+      tabs: false,
       // vpre: true,
-      vuePlayground: true,
+      vuePlayground: false,
     },
     // 打开博客功能
     blog: {

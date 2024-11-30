@@ -5,7 +5,17 @@ hero: true
 # heroImage : /head_logo.jpg
 bgImage: /blog_background.jpg
 heroFullScreen: false
-footer: "<a href='https://beian.miit.gov.cn' target='_blank' style='color: var(--c-text-lighter);'>蜀ICP备2022029402号</a>"
+footer: |
+  <div style="display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 14px; line-height: 1.5;">
+    <img src="/navicon/beian.png" alt="备案图标" style="width: 14px; height: 14px;">
+    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51162202511779" rel="noreferrer" target="_blank">
+      川公网安备51162202511779
+    </a>
+    <span style="margin: 0 10px;">|</span>
+    <a href="https://beian.miit.gov.cn" target="_blank">
+      蜀ICP备2022029402号
+    </a>
+  </div>
 footerHtml: true
 projects:
   - name: 代码笔记

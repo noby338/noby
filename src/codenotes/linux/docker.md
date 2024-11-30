@@ -852,4 +852,11 @@ python3 scripts/strava_auth.py --client-id 09bd596c577ae6d7126f453dac18b589961f3
 
 docker create --name=alist xhofe/alist:latest -v /Users/noby/dockervolume/alist:/opt/alist/data -p 5244:5244 -e PUID=0 -e PGID=0 -e UMASK=022
 
-docker run -d --restart=unless-stopped -v /Users/noby/dockervolume/alist:/opt/alist/data -p 5244:5244 -e PUID=0 -e PGID=0 -e UMASK=022 --name="alist" xhofe/alist:latest
+#### OpenWebUI
+
+docker create \
+    --name open-webui \
+    -p 3000:8080 \
+    --add-host=host.docker.internal:host-gateway \
+    -v /Users/noby/dockervolume/open-webui:/app/backend/data \
+    ghcr.io/open-webui/open-webui:main
